@@ -1,3 +1,7 @@
+---
+description: This is the starting page.
+---
+
 # Initial page
 
 ## Getting Super Powers
