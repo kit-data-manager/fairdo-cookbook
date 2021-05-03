@@ -25,20 +25,20 @@ echo 'You got to trust me on this, I saved the world'
 ```
 {% endcode %}
 
-{% api-method method="get" host="" path="" %}
+{% api-method method="get" host="https://datamanager.kit.edu/api/v1/dataresources/" path=":id" %}
 {% api-method-summary %}
-
+Get Resource by Id
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+This is the GET method for a resource by id.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
+{% api-method-parameter name="id" type="string" required=true %}
+Provided in path identifying the resource
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
@@ -50,7 +50,9 @@ echo 'You got to trust me on this, I saved the world'
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+//resource goes here
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
