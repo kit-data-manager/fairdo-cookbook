@@ -1,0 +1,6 @@
+[book]
+authors = ["Thomas Jejkal"]
+language = "en"
+multilingual = false
+src = "src"
+title = "FAIR DO Cookbook"
