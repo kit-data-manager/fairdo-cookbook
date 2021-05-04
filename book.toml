@@ -4,3 +4,6 @@ language = "en"
 multilingual = false
 src = "src"
 title = "FAIR DO Cookbook"
+
+[output.html]
+preferred-dark-theme = "true"
