@@ -40,7 +40,7 @@ This first step assumes, that you have (read) access to a Data Type Registry, e.
 
 
 
-![Search Data Type Registry](E:\Software\NetbeansProjects\fairdo-cookbook\src\images\datatype_step1.png)
+![Search Data Type Registry](./images/datatype_step1.png)
 
 
 
@@ -56,7 +56,7 @@ The following overview shows advantages and disadvantages of choosing a certain 
 
 
 
-![Decision on Level of Detail](E:\Software\NetbeansProjects\fairdo-cookbook\src\images\datatype_step2.png)
+![Decision on Level of Detail](./images/datatype_step2.png)
 
 Examples:
 
@@ -84,7 +84,7 @@ Data Types of *Granularity 3* can be the most complex Data Types. Their intentio
 
 In the course of this receipt, we will model a Data Type of *Granularity 3*. The following sample resource shows the structure we want to represent as a new Data Type.
 
-![Sample Resource](E:\Software\NetbeansProjects\fairdo-cookbook\src\images\datatype_resource.png)
+![Sample Resource](./images/datatype_resource.png)
 
 
 
@@ -109,7 +109,7 @@ Now, we go through each element in the checklist and apply the following process
 
 
 
-![Property Inquiry](E:\Software\NetbeansProjects\fairdo-cookbook\src\images\datatype_step3.png)
+![Property Inquiry](./images/datatype_step3.png)
 
 
 
