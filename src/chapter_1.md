@@ -1,4 +1,4 @@
-## Create a Data Type
+# Create a Data Type
 
 
 
@@ -6,7 +6,7 @@ This receipt will show you how to create your first Data Type in a Data Type Reg
 
 ---
 
-#### Ingredients
+## Ingredients
 
 - Data Type Registry (DTR), e.g. http://dtr-test.pidconsortium.eu/
 - Registered user account at Data Type Registry
@@ -14,11 +14,11 @@ This receipt will show you how to create your first Data Type in a Data Type Reg
 
 ---
 
-#### Work Steps
+## Work Steps
 
 1. Search data type registry for suitable data type
 
-2.  Describe/model envisioned data type (offline)
+2. Describe/model envisioned data type (offline)
 
    2.1 Decide on Data Type‘s level of detail
 
@@ -32,9 +32,9 @@ This receipt will show you how to create your first Data Type in a Data Type Reg
 
    3.3 Register main Data Type
 
-#### Preparation
+## Preparation
 
-##### 1. Search data type registry for suitable data type
+### 1. Search data type registry for suitable data type
 
 This first step assumes, that you have (read) access to a Data Type Registry, e.g., http://dtr-test.pidconsortium.eu/. Open the link to the DTR in your Web Browser and query for an existing Data Type, which best describes the digital resource you want to typify.  You may use the following decision graph showing what will be the next step depending on what you found. 
 
@@ -44,13 +44,13 @@ This first step assumes, that you have (read) access to a Data Type Registry, e.
 
 
 
-##### 2. Describe/model envisioned **data** **type (offline)** 
+### 2. Describe/model envisioned **data** **type (offline)** 
 
 Assuming that your search ended up at *Create new Data Type*, we now have to model the Data Type which we will register later. First, we should decide to which level of detail we want to model our Data Type and which are the consequences. 
 
 
 
-###### 2.1 Decide on Data Type‘s level of detail
+### 2.1 Decide on Data Type‘s level of detail
 
 The following overview shows advantages and disadvantages of choosing a certain level of Data Type granularity. 
 
@@ -88,7 +88,7 @@ In the course of this receipt, we will model a Data Type of *Granularity 3*. The
 
 
 
-###### 2.2 DTR Inquiry
+### 2.2 DTR Inquiry
 
 What we have to do now is to check for every property in the hierarchy, whether we can find an appropriate Data Type in the DTR. Therefor, we collect all properties in a checklist:
 
@@ -143,7 +143,7 @@ Almost done, only `aclList` is still open. As this property is another complex t
 
 
 
-##### 3. Register data type(s) in data type registry
+### 3. Register data type(s) in data type registry
 
 
 
