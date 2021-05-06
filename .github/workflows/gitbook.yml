@@ -3,7 +3,7 @@ name: 'Gitbook Action Build'
 on:
   push:
     branches:
-      - gitbook  # trigger branch
+      - gitbook
       
 jobs:
   build:
