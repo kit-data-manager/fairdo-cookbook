@@ -18,7 +18,7 @@ $ give me super-powers +1
 
 ### Header 2
 
-Once you're strong enough, save the world:
+Once you're strong enough, save the world...
 
 {% code title="hello.sh" %}
 ```bash
