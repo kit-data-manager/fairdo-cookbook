@@ -6,7 +6,7 @@ on:
       - gitbook
       
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout action
