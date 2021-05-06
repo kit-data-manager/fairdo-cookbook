@@ -1,8 +1,10 @@
 name: 'Gitbook Action Build'
+
 on:
   push:
     branches:
       - gitbook  # trigger branch
+      
 jobs:
   build:
     runs-on: ubuntu-latest
