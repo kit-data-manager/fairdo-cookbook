@@ -215,11 +215,9 @@
 <tr><td></td><td>MemberItem</td><td>21.T11148/195f306b750096f4fb6c</td></tr>
 <tr><td></td><td>Collection</td><td>21.T11148/2037de437c80264ccbce</td></tr>
 </tbody></table>
-<hr />
-<p><img src="https://github.githubassets.com/images/icons/emoji/unicode/2754.png" alt="" /> The main difference of the different levels of granularity is the depth of the resulting Data Type hierarchy. Data Types of <em>Granularity 1</em> have no hierarchy at all. Everything they need is defined in one single type. This allows them to be easily created, very generic and they also support basic value validation. Furthermore, their re-usability is comparably high, e.g., as sub-element of other, more complex Data Types.</p>
+<p>The main difference of the different levels of granularity is the depth of the resulting Data Type hierarchy. Data Types of <em>Granularity 1</em> have no hierarchy at all. Everything they need is defined in one single type. This allows them to be easily created, very generic and they also support basic value validation. Furthermore, their re-usability is comparably high, e.g., as sub-element of other, more complex Data Types.</span></p>
 <p>With <em>Granularity 2</em>, Data Types have at least one hierarchy level as they consist of the Data Type itself and one or more sub-elements, which also have a certain Data Type. These sub-elements also cause the additional effort, as the current receipt <code>Create a Data Type</code> has to be applied to all of them. As a result, a more in-depth validation of a resource can be performed. The re-usability is still quite high, especially for a specific purpose, e.g., to represent PID Kernel Information Profiles. </p>
 <p>Data Types of <em>Granularity 3</em> can be the most complex Data Types. Their intention is to represent a structured resource in detail, e.g., to reflect its entire hierarchy. The main advantage is, that such Data Types allow the full validation of matching resources and a high-degree of machine-readability and -interpretability. However, the effort for creating Data Types of <em>Granularity 3</em> can be extremely high, especially for nested hierarchies. Furthermore, as they contain very detailed information about a certain resource, their re-usability is very small.</p>
-<hr />
 <p>In the course of this receipt, we will model a Data Type of <em>Granularity 3</em>. The following sample resource shows the structure we want to represent as a new Data Type.</p>
 <p><img src="./images/datatype_resource.png" alt="Sample Resource" /></p>
 <h2><a class="header" href="#22-dtr-inquiry" id="22-dtr-inquiry">2.2 DTR Inquiry</a></h2>
@@ -251,15 +249,82 @@
 <tr><td>documentHash</td><td><span style="color:green">Reuse</span> <strong>sha-checksum</strong> (21.T11148/66bf538937bf74bfc48a)</td></tr>
 <tr><td>aclList</td><td><span style="color:red">Create</span></td></tr>
 </tbody></table>
-<hr />
-<p>:exclamation: It's highly recommended to note the PIDs of the identified Data Types, as we'll need them later. </p>
-<hr />
+<blockquote>
+<p><span style="color:orange">It's highly recommended to note the PIDs of the identified Data Types, as we'll need them later.</span> </p>
+</blockquote>
 <p>Almost done, only <code>aclList</code> is still open. As this property is another complex type, we have to create another checklist filling it the same way as we just did: </p>
 <table><thead><tr><th>Property</th><th>DTR Inquiry Result (<span style="color:green">Reuse</span>, <span style="color:orange">Extend</span>, <span style="color:red">Create</span>)</th></tr></thead><tbody>
 <tr><td>sid</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
 <tr><td>permission</td><td><span style="color:red">Create</span></td></tr>
 </tbody></table>
 <h2><a class="header" href="#3-register-data-types-in-data-type-registry" id="3-register-data-types-in-data-type-registry">3. Register data type(s) in data type registry</a></h2>
+<p>In the following steps, Data Types which were not found in the DTR, e.g., marked as <span style="color:orange">Extend</span> or <span style="color:red">Create</span> in your checklist, have to be registered at the DTR. This is done in a reverse order starting with missing Data Types at the lowest hierarchy level. In our case, we start with registering the <code>permission</code> Data Type in order to be able to proceed with defining the <code>aclEntry</code> Data Type and so forth.</p>
+<h2><a class="header" href="#31-register-new-child-data-types" id="31-register-new-child-data-types">3.1 Register new Child-Data Type(s)</a></h2>
+<p>Coming back to our <code>aclEntry</code> checklist we see, that the <code>permission</code> Data Type is missing. We'll now register this new Data Type at our DTR instance.</p>
+<table><thead><tr><th>Property</th><th>DTR Inquiry Result (<span style="color:green">Reuse</span>, <span style="color:orange">Extend</span>, <span style="color:red">Create</span>)</th></tr></thead><tbody>
+<tr><td>sid</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
+<tr><td>permission</td><td><span style="color:red">Create</span></td></tr>
+</tbody></table>
+<blockquote>
+<p><span style="color:orange">In order to create Data Types at the DTR, write permissions are required. In order to receive proper permissions, you'll have to create a user account. Typically, you'll have to contact the provider of the DTR in order to request a new user account.</span></p>
+</blockquote>
+<p>After logging in, you are able to create a new Data Type using the <code>Create</code> Dropdown Button next to the search field. Here you should select <code>PID-BasicInfoType</code>.</p>
+<p><img src="./images/datatype_permission_create_1.png" alt="" /></p>
+<p>As you can see in the screenshot, we just assign a <em>Type Name</em> and a <em>Contributor</em> in the upper section of the form before we proceed to the lower part. Here we add a new <em>Property</em>, assign <em>string</em> as <em>Data Type</em> and add the enumeration list containing all possible values of our envisioned <code>permission</code> Data Type.</p>
+<p><img src="./images/datatype_permission_create_2.png" alt="" /></p>
+<p>We may also assign a <em>Default Value</em> before we <em>Save</em> the new Data Type. As a result, the Data Type is created and gets a PID assigned. In our case, this PID is <code>21.T11148/1785713451d01948bc96</code>, which we add to our checklist for the following step.</p>
+<table><thead><tr><th>Property</th><th>DTR Inquiry Result (<span style="color:green">Reuse</span>, <span style="color:orange">Extend</span>, <span style="color:red">Create</span>)</th></tr></thead><tbody>
+<tr><td>sid</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
+<tr><td>permission</td><td><span style="color:red">Create</span> <strong>permission</strong> (21.T11148/1785713451d01948bc96)</td></tr>
+</tbody></table>
+<p>Now, we've all elements to create the <code>aclEntry</code> Data Type, which will be serve as single element of <code>aclList</code> in our modeled structure.</p>
+<p>We create a new Data Type but this time, we select <code>PID-InfoType</code> at the Dropdown Button.</p>
+<p><img src="./images/datatype_aclentry_create_1.png" alt="" /></p>
+<p>After adding Data Type Name and Contributor we continue with defining the properties. According to our checklist we should add two properties: <code>sid</code> and <code>permission</code>.</p>
+<p><img src="./images/datatype_aclentry_create_2.png" alt="" /></p>
+<p><img src="./images/datatype_aclentry_create_3.png" alt="" /></p>
+<p>We assign a name, e.g., the name of the attribute in our structure. Under <em>TID of Existing Data Type</em> we put in the according PID from our checklist representing the respective property, e.g., <em>21.T11148/f1627ce85386d8d75078</em> for <em>sid</em>. Furthermore, we may add Representation and Semantics information, e.g., about obligation, repeatability or for providing a constant value. If done, we can save the <code>aclEntry</code> Data Type and receive a PID, in our case <em>21.T11148/1785713451d01948bc96</em>, which we can now use to define the <code>aclList</code> in the next step. </p>
+<h2><a class="header" href="#32-register-extended-child-data-types" id="32-register-extended-child-data-types">3.2 Register extended Child-Data Type(s)</a></h2>
+<p>After registering elements of the lower hierarchy, e.g., <code>permission</code> and <code>aclEntry</code> we now proceed with the next higher level, namely the <code>aclList</code> Data Type. We start as before with creating a new Data Type of type <em>PID-InfoType</em>.</p>
+<p><img src="./images/datatype_acllist_create_1.png" alt="" /></p>
+<p>We add a Type name as well as the Contributor information as for all other Data Types. The following steps are slightly different, as you can see in the following screenshot.</p>
+<p><img src="./images/datatype_acllist_create_2.png" alt="" /></p>
+<p>First, in the <em>Represenatations and Semantics</em> section we add the value <code>isArrayWithGivenProperties</code> under <em>Relations for Sub-Schemas in Properties-Section</em>. This states, that the properties defined later will form an array representation in the resulting type, which is what we want for the <code>aclList</code>. Afterwards, we add one property, which has the Data Type of an <em>aclEntry</em> we've just defined. Note here, that the Data Type Name must not match the actual name of the used Data Type, which was <em>aclEntry</em> but can be freely chosen. However, for the Existing Data Type we use the PID of the <em>aclEntry</em>. In our example, we set the <em>Obligation</em> to <em>Mandatory</em> and do not allow multiple entries of <em>aclList</em> by setting <em>Repeatable</em> to <em>No</em>. Furthermore, we set <em>Omit Name as Subsidiary</em> to <em>Yes</em>. Please see to following example to understand the reason behind.</p>
+<p><img src="./images/omit_subsidiary.png" alt="" /></p>
+<p>On the left side you see an <em>aclList</em> without omitting the name of subsidiaries. You can see <em>aclEntry</em> appearing on each child element. On the right side you see what omitting of subsidiary names does and as this is the commonly used representation of array elements, we omit the name <em>aclEntry</em> by setting the property. That's it, we defined our <em>aclList</em> Data Type and we can save it. In our case, the resulting PID is <em>21.T11148/8b7b3f1b796a4dc1030f</em> which we can now add to our main checklist.</p>
+<table><thead><tr><th>Property</th><th>DTR Inquiry Result (<span style="color:green">Reuse</span>, <span style="color:orange">Extend</span>, <span style="color:red">Create</span>)</th></tr></thead><tbody>
+<tr><td>id</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
+<tr><td>pid</td><td><span style="color:green">Reuse</span> <strong>identifier-general</strong> (21.T11148/38330bcc6a40ca85e5b4)</td></tr>
+<tr><td>relatedResource</td><td><span style="color:green">Reuse</span> <strong>URL</strong> (21.T11148/e0efc41346cda4ba84ca)</td></tr>
+<tr><td>createdAt</td><td><span style="color:green">Reuse</span> <strong>date-time-rfc3339</strong> (21.T11148/3bfb2839a6967114bc3e)</td></tr>
+<tr><td>lastUpdate</td><td><span style="color:green">Reuse</span> <strong>date-time-rfc3339</strong> (21.T11148/3bfb2839a6967114bc3e)</td></tr>
+<tr><td>schemaId</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
+<tr><td>recordVersion</td><td><span style="color:green">Reuse</span> <strong>non_negative_integer</strong> (21.T11148/eca44a2ac007d5e126f5)</td></tr>
+<tr><td>metadataDocumentUri</td><td><span style="color:green">Reuse</span> <strong>URL</strong> (21.T11148/e0efc41346cda4ba84ca)</td></tr>
+<tr><td>documentHash</td><td><span style="color:green">Reuse</span> <strong>sha-checksum</strong> (21.T11148/66bf538937bf74bfc48a)</td></tr>
+<tr><td>aclList</td><td><span style="color:red">Create</span> <strong>aclList</strong> (21.T11148/8b7b3f1b796a4dc1030f)</td></tr>
+</tbody></table>
+<p>The checklist on the top hierarchy level is now complete and we can define our final Data Type representing our envisioned structure.</p>
+<h2><a class="header" href="#33-register-main-data-type" id="33-register-main-data-type">3.3 Register main Data Type</a></h2>
+<p>Finally, we arrived at the step where we collected everything in order to create our main Data Type. All these information are collected in our checklist, which we use now for defining this Data Type.</p>
+<table><thead><tr><th>Property</th><th>DTR Inquiry Result (<span style="color:green">Reuse</span>, <span style="color:orange">Extend</span>, <span style="color:red">Create</span>)</th></tr></thead><tbody>
+<tr><td>id</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
+<tr><td>pid</td><td><span style="color:green">Reuse</span> <strong>identifier-general</strong> (21.T11148/38330bcc6a40ca85e5b4)</td></tr>
+<tr><td>relatedResource</td><td><span style="color:green">Reuse</span> <strong>URL</strong> (21.T11148/e0efc41346cda4ba84ca)</td></tr>
+<tr><td>createdAt</td><td><span style="color:green">Reuse</span> <strong>date-time-rfc3339</strong> (21.T11148/3bfb2839a6967114bc3e)</td></tr>
+<tr><td>lastUpdate</td><td><span style="color:green">Reuse</span> <strong>date-time-rfc3339</strong> (21.T11148/3bfb2839a6967114bc3e)</td></tr>
+<tr><td>schemaId</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
+<tr><td>recordVersion</td><td><span style="color:green">Reuse</span> <strong>non_negative_integer</strong> (21.T11148/eca44a2ac007d5e126f5)</td></tr>
+<tr><td>metadataDocumentUri</td><td><span style="color:green">Reuse</span> <strong>URL</strong> (21.T11148/e0efc41346cda4ba84ca)</td></tr>
+<tr><td>documentHash</td><td><span style="color:green">Reuse</span> <strong>sha-checksum</strong> (21.T11148/66bf538937bf74bfc48a)</td></tr>
+<tr><td>aclList</td><td><span style="color:red">Create</span> <strong>aclList</strong> (21.T11148/8b7b3f1b796a4dc1030f)</td></tr>
+</tbody></table>
+<p>At first, we create a new Data Type of Type <em>PID-InfoType</em>.</p>
+<p><img src="./images/datatype_metadatarecord_create_1.png" alt="" /></p>
+<p>As before, we assign a <em>Type Name</em>, maybe a short <em>Description</em> and <em>Contributor</em> information. Afterwards, we add properties for each entry in our checklist assigning a <em>Data Type Name</em>, e.g., the value in the Property column of our checklist, and the <em>TID of Existing Data Type</em>, which is the <em>PID</em> value in the DTR Inquiry Result column. The <em>Obligation</em> we may or may not set to <em>Mandatory</em>, the <em>Repeatable</em> value should be set to <em>No</em> as each attribute of our structure can also appear once and <em>Omit Names as Subsidiary</em> should also stay <em>No</em> in that case, as we need to map the single values to the according properties by name. After transferring all properties we can save the <em>metadataRecord</em> Data Type and receive a new PID with value <em>21.T11148/6a29026053036431de11</em>. </p>
+<p>This PID now represents exactly the structure shown at the beginning:</p>
+<p><img src="./images/datatype_resource.png" alt="" /></p>
+<p>We are finished now with this receipt. If you like, you can check the next page for possible applications of the defined Data Type.</p>
 <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
 
                     </main>

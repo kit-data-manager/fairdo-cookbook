@@ -165,7 +165,28 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h2><a class="header" href="#32-register-extended-child-data-types" id="32-register-extended-child-data-types">3.2 Register extended Child-Data Type(s)</a></h2>
+<p>After registering elements of the lower hierarchy, e.g., <code>permission</code> and <code>aclEntry</code> we now proceed with the next higher level, namely the <code>aclList</code> Data Type. We start as before with creating a new Data Type of type <em>PID-InfoType</em>.</p>
+<p><img src="./images/datatype_acllist_create_1.png" alt="" /></p>
+<p>We add a Type name as well as the Contributor information as for all other Data Types. The following steps are slightly different, as you can see in the following screenshot.</p>
+<p><img src="./images/datatype_acllist_create_2.png" alt="" /></p>
+<p>First, in the <em>Represenatations and Semantics</em> section we add the value <code>isArrayWithGivenProperties</code> under <em>Relations for Sub-Schemas in Properties-Section</em>. This states, that the properties defined later will form an array representation in the resulting type, which is what we want for the <code>aclList</code>. Afterwards, we add one property, which has the Data Type of an <em>aclEntry</em> we've just defined. Note here, that the Data Type Name must not match the actual name of the used Data Type, which was <em>aclEntry</em> but can be freely chosen. However, for the Existing Data Type we use the PID of the <em>aclEntry</em>. In our example, we set the <em>Obligation</em> to <em>Mandatory</em> and do not allow multiple entries of <em>aclList</em> by setting <em>Repeatable</em> to <em>No</em>. Furthermore, we set <em>Omit Name as Subsidiary</em> to <em>Yes</em>. Please see to following example to understand the reason behind.</p>
+<p><img src="./images/omit_subsidiary.png" alt="" /></p>
+<p>On the left side you see an <em>aclList</em> without omitting the name of subsidiaries. You can see <em>aclEntry</em> appearing on each child element. On the right side you see what omitting of subsidiary names does and as this is the commonly used representation of array elements, we omit the name <em>aclEntry</em> by setting the property. That's it, we defined our <em>aclList</em> Data Type and we can save it. In our case, the resulting PID is <em>21.T11148/8b7b3f1b796a4dc1030f</em> which we can now add to our main checklist.</p>
+<table><thead><tr><th>Property</th><th>DTR Inquiry Result (<span style="color:green">Reuse</span>, <span style="color:orange">Extend</span>, <span style="color:red">Create</span>)</th></tr></thead><tbody>
+<tr><td>id</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
+<tr><td>pid</td><td><span style="color:green">Reuse</span> <strong>identifier-general</strong> (21.T11148/38330bcc6a40ca85e5b4)</td></tr>
+<tr><td>relatedResource</td><td><span style="color:green">Reuse</span> <strong>URL</strong> (21.T11148/e0efc41346cda4ba84ca)</td></tr>
+<tr><td>createdAt</td><td><span style="color:green">Reuse</span> <strong>date-time-rfc3339</strong> (21.T11148/3bfb2839a6967114bc3e)</td></tr>
+<tr><td>lastUpdate</td><td><span style="color:green">Reuse</span> <strong>date-time-rfc3339</strong> (21.T11148/3bfb2839a6967114bc3e)</td></tr>
+<tr><td>schemaId</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
+<tr><td>recordVersion</td><td><span style="color:green">Reuse</span> <strong>non_negative_integer</strong> (21.T11148/eca44a2ac007d5e126f5)</td></tr>
+<tr><td>metadataDocumentUri</td><td><span style="color:green">Reuse</span> <strong>URL</strong> (21.T11148/e0efc41346cda4ba84ca)</td></tr>
+<tr><td>documentHash</td><td><span style="color:green">Reuse</span> <strong>sha-checksum</strong> (21.T11148/66bf538937bf74bfc48a)</td></tr>
+<tr><td>aclList</td><td><span style="color:red">Create</span> <strong>aclList</strong> (21.T11148/8b7b3f1b796a4dc1030f)</td></tr>
+</tbody></table>
+<p>The checklist on the top hierarchy level is now complete and we can define our final Data Type representing our envisioned structure.</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

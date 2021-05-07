@@ -165,7 +165,27 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h2><a class="header" href="#33-register-main-data-type" id="33-register-main-data-type">3.3 Register main Data Type</a></h2>
+<p>Finally, we arrived at the step where we collected everything in order to create our main Data Type. All these information are collected in our checklist, which we use now for defining this Data Type.</p>
+<table><thead><tr><th>Property</th><th>DTR Inquiry Result (<span style="color:green">Reuse</span>, <span style="color:orange">Extend</span>, <span style="color:red">Create</span>)</th></tr></thead><tbody>
+<tr><td>id</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
+<tr><td>pid</td><td><span style="color:green">Reuse</span> <strong>identifier-general</strong> (21.T11148/38330bcc6a40ca85e5b4)</td></tr>
+<tr><td>relatedResource</td><td><span style="color:green">Reuse</span> <strong>URL</strong> (21.T11148/e0efc41346cda4ba84ca)</td></tr>
+<tr><td>createdAt</td><td><span style="color:green">Reuse</span> <strong>date-time-rfc3339</strong> (21.T11148/3bfb2839a6967114bc3e)</td></tr>
+<tr><td>lastUpdate</td><td><span style="color:green">Reuse</span> <strong>date-time-rfc3339</strong> (21.T11148/3bfb2839a6967114bc3e)</td></tr>
+<tr><td>schemaId</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
+<tr><td>recordVersion</td><td><span style="color:green">Reuse</span> <strong>non_negative_integer</strong> (21.T11148/eca44a2ac007d5e126f5)</td></tr>
+<tr><td>metadataDocumentUri</td><td><span style="color:green">Reuse</span> <strong>URL</strong> (21.T11148/e0efc41346cda4ba84ca)</td></tr>
+<tr><td>documentHash</td><td><span style="color:green">Reuse</span> <strong>sha-checksum</strong> (21.T11148/66bf538937bf74bfc48a)</td></tr>
+<tr><td>aclList</td><td><span style="color:red">Create</span> <strong>aclList</strong> (21.T11148/8b7b3f1b796a4dc1030f)</td></tr>
+</tbody></table>
+<p>At first, we create a new Data Type of Type <em>PID-InfoType</em>.</p>
+<p><img src="./images/datatype_metadatarecord_create_1.png" alt="" /></p>
+<p>As before, we assign a <em>Type Name</em>, maybe a short <em>Description</em> and <em>Contributor</em> information. Afterwards, we add properties for each entry in our checklist assigning a <em>Data Type Name</em>, e.g., the value in the Property column of our checklist, and the <em>TID of Existing Data Type</em>, which is the <em>PID</em> value in the DTR Inquiry Result column. The <em>Obligation</em> we may or may not set to <em>Mandatory</em>, the <em>Repeatable</em> value should be set to <em>No</em> as each attribute of our structure can also appear once and <em>Omit Names as Subsidiary</em> should also stay <em>No</em> in that case, as we need to map the single values to the according properties by name. After transferring all properties we can save the <em>metadataRecord</em> Data Type and receive a new PID with value <em>21.T11148/6a29026053036431de11</em>. </p>
+<p>This PID now represents exactly the structure shown at the beginning:</p>
+<p><img src="./images/datatype_resource.png" alt="" /></p>
+<p>We are finished now with this receipt. If you like, you can check the next page for possible applications of the defined Data Type.</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

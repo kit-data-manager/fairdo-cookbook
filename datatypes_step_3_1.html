@@ -165,7 +165,32 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h2><a class="header" href="#31-register-new-child-data-types" id="31-register-new-child-data-types">3.1 Register new Child-Data Type(s)</a></h2>
+<p>Coming back to our <code>aclEntry</code> checklist we see, that the <code>permission</code> Data Type is missing. We'll now register this new Data Type at our DTR instance.</p>
+<table><thead><tr><th>Property</th><th>DTR Inquiry Result (<span style="color:green">Reuse</span>, <span style="color:orange">Extend</span>, <span style="color:red">Create</span>)</th></tr></thead><tbody>
+<tr><td>sid</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
+<tr><td>permission</td><td><span style="color:red">Create</span></td></tr>
+</tbody></table>
+<blockquote>
+<p><span style="color:orange">In order to create Data Types at the DTR, write permissions are required. In order to receive proper permissions, you'll have to create a user account. Typically, you'll have to contact the provider of the DTR in order to request a new user account.</span></p>
+</blockquote>
+<p>After logging in, you are able to create a new Data Type using the <code>Create</code> Dropdown Button next to the search field. Here you should select <code>PID-BasicInfoType</code>.</p>
+<p><img src="./images/datatype_permission_create_1.png" alt="" /></p>
+<p>As you can see in the screenshot, we just assign a <em>Type Name</em> and a <em>Contributor</em> in the upper section of the form before we proceed to the lower part. Here we add a new <em>Property</em>, assign <em>string</em> as <em>Data Type</em> and add the enumeration list containing all possible values of our envisioned <code>permission</code> Data Type.</p>
+<p><img src="./images/datatype_permission_create_2.png" alt="" /></p>
+<p>We may also assign a <em>Default Value</em> before we <em>Save</em> the new Data Type. As a result, the Data Type is created and gets a PID assigned. In our case, this PID is <code>21.T11148/1785713451d01948bc96</code>, which we add to our checklist for the following step.</p>
+<table><thead><tr><th>Property</th><th>DTR Inquiry Result (<span style="color:green">Reuse</span>, <span style="color:orange">Extend</span>, <span style="color:red">Create</span>)</th></tr></thead><tbody>
+<tr><td>sid</td><td><span style="color:green">Reuse</span> <strong>unicode-line-string</strong> (21.T11148/f1627ce85386d8d75078)</td></tr>
+<tr><td>permission</td><td><span style="color:red">Create</span> <strong>permission</strong> (21.T11148/1785713451d01948bc96)</td></tr>
+</tbody></table>
+<p>Now, we've all elements to create the <code>aclEntry</code> Data Type, which will be serve as single element of <code>aclList</code> in our modeled structure.</p>
+<p>We create a new Data Type but this time, we select <code>PID-InfoType</code> at the Dropdown Button.</p>
+<p><img src="./images/datatype_aclentry_create_1.png" alt="" /></p>
+<p>After adding Data Type Name and Contributor we continue with defining the properties. According to our checklist we should add two properties: <code>sid</code> and <code>permission</code>.</p>
+<p><img src="./images/datatype_aclentry_create_2.png" alt="" /></p>
+<p><img src="./images/datatype_aclentry_create_3.png" alt="" /></p>
+<p>We assign a name, e.g., the name of the attribute in our structure. Under <em>TID of Existing Data Type</em> we put in the according PID from our checklist representing the respective property, e.g., <em>21.T11148/f1627ce85386d8d75078</em> for <em>sid</em>. Furthermore, we may add Representation and Semantics information, e.g., about obligation, repeatability or for providing a constant value. If done, we can save the <code>aclEntry</code> Data Type and receive a PID, in our case <em>21.T11148/1785713451d01948bc96</em>, which we can now use to define the <code>aclList</code> in the next step. </p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
