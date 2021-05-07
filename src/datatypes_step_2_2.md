@@ -38,11 +38,12 @@ As a result, the previously prepared checklist looks as follows:
 | documentHash        | <span style="color:green">Reuse</span> **sha-checksum** (21.T11148/66bf538937bf74bfc48a)      |
 | aclList             | <span style="color:red">Create</span>                                                       |
 
----
 
-:exclamation: It's highly recommended to note the PIDs of the identified Data Types, as we'll need them later. 
 
----
+
+> <span style="color:orange">It's highly recommended to note the PIDs of the identified Data Types, as we'll need them later.</span> 
+
+
 
 Almost done, only `aclList` is still open. As this property is another complex type, we have to create another checklist filling it the same way as we just did: 
 
