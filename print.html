@@ -99,7 +99,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Create a Data Type</li><li class="chapter-item expanded "><a href="datatypes_intro.html">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_1.html">Search data type registry for suitable data type</a></li><li class="chapter-item expanded "><a href="datatypes_step_2.html">Describe/model envisioned data type</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_2_1.html">Decide on Data Type‘s level of detail</a></li><li class="chapter-item expanded "><a href="datatypes_step_2_2.html">DTR Inquiry</a></li></ol></li><li class="chapter-item expanded "><a href="datatypes_step_3.html">Register data type(s) in data type registry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_3_1.html">Register new Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_2.html">Register extended Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_3.html">Register main Data Type</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Create a PID KIP</li><li class="chapter-item expanded "><a href="kip_intro.html">Introduction</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Create a Data Type</li><li class="chapter-item expanded "><a href="datatypes_intro.html">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_1.html">Search data type registry for suitable data type</a></li><li class="chapter-item expanded "><a href="datatypes_step_2.html">Describe/model envisioned data type</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_2_1.html">Decide on Data Type‘s level of detail</a></li><li class="chapter-item expanded "><a href="datatypes_step_2_2.html">DTR Inquiry</a></li></ol></li><li class="chapter-item expanded "><a href="datatypes_step_3.html">Register data type(s) in data type registry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_3_1.html">Register new Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_2.html">Register extended Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_3.html">Register main Data Type</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Create a PID KIP</li><li class="chapter-item expanded "><a href="kip_intro.html">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="kip_step_1.html">Search data type registry for suitable KIP</a></li><li class="chapter-item expanded "><a href="kip_step_2.html">Describe/model envisioned KIP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="kip_step_2_1.html">Call to mind basic KIP principles</a></li><li class="chapter-item expanded "><a href="kip_step_2_2.html">Decide on KIP contents</a></li></ol></li><li class="chapter-item expanded "><a href="kip_step_3.html">Register new KIP in Data Type Registry</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -347,8 +347,83 @@
 <li><a href="./kip_step_3.html">3. Register new KIP in Data Type Registry</a></li>
 </ul>
 <blockquote>
-<p><span style="color:orange">Before you start using this recipe it is recommended, to go through the recipe <a href="./datatype_intro.html">Create a Data Type</a> as it explains basics for using the Data Type Registry, which is also the place where PID Kernel Information Profiles are created and managed.</span></p>
+<p><span style="color:orange">Before you start using this recipe it is recommended, to go through the recipe <a href="./datatypes_intro.html">Create a Data Type</a> as it explains basics for using the Data Type Registry, which is also the place where PID Kernel Information Profiles are created and managed.</span></p>
 </blockquote>
+<h2><a class="header" href="#1-search-data-type-registry-for-suitable-data-type-1" id="1-search-data-type-registry-for-suitable-data-type-1">1. Search data type registry for suitable data type</a></h2>
+<p>This first step assumes, that you have (read) access to a Data Type Registry, e.g., <a href="http://dtr-test.pidconsortium.eu/">http://dtr-test.pidconsortium.eu/</a>. Open the link to the DTR in your Web Browser and query for an existing Kernel Information Profile, which might fit to your use case. The key question should be, which machine actionable decisions must be possible based on the KIP contents. There are probably a couple of basic and generic profiles available which can be reused or at least taken as an example. You may use the following decision graph showing what will be the next step depending on what you found. </p>
+<p><img src="./images/kip_step1.png" alt="Search Data Type Registry" /></p>
+<p>In the course of this recipe we assume, that we have to create a new KIP.</p>
+<h2><a class="header" href="#2-describemodel-envisioned-kip" id="2-describemodel-envisioned-kip">2. Describe/model envisioned KIP</a></h2>
+<p>Assuming that your search ended up at <em>Create new KIP</em>, we now have to model the profile which we will register later. Before we start thinking about possible elements of our new KIP, we should internalize a couple of key principles of Kernel Information Profiles. Those are listed on the next page. </p>
+<h2><a class="header" href="#21-call-to-mind-basic-kip-principles" id="21-call-to-mind-basic-kip-principles">2.1 Call to mind basic KIP principles</a></h2>
+<h3><a class="header" href="#principle-1" id="principle-1">Principle 1:</a></h3>
+<pre><code>The primary purpose of a PID KI record is to serve machine actionable services.
+</code></pre>
+<p>This means, you should *<strong>avoid including attributes whose main audience are humans</strong>.</p>
+<h3><a class="header" href="#principle-2" id="principle-2">Principle 2:</a></h3>
+<pre><code>Attributes (items) in the profile are expressed as key-value pairs where the values are simple (indivisible).
+</code></pre>
+<p>In other words, you should <em><strong>avoid using complex attribute values</strong></em>, e.g., JSON or XML structures, as a consumer might have difficulties while interpreting them. Furthermore, it is not recommended to use frequently changing attribute values, e.g., incomplete lists, as this would increase the frequency of changes of PID records making a proper caching and indexing of them hard.</p>
+<h3><a class="header" href="#principle-3" id="principle-3">Principle 3:</a></h3>
+<pre><code>PID Kernel Information is stored directly at the resolving service and not referenced. 
+</code></pre>
+<p>This means, that values which are <strong>required for interpreting</strong> the PID records should <strong>not be stored in an external system</strong>, e.g., additional metadata describing the referenced resource. The main reason is, that additional round trips using different interfaces should be avoided for performance, interoperability and reusability reasons. </p>
+<h3><a class="header" href="#principle-4" id="principle-4">Principle 4:</a></h3>
+<pre><code>PID Record values should change infrequently and possible without human interaction.
+</code></pre>
+<p>The guiding principle here is that PID Records are <strong>made for machines by machine</strong>. Human interaction would be time consuming and error prone, thus PID Records should be filled and updated according to a KIP by tools taking care of translating information coming from e.g. repositories into information following the KIP definition used.</p>
+<h3><a class="header" href="#principle-5" id="principle-5">Principle 5:</a></h3>
+<pre><code class="language-markdown">A profile should adhere to the following two requirements. Doing so may reduce migration issues in the event of profile revision:
+   * Every attribute in a profile depends only on the identified object and no other 		 objects.
+   * Every attribute in a profile describes the object directly and does not describe 		 another attribute in the same profile.
+</code></pre>
+<p>Explaining this principle works best with a counter example. Let's assume our PID refers to a file and we want to include file format information, e.g., format name and version, into the PID Record. Including both information into the KIP of the referenced file would break with this principle, as the version number is related to the file format and not the the referenced resource. Instead, file format and version should e.g. be stored in a separate PID's Record and this PID should then be used in our profile to uniquely identify the file format with its specific version. </p>
+<h3><a class="header" href="#principle-6" id="principle-6">Principle 6:</a></h3>
+<pre><code class="language-markdown">A PID Record is a non-authoritative source of metadata.
+</code></pre>
+<p>This final principle is related to the use of PID Kernel Information. All information stored in the PID Record are non-authoritative, which means, that they might be outdated or even invalid when accessing them. It's in the duty of the provider of such information to keep them up to date in the PID Record. Thus, the only authoritative source of metadata is the original source of information stored in the PID Record.</p>
+<h2><a class="header" href="#22-decide-on-kip-contents" id="22-decide-on-kip-contents">2.2 Decide on KIP contents</a></h2>
+<p>With our six key principles in mind, we can now start defining our PID Kernel Information Profile. As a basis, it is highly recommended to adopt the <a href="https://www.rd-alliance.org/system/files/RDA%20Recommendation%20on%20PID%20Kernel%20Information_final.pdf">Recommendation on PID Kernel Information of the Research Data Alliance</a>. Doing so, we'll start with a couple of recommended elements.</p>
+<table><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody>
+<tr><td>KernelInformationProfile</td><td>PID of the KIP for this PID record</td></tr>
+<tr><td>digitalObjectType</td><td>PID of the Data Type of the referenced object</td></tr>
+<tr><td>digitalObjectLocation</td><td>Location URL of the referenced object</td></tr>
+<tr><td>digitalObjectPolicy</td><td>PID of the policy object with e.g. license information</td></tr>
+<tr><td>etag</td><td>Etag of the current state of the referenced object</td></tr>
+<tr><td>dateModified</td><td>Last modification date of the references object</td></tr>
+<tr><td>dateCreated</td><td>Creation date of the referenced object</td></tr>
+<tr><td>version</td><td>Version of the referenced object</td></tr>
+<tr><td>wasDerivedFrom</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>specializationOf</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>wasRevisionOf</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>hadPrimarySource</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>wasQuotedFrom</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>alternateOf</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+</tbody></table>
+<p>As we've learned in the recipe on <a href="./datatype_into.html">Create a Data Type</a>, we now prepare our checklist containing at least the recommended properties and their Data Type PIDs.</p>
+<table><thead><tr><th>Property</th><th>DTR Inquiry Result (<span style="color:green">Reuse</span>, <span style="color:orange">Extend</span>, <span style="color:red">Create</span>)</th></tr></thead><tbody>
+<tr><td>KernelInformationProfile</td><td><span style="color:green">KernelInformationProfile</span> (21.T11148/076759916209e5d62bd5)</td></tr>
+<tr><td>digitalObjectType</td><td><span style="color:green">digitalObjectType</span> (21.T11148/1c699a5d1b4ad3ba4956)</td></tr>
+<tr><td>digitalObjectLocation</td><td><span style="color:green">digitalObjectLocation</span> (21.T11148/b8457812905b83046284)</td></tr>
+<tr><td>digitalObjectPolicy</td><td><span style="color:green">digitalObjectPolicy</span> (21.T11148/8074aed799118ac263ad)</td></tr>
+<tr><td>etag</td><td><span style="color:green">etag</span> (21.T11148/92e200311a56800b3e47)</td></tr>
+<tr><td>dateModified</td><td><span style="color:green">dateModified</span> (21.T11148/397d831aa3a9d18eb52c)</td></tr>
+<tr><td>dateCreated</td><td><span style="color:green">dateCreated</span> (21.T11148/397d831aa3a9d18eb52c)</td></tr>
+<tr><td>version</td><td><span style="color:green">version</span> (21.T11148/c692273deb2772da307f)</td></tr>
+<tr><td>wasDerivedFrom</td><td><span style="color:green">wasDerivedFrom</span> (21.T11148/c6e4c19f294ee6f41b1e)</td></tr>
+<tr><td>specializationOf</td><td><span style="color:green">spezializationOf</span> (21.T11148/ab53242825e85a0a7f76)</td></tr>
+<tr><td>wasRevisionOf</td><td><span style="color:green">wasRevisionOf</span> (21.T11148/2a1cad55473b20407c78)</td></tr>
+<tr><td>hadPrimarySource</td><td><span style="color:green">hadPrimarySource</span> (21.T11148/a753134738da82809fc1)</td></tr>
+<tr><td>wasQuotedFrom</td><td><span style="color:green">wasQuotedFrom</span> (21.T11148/beaeecebec408908de35)</td></tr>
+<tr><td>alternateOf</td><td><span style="color:green">alternateOf</span> (21.T11148/432132bdbd946b2baf2b)</td></tr>
+</tbody></table>
+<p>Now you may add additional properties, which you need according to your use case, e.g., the reference to a utilized instrument, geo location information, data format information, or information about software that can be used to process the referenced resource. Afterwards, for each of the added properties the following evaluation process, similar to the Data Type Registry Inquiry while creating a new Data Type, has to be performed.</p>
+<p><img src="./images/kip_step2.png" alt="Property Inquiry" /></p>
+<p>After this process, you'll end up with a checklist containing either matching Data Type PIDs for all your properties or you'll have to create a new Data Type for the one or the other property. In that case, please refer to the recipe <a href="./datatypes_intro.html">Create a Data Type</a> before you proceed.</p>
+<h2><a class="header" href="#3-register-new-kip-in-data-type-registry" id="3-register-new-kip-in-data-type-registry">3. Register new KIP in Data Type Registry</a></h2>
+<p>After collecting all properties and their Data Types in our checklist, the next step is to create a Kernel Information Profile in the Data Type Registry. After logging in, you are able to create a new Data Type using the <code>Create</code> Dropdown Button next to the search field. Here you should select <code>KernelInformationProfile</code>. </p>
+<p><img src="./images/kip_step3.png" alt="KIP Creation" /></p>
+<p>You may now add a name for the profile as well as constributor information as shown in the screenshot above. Afterwards, you have to transfer all properties in your checklist to properties of your Kernel Information Profile entry in the Data Type Registry. For more details, please check the recipe on <a href="./datatypes_intro.html">Create a Data Type</a>.</p>
 
                     </main>
 

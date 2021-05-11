@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>About - FAIR DO Cookbook</title>
+        <title>Decide on KIP contents - FAIR DO Cookbook</title>
         
         
 
@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Create a Data Type</li><li class="chapter-item expanded "><a href="datatypes_intro.html">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_1.html">Search data type registry for suitable data type</a></li><li class="chapter-item expanded "><a href="datatypes_step_2.html">Describe/model envisioned data type</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_2_1.html">Decide on Data Type‘s level of detail</a></li><li class="chapter-item expanded "><a href="datatypes_step_2_2.html">DTR Inquiry</a></li></ol></li><li class="chapter-item expanded "><a href="datatypes_step_3.html">Register data type(s) in data type registry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_3_1.html">Register new Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_2.html">Register extended Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_3.html">Register main Data Type</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Create a PID KIP</li><li class="chapter-item expanded "><a href="kip_intro.html">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="kip_step_1.html">Search data type registry for suitable KIP</a></li><li class="chapter-item expanded "><a href="kip_step_2.html">Describe/model envisioned KIP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="kip_step_2_1.html">Call to mind basic KIP principles</a></li><li class="chapter-item expanded "><a href="kip_step_2_2.html">Decide on KIP contents</a></li></ol></li><li class="chapter-item expanded "><a href="kip_step_3.html">Register new KIP in Data Type Registry</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Create a Data Type</li><li class="chapter-item expanded "><a href="datatypes_intro.html">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_1.html">Search data type registry for suitable data type</a></li><li class="chapter-item expanded "><a href="datatypes_step_2.html">Describe/model envisioned data type</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_2_1.html">Decide on Data Type‘s level of detail</a></li><li class="chapter-item expanded "><a href="datatypes_step_2_2.html">DTR Inquiry</a></li></ol></li><li class="chapter-item expanded "><a href="datatypes_step_3.html">Register data type(s) in data type registry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_3_1.html">Register new Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_2.html">Register extended Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_3.html">Register main Data Type</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Create a PID KIP</li><li class="chapter-item expanded "><a href="kip_intro.html">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="kip_step_1.html">Search data type registry for suitable KIP</a></li><li class="chapter-item expanded "><a href="kip_step_2.html">Describe/model envisioned KIP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="kip_step_2_1.html">Call to mind basic KIP principles</a></li><li class="chapter-item expanded "><a href="kip_step_2_2.html" class="active">Decide on KIP contents</a></li></ol></li><li class="chapter-item expanded "><a href="kip_step_3.html">Register new KIP in Data Type Registry</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -165,16 +165,57 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#about" id="about">About</a></h1>
+                        <h2><a class="header" href="#22-decide-on-kip-contents" id="22-decide-on-kip-contents">2.2 Decide on KIP contents</a></h2>
+<p>With our six key principles in mind, we can now start defining our PID Kernel Information Profile. As a basis, it is highly recommended to adopt the <a href="https://www.rd-alliance.org/system/files/RDA%20Recommendation%20on%20PID%20Kernel%20Information_final.pdf">Recommendation on PID Kernel Information of the Research Data Alliance</a>. Doing so, we'll start with a couple of recommended elements.</p>
+<table><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody>
+<tr><td>KernelInformationProfile</td><td>PID of the KIP for this PID record</td></tr>
+<tr><td>digitalObjectType</td><td>PID of the Data Type of the referenced object</td></tr>
+<tr><td>digitalObjectLocation</td><td>Location URL of the referenced object</td></tr>
+<tr><td>digitalObjectPolicy</td><td>PID of the policy object with e.g. license information</td></tr>
+<tr><td>etag</td><td>Etag of the current state of the referenced object</td></tr>
+<tr><td>dateModified</td><td>Last modification date of the references object</td></tr>
+<tr><td>dateCreated</td><td>Creation date of the referenced object</td></tr>
+<tr><td>version</td><td>Version of the referenced object</td></tr>
+<tr><td>wasDerivedFrom</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>specializationOf</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>wasRevisionOf</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>hadPrimarySource</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>wasQuotedFrom</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>alternateOf</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+</tbody></table>
+<p>As we've learned in the recipe on <a href="./datatype_into.html">Create a Data Type</a>, we now prepare our checklist containing at least the recommended properties and their Data Type PIDs.</p>
+<table><thead><tr><th>Property</th><th>DTR Inquiry Result (<span style="color:green">Reuse</span>, <span style="color:orange">Extend</span>, <span style="color:red">Create</span>)</th></tr></thead><tbody>
+<tr><td>KernelInformationProfile</td><td><span style="color:green">KernelInformationProfile</span> (21.T11148/076759916209e5d62bd5)</td></tr>
+<tr><td>digitalObjectType</td><td><span style="color:green">digitalObjectType</span> (21.T11148/1c699a5d1b4ad3ba4956)</td></tr>
+<tr><td>digitalObjectLocation</td><td><span style="color:green">digitalObjectLocation</span> (21.T11148/b8457812905b83046284)</td></tr>
+<tr><td>digitalObjectPolicy</td><td><span style="color:green">digitalObjectPolicy</span> (21.T11148/8074aed799118ac263ad)</td></tr>
+<tr><td>etag</td><td><span style="color:green">etag</span> (21.T11148/92e200311a56800b3e47)</td></tr>
+<tr><td>dateModified</td><td><span style="color:green">dateModified</span> (21.T11148/397d831aa3a9d18eb52c)</td></tr>
+<tr><td>dateCreated</td><td><span style="color:green">dateCreated</span> (21.T11148/397d831aa3a9d18eb52c)</td></tr>
+<tr><td>version</td><td><span style="color:green">version</span> (21.T11148/c692273deb2772da307f)</td></tr>
+<tr><td>wasDerivedFrom</td><td><span style="color:green">wasDerivedFrom</span> (21.T11148/c6e4c19f294ee6f41b1e)</td></tr>
+<tr><td>specializationOf</td><td><span style="color:green">spezializationOf</span> (21.T11148/ab53242825e85a0a7f76)</td></tr>
+<tr><td>wasRevisionOf</td><td><span style="color:green">wasRevisionOf</span> (21.T11148/2a1cad55473b20407c78)</td></tr>
+<tr><td>hadPrimarySource</td><td><span style="color:green">hadPrimarySource</span> (21.T11148/a753134738da82809fc1)</td></tr>
+<tr><td>wasQuotedFrom</td><td><span style="color:green">wasQuotedFrom</span> (21.T11148/beaeecebec408908de35)</td></tr>
+<tr><td>alternateOf</td><td><span style="color:green">alternateOf</span> (21.T11148/432132bdbd946b2baf2b)</td></tr>
+</tbody></table>
+<p>Now you may add additional properties, which you need according to your use case, e.g., the reference to a utilized instrument, geo location information, data format information, or information about software that can be used to process the referenced resource. Afterwards, for each of the added properties the following evaluation process, similar to the Data Type Registry Inquiry while creating a new Data Type, has to be performed.</p>
+<p><img src="./images/kip_step2.png" alt="Property Inquiry" /></p>
+<p>After this process, you'll end up with a checklist containing either matching Data Type PIDs for all your properties or you'll have to create a new Data Type for the one or the other property. In that case, please refer to the recipe <a href="./datatypes_intro.html">Create a Data Type</a> before you proceed.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="kip_step_2_1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
                         
-                            <a rel="next" href="datatypes_intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="kip_step_3.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -186,9 +227,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="kip_step_2_1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
                 
-                    <a rel="next" href="datatypes_intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="kip_step_3.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

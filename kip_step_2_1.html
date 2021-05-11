@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>About - FAIR DO Cookbook</title>
+        <title>Call to mind basic KIP principles - FAIR DO Cookbook</title>
         
         
 
@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Create a Data Type</li><li class="chapter-item expanded "><a href="datatypes_intro.html">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_1.html">Search data type registry for suitable data type</a></li><li class="chapter-item expanded "><a href="datatypes_step_2.html">Describe/model envisioned data type</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_2_1.html">Decide on Data Type‘s level of detail</a></li><li class="chapter-item expanded "><a href="datatypes_step_2_2.html">DTR Inquiry</a></li></ol></li><li class="chapter-item expanded "><a href="datatypes_step_3.html">Register data type(s) in data type registry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_3_1.html">Register new Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_2.html">Register extended Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_3.html">Register main Data Type</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Create a PID KIP</li><li class="chapter-item expanded "><a href="kip_intro.html">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="kip_step_1.html">Search data type registry for suitable KIP</a></li><li class="chapter-item expanded "><a href="kip_step_2.html">Describe/model envisioned KIP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="kip_step_2_1.html">Call to mind basic KIP principles</a></li><li class="chapter-item expanded "><a href="kip_step_2_2.html">Decide on KIP contents</a></li></ol></li><li class="chapter-item expanded "><a href="kip_step_3.html">Register new KIP in Data Type Registry</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Create a Data Type</li><li class="chapter-item expanded "><a href="datatypes_intro.html">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_1.html">Search data type registry for suitable data type</a></li><li class="chapter-item expanded "><a href="datatypes_step_2.html">Describe/model envisioned data type</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_2_1.html">Decide on Data Type‘s level of detail</a></li><li class="chapter-item expanded "><a href="datatypes_step_2_2.html">DTR Inquiry</a></li></ol></li><li class="chapter-item expanded "><a href="datatypes_step_3.html">Register data type(s) in data type registry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_3_1.html">Register new Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_2.html">Register extended Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_3.html">Register main Data Type</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Create a PID KIP</li><li class="chapter-item expanded "><a href="kip_intro.html">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="kip_step_1.html">Search data type registry for suitable KIP</a></li><li class="chapter-item expanded "><a href="kip_step_2.html">Describe/model envisioned KIP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="kip_step_2_1.html" class="active">Call to mind basic KIP principles</a></li><li class="chapter-item expanded "><a href="kip_step_2_2.html">Decide on KIP contents</a></li></ol></li><li class="chapter-item expanded "><a href="kip_step_3.html">Register new KIP in Data Type Registry</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -165,16 +165,46 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#about" id="about">About</a></h1>
+                        <h2><a class="header" href="#21-call-to-mind-basic-kip-principles" id="21-call-to-mind-basic-kip-principles">2.1 Call to mind basic KIP principles</a></h2>
+<h3><a class="header" href="#principle-1" id="principle-1">Principle 1:</a></h3>
+<pre><code>The primary purpose of a PID KI record is to serve machine actionable services.
+</code></pre>
+<p>This means, you should *<strong>avoid including attributes whose main audience are humans</strong>.</p>
+<h3><a class="header" href="#principle-2" id="principle-2">Principle 2:</a></h3>
+<pre><code>Attributes (items) in the profile are expressed as key-value pairs where the values are simple (indivisible).
+</code></pre>
+<p>In other words, you should <em><strong>avoid using complex attribute values</strong></em>, e.g., JSON or XML structures, as a consumer might have difficulties while interpreting them. Furthermore, it is not recommended to use frequently changing attribute values, e.g., incomplete lists, as this would increase the frequency of changes of PID records making a proper caching and indexing of them hard.</p>
+<h3><a class="header" href="#principle-3" id="principle-3">Principle 3:</a></h3>
+<pre><code>PID Kernel Information is stored directly at the resolving service and not referenced. 
+</code></pre>
+<p>This means, that values which are <strong>required for interpreting</strong> the PID records should <strong>not be stored in an external system</strong>, e.g., additional metadata describing the referenced resource. The main reason is, that additional round trips using different interfaces should be avoided for performance, interoperability and reusability reasons. </p>
+<h3><a class="header" href="#principle-4" id="principle-4">Principle 4:</a></h3>
+<pre><code>PID Record values should change infrequently and possible without human interaction.
+</code></pre>
+<p>The guiding principle here is that PID Records are <strong>made for machines by machine</strong>. Human interaction would be time consuming and error prone, thus PID Records should be filled and updated according to a KIP by tools taking care of translating information coming from e.g. repositories into information following the KIP definition used.</p>
+<h3><a class="header" href="#principle-5" id="principle-5">Principle 5:</a></h3>
+<pre><code class="language-markdown">A profile should adhere to the following two requirements. Doing so may reduce migration issues in the event of profile revision:
+   * Every attribute in a profile depends only on the identified object and no other 		 objects.
+   * Every attribute in a profile describes the object directly and does not describe 		 another attribute in the same profile.
+</code></pre>
+<p>Explaining this principle works best with a counter example. Let's assume our PID refers to a file and we want to include file format information, e.g., format name and version, into the PID Record. Including both information into the KIP of the referenced file would break with this principle, as the version number is related to the file format and not the the referenced resource. Instead, file format and version should e.g. be stored in a separate PID's Record and this PID should then be used in our profile to uniquely identify the file format with its specific version. </p>
+<h3><a class="header" href="#principle-6" id="principle-6">Principle 6:</a></h3>
+<pre><code class="language-markdown">A PID Record is a non-authoritative source of metadata.
+</code></pre>
+<p>This final principle is related to the use of PID Kernel Information. All information stored in the PID Record are non-authoritative, which means, that they might be outdated or even invalid when accessing them. It's in the duty of the provider of such information to keep them up to date in the PID Record. Thus, the only authoritative source of metadata is the original source of information stored in the PID Record.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="kip_step_2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
                         
-                            <a rel="next" href="datatypes_intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="kip_step_2_2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -186,9 +216,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="kip_step_2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
                 
-                    <a rel="next" href="datatypes_intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="kip_step_2_2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
