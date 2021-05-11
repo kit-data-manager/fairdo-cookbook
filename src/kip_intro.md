@@ -25,5 +25,5 @@ In receipt we will show how you to create a PID Kernel Information Profile (KIP)
 
 
 
-><span style="color:orange">Before you start using this recipe it is recommended, to go through the recipe [Create a Data Type](./datatype_intro.md) as it explains basics for using the Data Type Registry, which is also the place where PID Kernel Information Profiles are created and managed.</span>
+><span style="color:orange">Before you start using this recipe it is recommended, to go through the recipe [Create a Data Type](./datatypes_intro.md) as it explains basics for using the Data Type Registry, which is also the place where PID Kernel Information Profiles are created and managed.</span>
 

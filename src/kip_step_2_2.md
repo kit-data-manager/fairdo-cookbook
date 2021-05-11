@@ -44,5 +44,5 @@ Now you may add additional properties, which you need according to your use case
 
 
 
-After this process, you'll end up with a checklist containing either matching Data Type PIDs for all your properties or you'll have to create a new Data Type for the one or the other property. In that case, please refer to the recipe [Create a Data Type](./datatype_intro.md) before you proceed.
+After this process, you'll end up with a checklist containing either matching Data Type PIDs for all your properties or you'll have to create a new Data Type for the one or the other property. In that case, please refer to the recipe [Create a Data Type](./datatypes_intro.md) before you proceed.
 

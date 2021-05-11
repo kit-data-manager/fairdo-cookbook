@@ -16,3 +16,8 @@
 # Create a PID KIP
 
 - [Introduction](./kip_intro.md)
+   - [ Search data type registry for suitable KIP](./kip_step_1.md)
+   - [Describe/model envisioned KIP](./kip_step_2.md)
+      - [Call to mind basic KIP principles](./kip_step_2_1.md)
+      - [Decide on KIP contents](./kip_step_2_2.md)
+   - [Register new KIP in Data Type Registry](./kip_step_3.md)

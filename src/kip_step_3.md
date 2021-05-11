@@ -6,7 +6,7 @@ After collecting all properties and their Data Types in our checklist, the next 
 
 
 
-You may now add a name for the profile as well as constributor information as shown in the screenshot above. Afterwards, you have to transfer all properties in your checklist to properties of your Kernel Information Profile entry in the Data Type Registry. For more details, please check the recipe on [Create a Data Type](./datatype_intro.md).
+You may now add a name for the profile as well as constributor information as shown in the screenshot above. Afterwards, you have to transfer all properties in your checklist to properties of your Kernel Information Profile entry in the Data Type Registry. For more details, please check the recipe on [Create a Data Type](./datatypes_intro.md).
 
 
 
