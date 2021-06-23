@@ -1,6 +1,15 @@
 # Summary
 [About](./about.md)
 
+# Working with PIDs
+
+- [Introduction](./pids/intro.md)
+- [Create a PID](./pids/create.md)
+- [Resolve a PID](./pids/resolve.md)
+- [Update/maintain a PID](./pids/update.md)
+- [Delete](./pids/delete.md)
+- [Appendix A: PID Information Types Service](./pids/appendix_pit.md)
+
 # Create a Data Type
 
 - [Introduction](./datatypes_intro.md)

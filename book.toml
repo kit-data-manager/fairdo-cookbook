@@ -1,5 +1,5 @@
 [book]
-authors = ["Thomas Jejkal"]
+authors = ["Thomas Jejkal", "Andreas Pfeil"]
 language = "en"
 multilingual = false
 src = "src"
