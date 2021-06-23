@@ -16,14 +16,15 @@ In receipt we will show how you to create a PID Kernel Information Profile (KIP)
 
 ## Work Steps
 
-- [1. Search data type registry for suitable KIP](./kip_step_1.md)
-- [2. Describe/model envisioned KIP](./kip_step_2.md)
-  - [2.1 Call to mind basic KIP principles](./kip_step_2_1.md)
-  - [2.2 Decide on KIP contents](./kip_step_2_2.md)
-- [3. Register new KIP in Data Type Registry](./kip_step_3.md)
+<nestednumerationlist>
 
+1. [Search data type registry for suitable KIP](./kip_step_1.md)
+2. [Describe/model envisioned KIP](./kip_step_2.md)
+    1. [Call to mind basic KIP principles](./kip_step_2_1.md)
+    2. [Decide on KIP contents](./kip_step_2_2.md)
+3. [Register new KIP in Data Type Registry](./kip_step_3.md)
 
-
+</nestednumerationlist>
 
 ><span style="color:orange">Before you start using this recipe it is recommended, to go through the recipe [Create a Data Type](./datatypes_intro.md) as it explains basics for using the Data Type Registry, which is also the place where PID Kernel Information Profiles are created and managed.</span>
 
