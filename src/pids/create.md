@@ -27,40 +27,42 @@ As you can see in the ingedient list, you will need a profile. It will be stored
 
 We need to build a JSON-Representation of the PID record, so we can send it – together with the request to create a PID – to the PID Information Types service. Usually this is something that a program will do, in some cases supported by human intervention, so this is a semi-technical step, actually. The program might be a workflow system, a repository or similar.
 
-> Note: The JSON representation might be subject to change as long as there is no stable release of the PID information types service. (June 2021)
-
-As you have access to a PID information types service, the documentation of the API is available under it's domain (depending on the configuration, something like "http://domain:port/swagger-ui.html"). There you will find the current representation of a PID record within this service, using JSON. In general, a PID record is a Key-Value mapping. It maps types to values. The difference to typical Key-Value mappings is that there might be multiple values allowed for some types, depending on the profile. So it can be considered as a mapping
+As you have access to a PID information types service, the documentation of the API is available under it's domain (depending on the configuration, something like "http://domain:port/swagger-ui.html"). There you will find the current representation of a PID record within this service, using JSON. In general, a PID record is a Key-Value mapping. It maps types to values. The difference to typical Key-Value mappings is that there might be multiple values allowed for some types, depending on the profile. So it can be considered as a mapping in the following sense:
 
 ```
 "PID_of_type" -> List["value1", "value2", ...]
 ```
 
-> Note: The JSON representation additionally might contain a "pid" field. In the creation step, this field is ignored and can be left blank or null. It is used when resolving the PID using the PID information types service. The same goes for other fields like "name", which might contain human readable names. Such fields are not required for creation, but might be useful for resolving.
+> Note: The JSON representation additionally might contain a "pid" field. In the creation step, this field is ignored and can be omitted or null. It is used e.g. to transfer the PID to the client after creation. The same goes for other fields like "name", which might contain human readable names. For creation, the only the types and values are important.
 
 The types are defined in the profile you have chosen (or created). The profile also decides if you need to assign a value to the type of if this is optional. It also defines if a type can have multiple values (repeatability). For more information about types and profiles, you might want to read into the following recipes: [Create a data type](../datatypes_intro.md), [Create a profile](../kip_intro.md)
 
 As you already chose the profile, try to fill it at best effort (remember that there are likely some mandatory fields). Note that all records must contain the PID of their profile. This is – again – defined in each profile. This PID will be used by the PID information types service to validate your record. This means that if your record is not valid according to the profile you chose, no PID will be created. More details to that in the next step. Let us assume a [simple profile](http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132):
 
-| Property                 | Description                                                  |
-| ------------------------ | ------------------------------------------------------------ |
-| KernelInformationProfile | PID of the KIP for this PID record                           |
-| digitalObjectType        | PID of the Data Type of the referenced object                |
-| digitalObjectLocation    | Location URL of the referenced object                        |
-| digitalObjectPolicy      | PID of the policy object with e.g. license information       |
-| etag                     | Etag (checksum) of the current state of the referenced object|
-| dateModified             | Last modification date of the references object              |
-| dateCreated              | Creation date of the referenced object                       |
-| version                  | Version of the referenced object                             |
-| wasDerivedFrom           | PID of another object according to [PROV-DM] recommendation |
-| specializationOf         | PID of another object according to [PROV-DM] recommendation |
-| wasRevisionOf            | PID of another object according to [PROV-DM] recommendation |
-| hadPrimarySource         | PID of another object according to [PROV-DM] recommendation |
-| wasQuotedFrom            | PID of another object according to [PROV-DM] recommendation |
-| alternateOf              | PID of another object according to [PROV-DM] recommendation |
+| Property                 | mandatory | Description                                                  |
+| ------------------------ | --------- | ------------------------------------------------------------ |
+| KernelInformationProfile | yes       | PID of the KIP for this PID record                           |
+| digitalObjectType        | yes       | PID of the Data Type of the referenced object                |
+| digitalObjectLocation    | yes       | Location URL of the referenced object                        |
+| digitalObjectPolicy      | yes       | PID of the policy object with e.g. license information       |
+| etag                     | yes       | Etag (checksum) of the current state of the referenced object|
+| dateModified             | no        | Last modification date of the references object              |
+| dateCreated              | yes       | Creation date of the referenced object                       |
+| version                  | no        | Version of the referenced object                             |
+| wasDerivedFrom           | no        | PID of another object according to [PROV-DM] recommendation  |
+| specializationOf         | no        | PID of another object according to [PROV-DM] recommendation  |
+| wasRevisionOf            | no        | PID of another object according to [PROV-DM] recommendation  |
+| hadPrimarySource         | no        | PID of another object according to [PROV-DM] recommendation  |
+| wasQuotedFrom            | no        | PID of another object according to [PROV-DM] recommendation  |
+| alternateOf              | no        | PID of another object according to [PROV-DM] recommendation  |
 
 [PROV-DM]: https://www.w3.org/TR/2013/REC-prov-dm-20130430/
 
-And now let us try to define the JSON representation. You have the profile in the data type registry ([in this example, we use this profile](http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132)), so you have a list of properties in there. Scroll to the first property ("KernelInformationProfile") and click on the link to it (displayed as "[type name: KernelInformationProfile](http://dtr-test.pidconsortium.net/#objects/21.T11148/076759916209e5d62bd5)"). You can see that this type has one sub-property, which is also called "KernelInformationProfile" and accepts a Handle-System-PID as a value. In the "Representation and Semantics" section, you can also see that "Abbreviated Form" is set to "Yes". This simplifies the values for this type to ignore the encapsulation and allows us to simply refer to the inner type. Instead of writing
+[In this example, we use this profile](http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132). Each profile has a list of properties. Go to the profile definition in the Data Type Registry, scroll to the first property ("KernelInformationProfile") and click on the link to it (displayed as "[type name: KernelInformationProfile](http://dtr-test.pidconsortium.net/#objects/21.T11148/076759916209e5d62bd5)").
+
+![](../images/click_type_link.png)
+
+On the properties page, you can see that this type has one sub-property, which is also called "KernelInformationProfile" and accepts a Handle-System-PID as a value. In the "Representation and Semantics" section, you can also see that "Abbreviated Form" is set to "Yes". This simplifies the values for this type to ignore the encapsulation and allows us to simply refer to the inner type. Instead of writing
 
 ```json
 {
@@ -69,21 +71,23 @@ And now let us try to define the JSON representation. You have the profile in th
 }
 ```
 
-we can omit the actual parent type:
+for the value, this allows us to omit the actual parent type:
 
 ```json
     {"KernelInformationProfile": "some/handleIdentifier"}
 ```
 
-And as the inner type has the property `Omit Name as Subsidiary`set to `Yes`, we can omit the inner types name, too. We can now simply use
+And as the inner type has the property `Omit Name as Subsidiary`set to `Yes`, we can also omit the inner types name, too. This means we can simply use a handle PID as a value for the type KernelInformationProfile:
 
-```"some/handleIdentifier"```
+```json
+"some/handleIdentifier"
+```
 
-as a value for the type KernelInformationProfile. On the bottom of the types page you can find a JSON schema. This schema can be used on a value to validate it. It is a technical representation of the rules set on the types page.
+On the bottom of the types page you can find a JSON schema. This schema can be used on a value to validate it. It is a technical representation of the rules set on the types page. On the top of the type page you can find more about its semantics. There is a description and a list of related standards or recommendations.
 
-This can be done similar for all other types to figure out which values are allowed and what their semantic is. Note that all types refer to the object behind the PID record. E.g. if a type decodes a checksum, it is the checksum of the object the record is pointing to, not the checksum of the record. Keep this as a guideline when figuring out the actual values for your record.
+This procedure can be done similar for all other types to figure out which values are allowed and what their semantic is. Note that all types refer to the object behind the PID record. E.g. if a type represents a checksum, it has to be the checksum of the object the record is pointing to, not the checksum of the record or anything else. Keep this as a guideline when figuring out the actual values for your record.
 
-Now, bring your record into the actual JSON representation, store the result in a file called "record.json" and continue with step 2.
+Now, bring your record into the actual JSON representation by figuring out the values for at least all mandatory fields, store the result in a file called "record.json" and continue with step 2.
 
 ## Step 2: Send PID create request to PID Information Types service
 
