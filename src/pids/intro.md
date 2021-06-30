@@ -1,4 +1,4 @@
-# Introduction: Working with Profiles
+# Introduction: Working with PIDs
 
 **A PID is a unique, peristent identifier for a object.** This object might be (meta-)data, data streams, sensors, repositories and more. PIDs are associates with information which helps to access the object and to elaborate the use of the (data) object (PID record information) for the use case of a client. This means that a PID resolves to a "landing page for machines", enabling the client to decide if it can work with this object and to programmatically access it. Therefore PIDs are a vital part of FAIR Digital Objects.
 
