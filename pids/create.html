@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Create a PID - FAIR DO Cookbook</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../hierarchical_numbered_lists.css">
+        
+        <link rel="stylesheet" href="../chapter_list.css">
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../about.html">About</a></li><li class="chapter-item expanded "><a href="../pids/intro.html">Working with PIDs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../pids/create.html" class="active">Create a PID</a></li><li class="chapter-item "><a href="../pids/resolve.html">Resolve a PID</a></li><li class="chapter-item "><a href="../pids/update.html">Update/maintain a PID</a></li><li class="chapter-item "><a href="../pids/delete.html">Delete</a></li><li class="chapter-item "><a href="../pids/appendix_pit.html">Appendix A: PID Information Types Service</a></li></ol></li><li class="chapter-item "><a href="../datatypes_intro.html">Create a Data Type</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../datatypes_step_1.html">Search data type registry for suitable data type</a></li><li class="chapter-item "><a href="../datatypes_step_2.html">Describe/model envisioned data type</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../datatypes_step_2_1.html">Decide on Data Type‘s level of detail</a></li><li class="chapter-item "><a href="../datatypes_step_2_2.html">DTR Inquiry</a></li></ol></li><li class="chapter-item "><a href="../datatypes_step_3.html">Register data type(s) in data type registry</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../datatypes_step_3_1.html">Register new Child-Data Type(s)</a></li><li class="chapter-item "><a href="../datatypes_step_3_2.html">Register extended Child-Data Type(s)</a></li><li class="chapter-item "><a href="../datatypes_step_3_3.html">Register main Data Type</a></li></ol></li></ol></li><li class="chapter-item "><a href="../kip_intro.html">Create a PID KIP</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../kip_step_1.html">Search data type registry for suitable KIP</a></li><li class="chapter-item "><a href="../kip_step_2.html">Describe/model envisioned KIP</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../kip_step_2_1.html">Call to mind basic KIP principles</a></li><li class="chapter-item "><a href="../kip_step_2_2.html">Decide on KIP contents</a></li></ol></li><li class="chapter-item "><a href="../kip_step_3.html">Register new KIP in Data Type Registry</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">FAIR DO Cookbook</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#create-a-pid" id="create-a-pid">Create a PID</a></h1>
+<p>Creating a PID means not only to register an identifier, but also to fill it with reasonable information at the same time. Creating a PID is therefore the same as &quot;creating a PID record&quot; or similar terms. In some contexts it is also referred to as &quot;creating a FAIR Digital Object&quot;.</p>
+<p>As you can see in the ingedient list, you will need a profile. It will be stored in the record and serves validation and eases decisionmaking for machines. First, search for existing profiles. This will maximize reusability. If no fitting profile exists, you need to create one. <a href="../kip_intro.html">The process of searching or creating of such profiles is already described in another recipe.</a> It is important that you are able to fulfill the profiles requirements, meaning that you have the information to create a valid record according to this profile (last point in the ingredients).</p>
+<hr />
+<h2><a class="header" href="#ingredients" id="ingredients">Ingredients</a></h2>
+<ul>
+<li>Access to a PID Information Types Service or a Testbed instance (<a href="./appendix_pit.html">also see Appendix A</a>)</li>
+<li><a href="../kip_intro.html">A PID Information Profile</a> that can properly represent your object you want to represent</li>
+<li>A reference to your data/object (e.g. a URL), which can be used according to your profile</li>
+<li>Information which needs to be provided according to the profile you chose</li>
+</ul>
+<hr />
+<h2><a class="header" href="#work-steps-summary" id="work-steps-summary">Work Steps (Summary)</a></h2>
+<ol>
+<li>Build a JSON-Representation of the PID record.</li>
+<li>Request the PID Information Types service (also available in the testbed) to register a PID and send the JSON record (step 3) together with the request.</li>
+</ol>
+<hr />
+<h2><a class="header" href="#step-1-build-a-json-representation-of-the-pid-record" id="step-1-build-a-json-representation-of-the-pid-record">Step 1: Build a JSON-Representation of the PID record</a></h2>
+<p>We need to build a JSON-Representation of the PID record, so we can send it – together with the request to create a PID – to the PID Information Types service. Usually this is something that a program will do, in some cases supported by human intervention, so this is a semi-technical step, actually. The program might be a workflow system, a repository or similar.</p>
+<p>As you have access to a PID information types service, the documentation of the API is available under it's domain (depending on the configuration, something like &quot;http://domain:port/swagger-ui.html&quot;). There you will find the current representation of a PID record within this service, using JSON. In general, a PID record is a Key-Value mapping. It maps types to values. The difference to typical Key-Value mappings is that there might be multiple values allowed for some types, depending on the profile. So it can be considered as a mapping in the following sense:</p>
+<pre><code>&quot;PID_of_type&quot; -&gt; List[&quot;value1&quot;, &quot;value2&quot;, ...]
+</code></pre>
+<blockquote>
+<p>Note: The JSON representation additionally might contain a &quot;pid&quot; field. In the creation step, this field is ignored and can be omitted or null. It is used e.g. to transfer the PID to the client after creation. The same goes for other fields like &quot;name&quot;, which might contain human readable names. For creation, the only the types and values are important.</p>
+</blockquote>
+<p>The types are defined in the profile you have chosen (or created). The profile also decides if you need to assign a value to the type of if this is optional. It also defines if a type can have multiple values (repeatability). For more information about types and profiles, you might want to read into the following recipes: <a href="../datatypes_intro.html">Create a data type</a>, <a href="../kip_intro.html">Create a profile</a></p>
+<p>As you already chose the profile, try to fill it at best effort (remember that there are likely some mandatory fields). Note that all records must contain the PID of their profile. This is – again – defined in each profile. This PID will be used by the PID information types service to validate your record. This means that if your record is not valid according to the profile you chose, no PID will be created. More details to that in the next step. Let us assume a <a href="http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132">simple profile</a>:</p>
+<table><thead><tr><th>Property</th><th>mandatory</th><th>Description</th></tr></thead><tbody>
+<tr><td>KernelInformationProfile</td><td>yes</td><td>PID of the KIP for this PID record</td></tr>
+<tr><td>digitalObjectType</td><td>yes</td><td>PID of the Data Type of the referenced object</td></tr>
+<tr><td>digitalObjectLocation</td><td>yes</td><td>Location URL of the referenced object</td></tr>
+<tr><td>digitalObjectPolicy</td><td>yes</td><td>PID of the policy object with e.g. license information</td></tr>
+<tr><td>etag</td><td>yes</td><td>Etag (checksum) of the current state of the referenced object</td></tr>
+<tr><td>dateModified</td><td>no</td><td>Last modification date of the references object</td></tr>
+<tr><td>dateCreated</td><td>yes</td><td>Creation date of the referenced object</td></tr>
+<tr><td>version</td><td>no</td><td>Version of the referenced object</td></tr>
+<tr><td>wasDerivedFrom</td><td>no</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>specializationOf</td><td>no</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>wasRevisionOf</td><td>no</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>hadPrimarySource</td><td>no</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>wasQuotedFrom</td><td>no</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+<tr><td>alternateOf</td><td>no</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
+</tbody></table>
+<p><a href="http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132">In this example, we use this profile</a>. Each profile has a list of properties. Go to the profile definition in the Data Type Registry, scroll to the first property (&quot;KernelInformationProfile&quot;) and click on the link to it (displayed as &quot;<a href="http://dtr-test.pidconsortium.net/#objects/21.T11148/076759916209e5d62bd5">type name: KernelInformationProfile</a>&quot;).</p>
+<p><img src="../images/click_type_link.png" alt="" /></p>
+<p>On the properties page, you can see that this type has one sub-property, which is also called &quot;KernelInformationProfile&quot; and accepts a Handle-System-PID as a value. In the &quot;Representation and Semantics&quot; section, you can also see that &quot;Abbreviated Form&quot; is set to &quot;Yes&quot;. This simplifies the values for this type to ignore the encapsulation and allows us to simply refer to the inner type. Instead of writing</p>
+<pre><code class="language-json">{
+  &quot;KernelInformationProfile&quot;:
+    {&quot;KernelInformationProfile&quot;: &quot;some/handleIdentifier&quot;}
+}
+</code></pre>
+<p>for the value, this allows us to omit the actual parent type:</p>
+<pre><code class="language-json">    {&quot;KernelInformationProfile&quot;: &quot;some/handleIdentifier&quot;}
+</code></pre>
+<p>And as the inner type has the property <code>Omit Name as Subsidiary</code>set to <code>Yes</code>, we can also omit the inner types name, too. This means we can simply use a handle PID as a value for the type KernelInformationProfile:</p>
+<pre><code class="language-json">&quot;some/handleIdentifier&quot;
+</code></pre>
+<p>On the bottom of the types page you can find a JSON schema. This schema can be used on a value to validate it. It is a technical representation of the rules set on the types page. On the top of the type page you can find more about its semantics. There is a description and a list of related standards or recommendations.</p>
+<p>This procedure can be done similar for all other types to figure out which values are allowed and what their semantic is. Note that all types refer to the object behind the PID record. E.g. if a type represents a checksum, it has to be the checksum of the object the record is pointing to, not the checksum of the record or anything else. Keep this as a guideline when figuring out the actual values for your record.</p>
+<p>Now, bring your record into the actual JSON representation by figuring out the values for at least all mandatory fields, store the result in a file called &quot;record.json&quot; and continue with step 2.</p>
+<h2><a class="header" href="#step-2-send-pid-create-request-to-pid-information-types-service" id="step-2-send-pid-create-request-to-pid-information-types-service">Step 2: Send PID create request to PID Information Types service</a></h2>
+<p>Every instance hosts an interactive API documentation. It is available at <code>http://domain:port/swagger-ui.html</code>, where domain and port is specific to your instance. To do a small manual test, the following bash script will help you. In practice you probably want to do it automatically or build a user interface in case it is done (semi-)manually.</p>
+<ol>
+<li><a href="./create_pid.bash">Download the bash script to register a PID</a>. Remember that for production-configured PID information types services, this will register a real PID. In this case, you can reuse the created PID later by <a href="./update.html">updating the record</a>.</li>
+<li>Remember to store the JSON representation into a file in the same directory as the bash script. Call it for example <code>record.json</code>.</li>
+<li>Open a terminal and execute this command:
+<ul>
+<li><code>bash create_pid.bash $url record.json</code></li>
+<li>where <code>$url</code> must be replaced with the hostname and port (e.g. <code>https://hostname:port</code>).</li>
+</ul>
+</li>
+</ol>
+<p>On success the service will return the information back to you. it should be exactly the same, but with the PID of your object included. In this example, you can see that we used the sandboxed, temporary PID service for testing: <code>{&quot;pid&quot;:&quot;sandboxed/-647408938&quot;,&quot;entries&quot;:{...}}</code></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../pids/intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../pids/resolve.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../pids/intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../pids/resolve.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

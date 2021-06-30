@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction - FAIR DO Cookbook</title>
+        <title>Create a PID KIP - FAIR DO Cookbook</title>
         
         
 
@@ -43,7 +43,9 @@
 
         <!-- Custom theme stylesheets -->
         
-        <link rel="stylesheet" href="custom.css">
+        <link rel="stylesheet" href="hierarchical_numbered_lists.css">
+        
+        <link rel="stylesheet" href="chapter_list.css">
         
 
         
@@ -97,7 +99,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">Create a Data Type</li><li class="chapter-item expanded "><a href="datatypes_intro.html">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_1.html">Search data type registry for suitable data type</a></li><li class="chapter-item expanded "><a href="datatypes_step_2.html">Describe/model envisioned data type</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_2_1.html">Decide on Data Type‘s level of detail</a></li><li class="chapter-item expanded "><a href="datatypes_step_2_2.html">DTR Inquiry</a></li></ol></li><li class="chapter-item expanded "><a href="datatypes_step_3.html">Register data type(s) in data type registry</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="datatypes_step_3_1.html">Register new Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_2.html">Register extended Child-Data Type(s)</a></li><li class="chapter-item expanded "><a href="datatypes_step_3_3.html">Register main Data Type</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Create a PID KIP</li><li class="chapter-item expanded "><a href="kip_intro.html" class="active">Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="kip_step_1.html">Search data type registry for suitable KIP</a></li><li class="chapter-item expanded "><a href="kip_step_2.html">Describe/model envisioned KIP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="kip_step_2_1.html">Call to mind basic KIP principles</a></li><li class="chapter-item expanded "><a href="kip_step_2_2.html">Decide on KIP contents</a></li></ol></li><li class="chapter-item expanded "><a href="kip_step_3.html">Register new KIP in Data Type Registry</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="about.html">About</a></li><li class="chapter-item "><a href="pids/intro.html">Working with PIDs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="pids/create.html">Create a PID</a></li><li class="chapter-item "><a href="pids/resolve.html">Resolve a PID</a></li><li class="chapter-item "><a href="pids/update.html">Update/maintain a PID</a></li><li class="chapter-item "><a href="pids/delete.html">Delete</a></li><li class="chapter-item "><a href="pids/appendix_pit.html">Appendix A: PID Information Types Service</a></li></ol></li><li class="chapter-item "><a href="datatypes_intro.html">Create a Data Type</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="datatypes_step_1.html">Search data type registry for suitable data type</a></li><li class="chapter-item "><a href="datatypes_step_2.html">Describe/model envisioned data type</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="datatypes_step_2_1.html">Decide on Data Type‘s level of detail</a></li><li class="chapter-item "><a href="datatypes_step_2_2.html">DTR Inquiry</a></li></ol></li><li class="chapter-item "><a href="datatypes_step_3.html">Register data type(s) in data type registry</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="datatypes_step_3_1.html">Register new Child-Data Type(s)</a></li><li class="chapter-item "><a href="datatypes_step_3_2.html">Register extended Child-Data Type(s)</a></li><li class="chapter-item "><a href="datatypes_step_3_3.html">Register main Data Type</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="kip_intro.html" class="active">Create a PID KIP</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="kip_step_1.html">Search data type registry for suitable KIP</a></li><li class="chapter-item "><a href="kip_step_2.html">Describe/model envisioned KIP</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="kip_step_2_1.html">Call to mind basic KIP principles</a></li><li class="chapter-item "><a href="kip_step_2_2.html">Decide on KIP contents</a></li></ol></li><li class="chapter-item "><a href="kip_step_3.html">Register new KIP in Data Type Registry</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -176,16 +178,18 @@
 </ul>
 <hr />
 <h2><a class="header" href="#work-steps" id="work-steps">Work Steps</a></h2>
-<ul>
-<li><a href="./kip_step_1.html">1. Search data type registry for suitable KIP</a></li>
-<li><a href="./kip_step_2.html">2. Describe/model envisioned KIP</a>
-<ul>
-<li><a href="./kip_step_2_1.html">2.1 Call to mind basic KIP principles</a></li>
-<li><a href="./kip_step_2_2.html">2.2 Decide on KIP contents</a></li>
-</ul>
+<nestednumerationlist>
+<ol>
+<li><a href="./kip_step_1.html">Search data type registry for suitable KIP</a></li>
+<li><a href="./kip_step_2.html">Describe/model envisioned KIP</a>
+<ol>
+<li><a href="./kip_step_2_1.html">Call to mind basic KIP principles</a></li>
+<li><a href="./kip_step_2_2.html">Decide on KIP contents</a></li>
+</ol>
 </li>
-<li><a href="./kip_step_3.html">3. Register new KIP in Data Type Registry</a></li>
-</ul>
+<li><a href="./kip_step_3.html">Register new KIP in Data Type Registry</a></li>
+</ol>
+</nestednumerationlist>
 <blockquote>
 <p><span style="color:orange">Before you start using this recipe it is recommended, to go through the recipe <a href="./datatypes_intro.html">Create a Data Type</a> as it explains basics for using the Data Type Registry, which is also the place where PID Kernel Information Profiles are created and managed.</span></p>
 </blockquote>
