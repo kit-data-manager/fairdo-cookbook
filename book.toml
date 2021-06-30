@@ -9,4 +9,5 @@ title = "FAIR DO Cookbook"
 default-theme = "navy"
 preferred-dark-theme = "navy"
 no-section-label = true
-additional-css = ["hierarchical_numbered_lists.css"]
+fold = {enable = true, level = 0}
+additional-css = ["hierarchical_numbered_lists.css", "chapter_list.css"]
