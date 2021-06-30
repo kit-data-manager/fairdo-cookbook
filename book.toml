@@ -8,6 +8,7 @@ title = "FAIR DO Cookbook"
 [output.html]
 default-theme = "navy"
 preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/kit-data-manager/fairdo-cookbook/"
 no-section-label = true
 fold = {enable = true, level = 0}
 additional-css = ["hierarchical_numbered_lists.css", "chapter_list.css"]
