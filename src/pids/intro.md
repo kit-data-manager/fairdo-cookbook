@@ -19,7 +19,7 @@
 - [Resolve a PID](./resolve.md)  
     This is the action to get the content of a PIDs record, which is the "landing page for machines" This is the first information a machine can get and make first decisions.
 - [Update a PID](./update.md)  
-    PIDs and their contents should remain constant. For data curation reasons there still might be reasons where someone wants to update the PID record, for example to update the new object location, when a server has moved.
+    PIDs and their contents ideally remain constant. For data curation reasons there still might be reasons where someone wants to update the PID record, for example to update the new object location, when a server has moved.
 - [Delete a PID](./delete.md)  
-    Deleting is against the P(ersistent) in PID. But if data has been archived or is not accessible for other reasons anymore, a PID should have some "tomb stone information" that explains this to the machine. This is a recipe about how to do this.
+    Deleting is against the P(ersistent) in PID. There are cases where you might feel the need to delete PIDs. But in FAIR ecosystems, the solution is usually a PID record update. This recipe is about why you should not delete PIDs and about guidelines that discuss which modifications should be done on such a record, and which shouldn't.
 
