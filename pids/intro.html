@@ -140,6 +140,10 @@
                         </a>
                         
                         
+                        <a href="https://github.com/kit-data-manager/fairdo-cookbook/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -168,12 +172,13 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#introduction-working-with-pids" id="introduction-working-with-pids">Introduction: Working with PIDs</a></h1>
-<p><strong>A PID is a unique, peristent identifier for a object.</strong> This object might be (meta-)data, data streams, sensors, repositories and more. PIDs are associates with information which helps to access the object and to elaborate the use of the (data) object (PID record information) for the use case of a client. This means that a PID resolves to a &quot;landing page for machines&quot;, enabling the client to decide if it can work with this object and to programmatically access it. Therefore PIDs are a vital part of FAIR Digital Objects.</p>
-<p><img src="../images/pid_overview.drawio.png" alt="" /></p>
+<p><strong>A PID is a unique, persistent and resolvable identifier for an object.</strong> This object might be (meta-)data, data streams, sensors, repositories and more. PIDs are associated with information which helps to access the object and to elaborate the use of the (data) object (PID record information) for the use case of a client. This means that a PID resolves to a &quot;landing page for machines&quot;, enabling the client to decide if it can work with this object and to programmatically access it. Therefore PIDs are a vital part of FAIR Digital Objects.</p>
+<p><img src="../images/pid_overview.drawio.svg" alt="" /></p>
 <p><strong>The following receipts are about working with PIDs</strong> and use the same ingredients and similar steps. Working with PIDs means in this case, to do <a href="https://de.wikipedia.org/wiki/CRUD">CRUD-Operations</a> (Create, Retrieve, Update, Delete) with PIDs. We use our <a href="https://github.com/kit-data-manager/testbed4inf">Testbed</a> to elaborate and test generic PID handling and advanced use cases.</p>
 <blockquote>
 <p>Note that there is no delete-Operation recommended in the context of FAIR Digital Objects, therefore the recipe will not delete it, but show how to handle e.g. the loss of the actual data in terms of PID curation.</p>
 </blockquote>
+<p><img src="../images/pit_to_pid.drawio.svg" alt="" /></p>
 <hr />
 <h2><a class="header" href="#recipes" id="recipes">Recipes</a></h2>
 <ul>
@@ -182,9 +187,9 @@ This is also known as &quot;Creating a FAIR Digital Object&quot; or &quot;Creati
 <li><a href="./resolve.html">Resolve a PID</a><br />
 This is the action to get the content of a PIDs record, which is the &quot;landing page for machines&quot; This is the first information a machine can get and make first decisions.</li>
 <li><a href="./update.html">Update a PID</a><br />
-PIDs and their contents should remain constant. For data curation reasons there still might be reasons where someone wants to update the PID record, e.g. to update the new server URL, when the server has moved.</li>
+PIDs and their contents should remain constant. For data curation reasons there still might be reasons where someone wants to update the PID record, for example to update the new object location, when a server has moved.</li>
 <li><a href="./delete.html">Delete a PID</a><br />
-Deleting is against the P(ersistence) in PID. But if data has been archived or is not accessible for other reasons anymore, a PID should have some &quot;thomb stone information&quot; that explains this to the machine. This is a recipe about how to do this.</li>
+Deleting is against the P(ersistent) in PID. But if data has been archived or is not accessible for other reasons anymore, a PID should have some &quot;tomb stone information&quot; that explains this to the machine. This is a recipe about how to do this.</li>
 </ul>
 
                     </main>

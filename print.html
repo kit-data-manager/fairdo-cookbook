@@ -142,6 +142,10 @@
                         </a>
                         
                         
+                        <a href="https://github.com/kit-data-manager/fairdo-cookbook/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -171,12 +175,13 @@
                     <main>
                         <h1><a class="header" href="#about" id="about">About</a></h1>
 <h1><a class="header" href="#introduction-working-with-pids" id="introduction-working-with-pids">Introduction: Working with PIDs</a></h1>
-<p><strong>A PID is a unique, peristent identifier for a object.</strong> This object might be (meta-)data, data streams, sensors, repositories and more. PIDs are associates with information which helps to access the object and to elaborate the use of the (data) object (PID record information) for the use case of a client. This means that a PID resolves to a &quot;landing page for machines&quot;, enabling the client to decide if it can work with this object and to programmatically access it. Therefore PIDs are a vital part of FAIR Digital Objects.</p>
-<p><img src="pids/../images/pid_overview.drawio.png" alt="" /></p>
+<p><strong>A PID is a unique, persistent and resolvable identifier for an object.</strong> This object might be (meta-)data, data streams, sensors, repositories and more. PIDs are associated with information which helps to access the object and to elaborate the use of the (data) object (PID record information) for the use case of a client. This means that a PID resolves to a &quot;landing page for machines&quot;, enabling the client to decide if it can work with this object and to programmatically access it. Therefore PIDs are a vital part of FAIR Digital Objects.</p>
+<p><img src="pids/../images/pid_overview.drawio.svg" alt="" /></p>
 <p><strong>The following receipts are about working with PIDs</strong> and use the same ingredients and similar steps. Working with PIDs means in this case, to do <a href="https://de.wikipedia.org/wiki/CRUD">CRUD-Operations</a> (Create, Retrieve, Update, Delete) with PIDs. We use our <a href="https://github.com/kit-data-manager/testbed4inf">Testbed</a> to elaborate and test generic PID handling and advanced use cases.</p>
 <blockquote>
 <p>Note that there is no delete-Operation recommended in the context of FAIR Digital Objects, therefore the recipe will not delete it, but show how to handle e.g. the loss of the actual data in terms of PID curation.</p>
 </blockquote>
+<p><img src="pids/../images/pit_to_pid.drawio.svg" alt="" /></p>
 <hr />
 <h2><a class="header" href="#recipes" id="recipes">Recipes</a></h2>
 <ul>
@@ -185,9 +190,9 @@ This is also known as &quot;Creating a FAIR Digital Object&quot; or &quot;Creati
 <li><a href="pids/./resolve.html">Resolve a PID</a><br />
 This is the action to get the content of a PIDs record, which is the &quot;landing page for machines&quot; This is the first information a machine can get and make first decisions.</li>
 <li><a href="pids/./update.html">Update a PID</a><br />
-PIDs and their contents should remain constant. For data curation reasons there still might be reasons where someone wants to update the PID record, e.g. to update the new server URL, when the server has moved.</li>
+PIDs and their contents should remain constant. For data curation reasons there still might be reasons where someone wants to update the PID record, for example to update the new object location, when a server has moved.</li>
 <li><a href="pids/./delete.html">Delete a PID</a><br />
-Deleting is against the P(ersistence) in PID. But if data has been archived or is not accessible for other reasons anymore, a PID should have some &quot;thomb stone information&quot; that explains this to the machine. This is a recipe about how to do this.</li>
+Deleting is against the P(ersistent) in PID. But if data has been archived or is not accessible for other reasons anymore, a PID should have some &quot;tomb stone information&quot; that explains this to the machine. This is a recipe about how to do this.</li>
 </ul>
 <h1><a class="header" href="#create-a-pid" id="create-a-pid">Create a PID</a></h1>
 <p>Creating a PID means not only to register an identifier, but also to fill it with reasonable information at the same time. Creating a PID is therefore the same as &quot;creating a PID record&quot; or similar terms. In some contexts it is also referred to as &quot;creating a FAIR Digital Object&quot;.</p>
@@ -208,7 +213,7 @@ Deleting is against the P(ersistence) in PID. But if data has been archived or i
 </ol>
 <hr />
 <h2><a class="header" href="#step-1-build-a-json-representation-of-the-pid-record" id="step-1-build-a-json-representation-of-the-pid-record">Step 1: Build a JSON-Representation of the PID record</a></h2>
-<p>We need to build a JSON-Representation of the PID record, so we can send it – together with the request to create a PID – to the PID Information Types service. Usually this is something that a program will do, in some cases supported by human intervention, so this is a semi-technical step, actually. The program might be a workflow system, a repository or similar.</p>
+<p>We need to build a JSON-Representation of the PID record, so we can send it — together with the request to create a PID – to the PID Information Types service. Usually this is something that a program will do, in some cases supported by human intervention, so this is a semi-technical step, actually. The program might be a workflow system, a repository or similar.</p>
 <p>As you have access to a PID information types service, the documentation of the API is available under it's domain (depending on the configuration, something like &quot;http://domain:port/swagger-ui.html&quot;). There you will find the current representation of a PID record within this service, using JSON. In general, a PID record is a Key-Value mapping. It maps types to values. The difference to typical Key-Value mappings is that there might be multiple values allowed for some types, depending on the profile. So it can be considered as a mapping in the following sense:</p>
 <pre><code>&quot;PID_of_type&quot; -&gt; List[&quot;value1&quot;, &quot;value2&quot;, ...]
 </code></pre>
@@ -216,7 +221,7 @@ Deleting is against the P(ersistence) in PID. But if data has been archived or i
 <p>Note: The JSON representation additionally might contain a &quot;pid&quot; field. In the creation step, this field is ignored and can be omitted or null. It is used e.g. to transfer the PID to the client after creation. The same goes for other fields like &quot;name&quot;, which might contain human readable names. For creation, the only the types and values are important.</p>
 </blockquote>
 <p>The types are defined in the profile you have chosen (or created). The profile also decides if you need to assign a value to the type of if this is optional. It also defines if a type can have multiple values (repeatability). For more information about types and profiles, you might want to read into the following recipes: <a href="pids/../datatypes_intro.html">Create a data type</a>, <a href="pids/../kip_intro.html">Create a profile</a></p>
-<p>As you already chose the profile, try to fill it at best effort (remember that there are likely some mandatory fields). Note that all records must contain the PID of their profile. This is – again – defined in each profile. This PID will be used by the PID information types service to validate your record. This means that if your record is not valid according to the profile you chose, no PID will be created. More details to that in the next step. Let us assume a <a href="http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132">simple profile</a>:</p>
+<p>As you already chose the profile, try to fill it at best effort (remember that there are likely some mandatory fields). Note that all records must contain the PID of their profile. This is – again – defined in each profile. This PID will be used by the PID information types service to validate your record. —This means that if your record is not valid according to the profile you chose, no PID will be created. More details to that in the next step. Let us assume a <a href="http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132">simple profile</a>:</p>
 <table><thead><tr><th>Property</th><th>mandatory</th><th>Description</th></tr></thead><tbody>
 <tr><td>KernelInformationProfile</td><td>yes</td><td>PID of the KIP for this PID record</td></tr>
 <tr><td>digitalObjectType</td><td>yes</td><td>PID of the Data Type of the referenced object</td></tr>
@@ -244,11 +249,11 @@ Deleting is against the P(ersistence) in PID. But if data has been archived or i
 <p>for the value, this allows us to omit the actual parent type:</p>
 <pre><code class="language-json">    {&quot;KernelInformationProfile&quot;: &quot;some/handleIdentifier&quot;}
 </code></pre>
-<p>And as the inner type has the property <code>Omit Name as Subsidiary</code>set to <code>Yes</code>, we can also omit the inner types name, too. This means we can simply use a handle PID as a value for the type KernelInformationProfile:</p>
+<p>And as the inner type has the property <code>Omit Name as Subsidiary</code> set to <code>Yes</code>, we can also omit the inner types name, too. This means we can simply use a handle PID as a value for the type KernelInformationProfile:</p>
 <pre><code class="language-json">&quot;some/handleIdentifier&quot;
 </code></pre>
 <p>On the bottom of the types page you can find a JSON schema. This schema can be used on a value to validate it. It is a technical representation of the rules set on the types page. On the top of the type page you can find more about its semantics. There is a description and a list of related standards or recommendations.</p>
-<p>This procedure can be done similar for all other types to figure out which values are allowed and what their semantic is. Note that all types refer to the object behind the PID record. E.g. if a type represents a checksum, it has to be the checksum of the object the record is pointing to, not the checksum of the record or anything else. Keep this as a guideline when figuring out the actual values for your record.</p>
+<p>This procedure can be done similar for all other types to figure out which values are allowed and what the semantic is. Note that all types refer to the object behind the PID record. For example, if a type represents a checksum, it has to be the checksum of the object the record is pointing to, not the checksum of the record or anything else. Keep this as a guideline when figuring out the actual values for your record.</p>
 <p>Now, bring your record into the actual JSON representation by figuring out the values for at least all mandatory fields, store the result in a file called &quot;record.json&quot; and continue with step 2.</p>
 <h2><a class="header" href="#step-2-send-pid-create-request-to-pid-information-types-service" id="step-2-send-pid-create-request-to-pid-information-types-service">Step 2: Send PID create request to PID Information Types service</a></h2>
 <p>Every instance hosts an interactive API documentation. It is available at <code>http://domain:port/swagger-ui.html</code>, where domain and port is specific to your instance. To do a small manual test, the following bash script will help you. In practice you probably want to do it automatically or build a user interface in case it is done (semi-)manually.</p>
@@ -264,8 +269,123 @@ Deleting is against the P(ersistence) in PID. But if data has been archived or i
 </ol>
 <p>On success the service will return the information back to you. it should be exactly the same, but with the PID of your object included. In this example, you can see that we used the sandboxed, temporary PID service for testing: <code>{&quot;pid&quot;:&quot;sandboxed/-647408938&quot;,&quot;entries&quot;:{...}}</code></p>
 <h1><a class="header" href="#resolve-a-pid" id="resolve-a-pid">Resolve a PID</a></h1>
+<p>Resolving a PID (also &quot;retrieving a PID (record)&quot;) is the process of submitting the PID to a system in order to receive the associated PID record as a response. It is sometimes also called &quot;resolving a FAIR Digital Object&quot;, although this term is also used to refer to the process of accessing the actual data object which is referenced by the PID record, which makes it a vague term. Resolving allows machines to act on the PIDs record information.</p>
+<hr />
+<h2><a class="header" href="#ingredients-1" id="ingredients-1">Ingredients</a></h2>
+<ul>
+<li>A registered PID you want to resolve.</li>
+<li>Access to a PID Information Types Service or a Testbed instance (<a href="pids/./appendix_pit.html">also see Appendix A</a>)
+<ul>
+<li>The service must be configured in a way to support your PID system. For details on that, read the instructions.</li>
+<li>Alternatively: Any other system that uses the resolving API of the PID system of your choice.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2><a class="header" href="#work-steps-summary-1" id="work-steps-summary-1">Work Steps (Summary)</a></h2>
+<ol>
+<li>Request the PID information types service to resolve a given PID</li>
+</ol>
+<hr />
+<h2><a class="header" href="#step-1-request-the-pid-information-types-service-to-resolve-a-given-pid" id="step-1-request-the-pid-information-types-service-to-resolve-a-given-pid">Step 1: Request the PID information types service to resolve a given PID</a></h2>
+<blockquote>
+<p>Note: The PID information types service does not support every PID system, but can be extended. Feel free to open an issue on the <a href="https://github.com/kit-data-manager/pit-service">Github Page</a> if your PID type is not supported. As of now (June 2021) it supports only PID services building on the federated Handle System.</p>
+<p>Also, it includes a small sandboxed PID service in it's default configuration for testing purposes. Note that these sandboxed PIDs are <strong>not</strong> publicly resolvable, do only exist in this instance and are not stored permanently. But it might be enough for you to e.g. test the API or your PID workflows.</p>
+</blockquote>
+<p>The PID information types service offers an API to resolve PIDs. The principle is simple: You give it the API and will get a JSON document in return, which contains the content of the PIDs record.</p>
+<p> <img src="pids/../images/pit_to_pid.drawio.svg" alt="" /></p>
+<h3><a class="header" href="#using-the-pid-information-types-instance" id="using-the-pid-information-types-instance">Using the PID information types instance</a></h3>
+<p>The advantage of this method is that the PID information types service is an abstraction of the PID system used. This means that if you switch the system in the background, the API will stay the same. The resolving step does currently not involve any FAIR or profile validation.</p>
+<ol>
+<li>Download <a href="pids/./resolve_pid.bash">resolve_pid.bash</a></li>
+<li>Run this in your terminal: <code>bash resolve_pid.bash $url &quot;$pid&quot;</code>
+<ul>
+<li>where <code>$url</code> must be replaced with the hostname and port (e.g. <code>https://hostname:port</code>)</li>
+<li>where <code>$pid</code> must be the PID you want to resolve.</li>
+</ul>
+</li>
+</ol>
+<p>The result will be the same as after creating a PID: A JSON document that contains the record information similar to this:</p>
+<pre><code class="language-json">{&quot;pid&quot;: &quot;sandboxed/406871&quot;,&quot;entries&quot;: {...}}
+</code></pre>
+<h3><a class="header" href="#using-the-handle-resolver-try-it-in-your-browser" id="using-the-handle-resolver-try-it-in-your-browser">Using the handle resolver (try it in your browser!)</a></h3>
+<blockquote>
+<p>Note: Like with the PID information types service, this only works with PIDs built upon the handle system. If you use another system, you need to look for a compatible web-resolver.</p>
+</blockquote>
+<ol>
+<li>Go to <a href="https://hdl.handle.net">hdl.handle.net</a>.</li>
+<li>Insert the PID in the &quot;Handle&quot; field.</li>
+<li>Check the &quot;Don't redirect to URLs&quot; option.</li>
+<li>Click on the &quot;Submit&quot; button.</li>
+</ol>
+<p>You will see a table, similar to the one after this paragraph. It contains a &quot;Type&quot; column, which for a real FAIR Digital Object <strong>must</strong> contain only PIDs. Exceptions are other types that are required by a PID system, often containing specific, administrative information. The &quot;Data&quot; column contains the value of the according type in the same line. All other columns are handle specific. Here you can see an excerpt of a handle PID record:</p>
+<table><thead><tr><th>Index</th><th>Type</th><th>Timestamp</th><th>Data</th></tr></thead><tbody>
+<tr><td>1</td><td>21.T11148/8eb858ee0b12e8e463a5</td><td>2021-04-19 08:59:03Z</td><td>{&quot;identifierValue&quot;:&quot;http://hdl.handle.net/21.T11998/0000-001A-3905-F&quot;,&quot;identifierType&quot;:&quot;Handle&quot;}</td></tr>
+<tr><td>3</td><td>21.T11148/9a15a4735d4bda329d80</td><td>2021-04-15 10:47:38Z</td><td>https://linkedsystems.uk/system/instance/TOOL0022_2490/current/</td></tr>
+<tr><td>4</td><td>21.T11148/709a23220f2c3d64d1e1</td><td>2021-04-15 10:47:38Z</td><td>Sea-Bird SBE 37-IM MicroCAT C-T Sensor</td></tr>
+<tr><td>12</td><td>21.T11148/eb3c713572f681e6c4c3</td><td>2021-04-19 10:41:18Z</td><td>[{ &quot;alternateIdentifier&quot;: {&quot;alternateIdentifierValue&quot;: &quot;2490&quot;,&quot;alternateIdentifierType&quot;: &quot;serialNumber&quot; }}]</td></tr>
+<tr><td>13</td><td>21.T11148/178fb558abc755ca7046</td><td>2021-04-19 10:41:18Z</td><td>[{&quot;relatedIdentifier&quot;: {&quot;relatedIdentifierValue&quot;: &quot;https://www.bodc.ac.uk/data/documents/nodb/pdf/37imbrochurejul08.pdf&quot;,&quot;relatedIdentifierType&quot;: &quot;URL&quot;, &quot;relationType&quot;: &quot;IsDescribedBy&quot;}}]</td></tr>
+</tbody></table>
 <h1><a class="header" href="#updatemaintain-a-pid" id="updatemaintain-a-pid">Update/maintain a PID</a></h1>
-<h1><a class="header" href="#delete" id="delete">Delete</a></h1>
+<p>This is very similar to &quot;<a href="pids/./create.html">Create a PID</a>&quot;.</p>
+<hr />
+<h2><a class="header" href="#ingredients-2" id="ingredients-2">Ingredients</a></h2>
+<ul>
+<li>Access to a PID Information Types Service or a Testbed instance (<a href="pids/./appendix_pit.html">also see Appendix A</a>)</li>
+<li>The information you want to put into the record (new data and replacing data is both possible)</li>
+</ul>
+<hr />
+<h2><a class="header" href="#work-steps-summary-2" id="work-steps-summary-2">Work Steps (Summary)</a></h2>
+<ol>
+<li>Resolve the PID</li>
+<li>Modify the JSON-Representation of the PID record as you wish.</li>
+<li>Request the PID Information Types service (also available in the testbed) to update the PID and send the JSON record (step 3) together with the request.</li>
+</ol>
+<hr />
+<h2><a class="header" href="#step-1-resolve-a-pid" id="step-1-resolve-a-pid">Step 1: Resolve a PID</a></h2>
+<p>The idea of updating a record is the following: Get the current state, modify the record, then overwrite the whole record with your modified version. To get the current state, you need to <a href="pids/./resolve.html">resolve the PID, as stated in this recipe</a>.</p>
+<h2><a class="header" href="#step-2-modify-the-json-representation-of-the-pid-record-as-you-wish" id="step-2-modify-the-json-representation-of-the-pid-record-as-you-wish">Step 2: Modify the JSON-Representation of the PID record as you wish.</a></h2>
+<p>You may use any JSON manipulation tool to exchange any information in the record, even the profile. But there will — like when using the &quot;create API&quot; — a validation before the PID information types service will do the update. So make sure that the result of your modifications is a valid record according to the (maybe new) profile before proceeding.</p>
+<h2><a class="header" href="#step-3-send-pid-update-request-to-pid-information-types-service" id="step-3-send-pid-update-request-to-pid-information-types-service">Step 3: Send PID update request to PID Information Types service</a></h2>
+<p>This request is very similar to the <a href="pids/./create.html">create request</a>. The difference is that you will need to provide a PID which will have its record updated.</p>
+<ol>
+<li><a href="pids/./update_pid.bash">Download the bash script to update a PID</a>.</li>
+<li>Remember to store the JSON representation into a file in the same directory as the bash script. Call it for example <code>record.json</code>.</li>
+<li>Open a terminal and execute this command:
+<ul>
+<li><code>bash update_pid.bash $url record.json $pid</code></li>
+<li>where <code>$url</code> must be replaced with the hostname and port (e.g. <code>https://hostname:port</code>).</li>
+<li>where <code>$pid</code> must be replaced with the pid of the record that shall be updated.</li>
+</ul>
+</li>
+</ol>
+<h1><a class="header" href="#delete-a-pid" id="delete-a-pid">Delete a PID</a></h1>
+<p>Deleting a PID should not be done, as it is against the P in PID. Note that usually PID systems offer a possibility to delete PIDs. As we are considering FAIR ecosystems, we do not expose this functionality to maintain reusability and citability to the highest degree possible. It is therefore not supported by the PID information types service.</p>
+<p>But there are solutions if you feel the need, which are better than updating the record to some dummy record. There are cases where deleting a PID might seem to be a solution at the first glance:</p>
+<ol>
+<li>The object access is now restricted (e.g., it was made public by accident).</li>
+<li>The object is gone. It might have been an accident, for administrative reasons (free space, archival, ...) or the object might have been available but has been withdrawn.</li>
+</ol>
+<p>The following recipe will cover what we recommend in such cases. Every recommendation involves <a href="pids/./update.html">modifying/updating the record</a> in specific ways.</p>
+<hr />
+<h2><a class="header" href="#ingredients-3" id="ingredients-3">Ingredients</a></h2>
+<p>See the &quot;<a href="pids/./update.html">Update a PID recipe</a>&quot; to see the ingredients and steps. This recipe will cover in which way the record should be modified in different cases.</p>
+<h2><a class="header" href="#work-steps" id="work-steps">Work Steps</a></h2>
+<h3><a class="header" href="#if-the-object-was-available-and-a-pid-registered-but-access-is-now-restricted" id="if-the-object-was-available-and-a-pid-registered-but-access-is-now-restricted">If the object was available and a PID registered, but access is now restricted</a></h3>
+<p>FAIR Digital Objects can handle restricted access. It is encouraged to make data public if possible, to improve the situation for open data, open science, citizen science and so on. But sometimes it is not possible due to legal or privacy considerations. The important part is that a machine has to be able to know how to access the object if it has the neccessary information. I access is not possible in an automated way, the machine must be able to tell the user what she needs to do to gain access. Profiles need to be able to express this, but currently there is, unfortunately, no consensus about how this information should be represented. Generally, this is what should be done:</p>
+<ol>
+<li>Make sure no confidential information is stored in the record.</li>
+<li>Add information to the record that states that the object access is restricted.</li>
+<li>Add information to the record that states how access can be achieved.</li>
+</ol>
+<p><a href="pids/./update.html">Read this recipe on how to update your record.</a></p>
+<h3><a class="header" href="#the-object-is-not-available-anymore-and-will-probably-never-be-available-again" id="the-object-is-not-available-anymore-and-will-probably-never-be-available-again">The object is not available anymore and will probably never be available again.</a></h3>
+<p>It is common consensus in PID handling to store a so called tomb stone in your profile and keep as much information as feasible within the record. To place this tombstone in the PID record, an according profile might need to be chosen. What the tombstone is will depend on the profile. It might be as simple as a human readable string or contain machine readable codes, similar to HTTP status codes.</p>
+<ol>
+<li>Keep as much information as feasible in the record. There is no reason to loose even more information. Fingerprints like checksums might be useful in case data appears again, to identify it.</li>
+<li>Place a thombstone in the record to state that this object is gone, with as much information about why it has disappeared as possible. In case there is a new PID leading to the object, link it in the record.</li>
+</ol>
+<p><a href="pids/./update.html">Read this recipe on how to update your record.</a></p>
 <h2><a class="header" href="#appendix-a-set-up-a-pid-information-types-instance" id="appendix-a-set-up-a-pid-information-types-instance">Appendix A: Set up a PID Information Types instance</a></h2>
 <blockquote>
 <p>A PID information types instance for production needs a prefix of a compatible PID service, which is a financial and administrative matter and is something not every researcher will do on her own. Consider to find a service provider which can give you access to a PID information types service instance and skip the rest of this appendix. If you do have a PID prefix and want to do it yourself or want to try it with a in-memory &quot;sandboxed&quot; PID service (for testing only!), read on.</p>
@@ -286,14 +406,14 @@ Deleting is against the P(ersistence) in PID. But if data has been archived or i
 <h1><a class="header" href="#create-a-data-type" id="create-a-data-type">Create a Data Type</a></h1>
 <p>This receipt will show you how to create your first Data Type in a Data Type Registry. Together with Persistent Identifiers, which we deal with in another receipt, Data Types are a second essential ingredient of a FAIR Digital Object.</p>
 <hr />
-<h2><a class="header" href="#ingredients-1" id="ingredients-1">Ingredients</a></h2>
+<h2><a class="header" href="#ingredients-4" id="ingredients-4">Ingredients</a></h2>
 <ul>
 <li>Data Type Registry (DTR), e.g. <a href="http://dtr-test.pidconsortium.eu/">http://dtr-test.pidconsortium.eu/</a></li>
 <li>Registered user account at Data Type Registry</li>
 <li>Web Browser</li>
 </ul>
 <hr />
-<h2><a class="header" href="#work-steps" id="work-steps">Work Steps</a></h2>
+<h2><a class="header" href="#work-steps-1" id="work-steps-1">Work Steps</a></h2>
 <nestednumerationlist>
 <ol>
 <li><a href="./datatypes_step_1.html">Search data type registry for suitable data type</a></li>
@@ -444,14 +564,14 @@ Deleting is against the P(ersistence) in PID. But if data has been archived or i
 <h1><a class="header" href="#create-a-pid-kernel-information-profile" id="create-a-pid-kernel-information-profile">Create a PID Kernel Information Profile</a></h1>
 <p>In receipt we will show how you to create a PID Kernel Information Profile (KIP). The KIP is a special Data Type which allows you to define and validate elements in a PID Information Record. The goal is, to store a small subset of metadata in this record directly in the PID resolving service to allow fast, machine actionable decisions already on the PID-level. Thus, a machine can decide on further resolution of the referenced content or withdraw the PID if does not contain any interpretable information. </p>
 <hr />
-<h2><a class="header" href="#ingredients-2" id="ingredients-2">Ingredients</a></h2>
+<h2><a class="header" href="#ingredients-5" id="ingredients-5">Ingredients</a></h2>
 <ul>
 <li>Data Type Registry (DTR), e.g. <a href="http://dtr-test.pidconsortium.eu/">http://dtr-test.pidconsortium.eu/</a></li>
 <li>Registered user account at Data Type Registry</li>
 <li>Web Browser</li>
 </ul>
 <hr />
-<h2><a class="header" href="#work-steps-1" id="work-steps-1">Work Steps</a></h2>
+<h2><a class="header" href="#work-steps-2" id="work-steps-2">Work Steps</a></h2>
 <nestednumerationlist>
 <ol>
 <li><a href="./kip_step_1.html">Search data type registry for suitable KIP</a></li>

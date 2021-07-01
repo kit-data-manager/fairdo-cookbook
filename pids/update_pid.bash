@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -e # ends the program if something goes wrong
 
-if test $# -lt 2
+numParamsExpected=3
+
+if test $# -lt $numParamsExpected
     then
     echo "Not enough parameters given (was $#)."
 fi
@@ -11,7 +13,7 @@ if test ! -f "$2"
     echo "Second parameter is not a file."
 fi
 
-if test "$1" = "--help" || test "$1" = "-h" || test $# -lt 2 || test ! -f "$2"
+if test "$1" = "--help" || test "$1" = "-h" || test $# -lt $numParamsExpected || test ! -f "$2"
     then
     echo "=== HELP ==="
     echo "Create a PID using a PIT service endpoint."
@@ -19,12 +21,13 @@ if test "$1" = "--help" || test "$1" = "-h" || test $# -lt 2 || test ! -f "$2"
     exit -1
 fi
 
-content=$(cat $2)
 url=$1
+content=$(cat $2)
+pid=$3
 
 curl \
     -H "Content-Type: application/json" \
-    -X POST \
+    -X PUT \
     -d "$content" \
     --include \
-    $url/api/v1/pit/pid/
+    $url/api/v1/pit/pid/$pid

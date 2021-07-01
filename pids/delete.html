@@ -140,6 +140,10 @@
                         </a>
                         
                         
+                        <a href="https://github.com/kit-data-manager/fairdo-cookbook/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -167,7 +171,33 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#delete" id="delete">Delete</a></h1>
+                        <h1><a class="header" href="#delete-a-pid" id="delete-a-pid">Delete a PID</a></h1>
+<p>Deleting a PID should not be done, as it is against the P in PID. Note that usually PID systems offer a possibility to delete PIDs. As we are considering FAIR ecosystems, we do not expose this functionality to maintain reusability and citability to the highest degree possible. It is therefore not supported by the PID information types service.</p>
+<p>But there are solutions if you feel the need, which are better than updating the record to some dummy record. There are cases where deleting a PID might seem to be a solution at the first glance:</p>
+<ol>
+<li>The object access is now restricted (e.g., it was made public by accident).</li>
+<li>The object is gone. It might have been an accident, for administrative reasons (free space, archival, ...) or the object might have been available but has been withdrawn.</li>
+</ol>
+<p>The following recipe will cover what we recommend in such cases. Every recommendation involves <a href="./update.html">modifying/updating the record</a> in specific ways.</p>
+<hr />
+<h2><a class="header" href="#ingredients" id="ingredients">Ingredients</a></h2>
+<p>See the &quot;<a href="./update.html">Update a PID recipe</a>&quot; to see the ingredients and steps. This recipe will cover in which way the record should be modified in different cases.</p>
+<h2><a class="header" href="#work-steps" id="work-steps">Work Steps</a></h2>
+<h3><a class="header" href="#if-the-object-was-available-and-a-pid-registered-but-access-is-now-restricted" id="if-the-object-was-available-and-a-pid-registered-but-access-is-now-restricted">If the object was available and a PID registered, but access is now restricted</a></h3>
+<p>FAIR Digital Objects can handle restricted access. It is encouraged to make data public if possible, to improve the situation for open data, open science, citizen science and so on. But sometimes it is not possible due to legal or privacy considerations. The important part is that a machine has to be able to know how to access the object if it has the neccessary information. I access is not possible in an automated way, the machine must be able to tell the user what she needs to do to gain access. Profiles need to be able to express this, but currently there is, unfortunately, no consensus about how this information should be represented. Generally, this is what should be done:</p>
+<ol>
+<li>Make sure no confidential information is stored in the record.</li>
+<li>Add information to the record that states that the object access is restricted.</li>
+<li>Add information to the record that states how access can be achieved.</li>
+</ol>
+<p><a href="./update.html">Read this recipe on how to update your record.</a></p>
+<h3><a class="header" href="#the-object-is-not-available-anymore-and-will-probably-never-be-available-again" id="the-object-is-not-available-anymore-and-will-probably-never-be-available-again">The object is not available anymore and will probably never be available again.</a></h3>
+<p>It is common consensus in PID handling to store a so called tomb stone in your profile and keep as much information as feasible within the record. To place this tombstone in the PID record, an according profile might need to be chosen. What the tombstone is will depend on the profile. It might be as simple as a human readable string or contain machine readable codes, similar to HTTP status codes.</p>
+<ol>
+<li>Keep as much information as feasible in the record. There is no reason to loose even more information. Fingerprints like checksums might be useful in case data appears again, to identify it.</li>
+<li>Place a thombstone in the record to state that this object is gone, with as much information about why it has disappeared as possible. In case there is a new PID leading to the object, link it in the record.</li>
+</ol>
+<p><a href="./update.html">Read this recipe on how to update your record.</a></p>
 
                     </main>
 

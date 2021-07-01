@@ -140,6 +140,10 @@
                         </a>
                         
                         
+                        <a href="https://github.com/kit-data-manager/fairdo-cookbook/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -186,7 +190,7 @@
 </ol>
 <hr />
 <h2><a class="header" href="#step-1-build-a-json-representation-of-the-pid-record" id="step-1-build-a-json-representation-of-the-pid-record">Step 1: Build a JSON-Representation of the PID record</a></h2>
-<p>We need to build a JSON-Representation of the PID record, so we can send it – together with the request to create a PID – to the PID Information Types service. Usually this is something that a program will do, in some cases supported by human intervention, so this is a semi-technical step, actually. The program might be a workflow system, a repository or similar.</p>
+<p>We need to build a JSON-Representation of the PID record, so we can send it — together with the request to create a PID – to the PID Information Types service. Usually this is something that a program will do, in some cases supported by human intervention, so this is a semi-technical step, actually. The program might be a workflow system, a repository or similar.</p>
 <p>As you have access to a PID information types service, the documentation of the API is available under it's domain (depending on the configuration, something like &quot;http://domain:port/swagger-ui.html&quot;). There you will find the current representation of a PID record within this service, using JSON. In general, a PID record is a Key-Value mapping. It maps types to values. The difference to typical Key-Value mappings is that there might be multiple values allowed for some types, depending on the profile. So it can be considered as a mapping in the following sense:</p>
 <pre><code>&quot;PID_of_type&quot; -&gt; List[&quot;value1&quot;, &quot;value2&quot;, ...]
 </code></pre>
@@ -194,7 +198,7 @@
 <p>Note: The JSON representation additionally might contain a &quot;pid&quot; field. In the creation step, this field is ignored and can be omitted or null. It is used e.g. to transfer the PID to the client after creation. The same goes for other fields like &quot;name&quot;, which might contain human readable names. For creation, the only the types and values are important.</p>
 </blockquote>
 <p>The types are defined in the profile you have chosen (or created). The profile also decides if you need to assign a value to the type of if this is optional. It also defines if a type can have multiple values (repeatability). For more information about types and profiles, you might want to read into the following recipes: <a href="../datatypes_intro.html">Create a data type</a>, <a href="../kip_intro.html">Create a profile</a></p>
-<p>As you already chose the profile, try to fill it at best effort (remember that there are likely some mandatory fields). Note that all records must contain the PID of their profile. This is – again – defined in each profile. This PID will be used by the PID information types service to validate your record. This means that if your record is not valid according to the profile you chose, no PID will be created. More details to that in the next step. Let us assume a <a href="http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132">simple profile</a>:</p>
+<p>As you already chose the profile, try to fill it at best effort (remember that there are likely some mandatory fields). Note that all records must contain the PID of their profile. This is – again – defined in each profile. This PID will be used by the PID information types service to validate your record. —This means that if your record is not valid according to the profile you chose, no PID will be created. More details to that in the next step. Let us assume a <a href="http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132">simple profile</a>:</p>
 <table><thead><tr><th>Property</th><th>mandatory</th><th>Description</th></tr></thead><tbody>
 <tr><td>KernelInformationProfile</td><td>yes</td><td>PID of the KIP for this PID record</td></tr>
 <tr><td>digitalObjectType</td><td>yes</td><td>PID of the Data Type of the referenced object</td></tr>
@@ -222,11 +226,11 @@
 <p>for the value, this allows us to omit the actual parent type:</p>
 <pre><code class="language-json">    {&quot;KernelInformationProfile&quot;: &quot;some/handleIdentifier&quot;}
 </code></pre>
-<p>And as the inner type has the property <code>Omit Name as Subsidiary</code>set to <code>Yes</code>, we can also omit the inner types name, too. This means we can simply use a handle PID as a value for the type KernelInformationProfile:</p>
+<p>And as the inner type has the property <code>Omit Name as Subsidiary</code> set to <code>Yes</code>, we can also omit the inner types name, too. This means we can simply use a handle PID as a value for the type KernelInformationProfile:</p>
 <pre><code class="language-json">&quot;some/handleIdentifier&quot;
 </code></pre>
 <p>On the bottom of the types page you can find a JSON schema. This schema can be used on a value to validate it. It is a technical representation of the rules set on the types page. On the top of the type page you can find more about its semantics. There is a description and a list of related standards or recommendations.</p>
-<p>This procedure can be done similar for all other types to figure out which values are allowed and what their semantic is. Note that all types refer to the object behind the PID record. E.g. if a type represents a checksum, it has to be the checksum of the object the record is pointing to, not the checksum of the record or anything else. Keep this as a guideline when figuring out the actual values for your record.</p>
+<p>This procedure can be done similar for all other types to figure out which values are allowed and what the semantic is. Note that all types refer to the object behind the PID record. For example, if a type represents a checksum, it has to be the checksum of the object the record is pointing to, not the checksum of the record or anything else. Keep this as a guideline when figuring out the actual values for your record.</p>
 <p>Now, bring your record into the actual JSON representation by figuring out the values for at least all mandatory fields, store the result in a file called &quot;record.json&quot; and continue with step 2.</p>
 <h2><a class="header" href="#step-2-send-pid-create-request-to-pid-information-types-service" id="step-2-send-pid-create-request-to-pid-information-types-service">Step 2: Send PID create request to PID Information Types service</a></h2>
 <p>Every instance hosts an interactive API documentation. It is available at <code>http://domain:port/swagger-ui.html</code>, where domain and port is specific to your instance. To do a small manual test, the following bash script will help you. In practice you probably want to do it automatically or build a user interface in case it is done (semi-)manually.</p>

@@ -140,6 +140,10 @@
                         </a>
                         
                         
+                        <a href="https://github.com/kit-data-manager/fairdo-cookbook/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -168,6 +172,63 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#resolve-a-pid" id="resolve-a-pid">Resolve a PID</a></h1>
+<p>Resolving a PID (also &quot;retrieving a PID (record)&quot;) is the process of submitting the PID to a system in order to receive the associated PID record as a response. It is sometimes also called &quot;resolving a FAIR Digital Object&quot;, although this term is also used to refer to the process of accessing the actual data object which is referenced by the PID record, which makes it a vague term. Resolving allows machines to act on the PIDs record information.</p>
+<hr />
+<h2><a class="header" href="#ingredients" id="ingredients">Ingredients</a></h2>
+<ul>
+<li>A registered PID you want to resolve.</li>
+<li>Access to a PID Information Types Service or a Testbed instance (<a href="./appendix_pit.html">also see Appendix A</a>)
+<ul>
+<li>The service must be configured in a way to support your PID system. For details on that, read the instructions.</li>
+<li>Alternatively: Any other system that uses the resolving API of the PID system of your choice.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2><a class="header" href="#work-steps-summary" id="work-steps-summary">Work Steps (Summary)</a></h2>
+<ol>
+<li>Request the PID information types service to resolve a given PID</li>
+</ol>
+<hr />
+<h2><a class="header" href="#step-1-request-the-pid-information-types-service-to-resolve-a-given-pid" id="step-1-request-the-pid-information-types-service-to-resolve-a-given-pid">Step 1: Request the PID information types service to resolve a given PID</a></h2>
+<blockquote>
+<p>Note: The PID information types service does not support every PID system, but can be extended. Feel free to open an issue on the <a href="https://github.com/kit-data-manager/pit-service">Github Page</a> if your PID type is not supported. As of now (June 2021) it supports only PID services building on the federated Handle System.</p>
+<p>Also, it includes a small sandboxed PID service in it's default configuration for testing purposes. Note that these sandboxed PIDs are <strong>not</strong> publicly resolvable, do only exist in this instance and are not stored permanently. But it might be enough for you to e.g. test the API or your PID workflows.</p>
+</blockquote>
+<p>The PID information types service offers an API to resolve PIDs. The principle is simple: You give it the API and will get a JSON document in return, which contains the content of the PIDs record.</p>
+<p> <img src="../images/pit_to_pid.drawio.svg" alt="" /></p>
+<h3><a class="header" href="#using-the-pid-information-types-instance" id="using-the-pid-information-types-instance">Using the PID information types instance</a></h3>
+<p>The advantage of this method is that the PID information types service is an abstraction of the PID system used. This means that if you switch the system in the background, the API will stay the same. The resolving step does currently not involve any FAIR or profile validation.</p>
+<ol>
+<li>Download <a href="./resolve_pid.bash">resolve_pid.bash</a></li>
+<li>Run this in your terminal: <code>bash resolve_pid.bash $url &quot;$pid&quot;</code>
+<ul>
+<li>where <code>$url</code> must be replaced with the hostname and port (e.g. <code>https://hostname:port</code>)</li>
+<li>where <code>$pid</code> must be the PID you want to resolve.</li>
+</ul>
+</li>
+</ol>
+<p>The result will be the same as after creating a PID: A JSON document that contains the record information similar to this:</p>
+<pre><code class="language-json">{&quot;pid&quot;: &quot;sandboxed/406871&quot;,&quot;entries&quot;: {...}}
+</code></pre>
+<h3><a class="header" href="#using-the-handle-resolver-try-it-in-your-browser" id="using-the-handle-resolver-try-it-in-your-browser">Using the handle resolver (try it in your browser!)</a></h3>
+<blockquote>
+<p>Note: Like with the PID information types service, this only works with PIDs built upon the handle system. If you use another system, you need to look for a compatible web-resolver.</p>
+</blockquote>
+<ol>
+<li>Go to <a href="https://hdl.handle.net">hdl.handle.net</a>.</li>
+<li>Insert the PID in the &quot;Handle&quot; field.</li>
+<li>Check the &quot;Don't redirect to URLs&quot; option.</li>
+<li>Click on the &quot;Submit&quot; button.</li>
+</ol>
+<p>You will see a table, similar to the one after this paragraph. It contains a &quot;Type&quot; column, which for a real FAIR Digital Object <strong>must</strong> contain only PIDs. Exceptions are other types that are required by a PID system, often containing specific, administrative information. The &quot;Data&quot; column contains the value of the according type in the same line. All other columns are handle specific. Here you can see an excerpt of a handle PID record:</p>
+<table><thead><tr><th>Index</th><th>Type</th><th>Timestamp</th><th>Data</th></tr></thead><tbody>
+<tr><td>1</td><td>21.T11148/8eb858ee0b12e8e463a5</td><td>2021-04-19 08:59:03Z</td><td>{&quot;identifierValue&quot;:&quot;http://hdl.handle.net/21.T11998/0000-001A-3905-F&quot;,&quot;identifierType&quot;:&quot;Handle&quot;}</td></tr>
+<tr><td>3</td><td>21.T11148/9a15a4735d4bda329d80</td><td>2021-04-15 10:47:38Z</td><td>https://linkedsystems.uk/system/instance/TOOL0022_2490/current/</td></tr>
+<tr><td>4</td><td>21.T11148/709a23220f2c3d64d1e1</td><td>2021-04-15 10:47:38Z</td><td>Sea-Bird SBE 37-IM MicroCAT C-T Sensor</td></tr>
+<tr><td>12</td><td>21.T11148/eb3c713572f681e6c4c3</td><td>2021-04-19 10:41:18Z</td><td>[{ &quot;alternateIdentifier&quot;: {&quot;alternateIdentifierValue&quot;: &quot;2490&quot;,&quot;alternateIdentifierType&quot;: &quot;serialNumber&quot; }}]</td></tr>
+<tr><td>13</td><td>21.T11148/178fb558abc755ca7046</td><td>2021-04-19 10:41:18Z</td><td>[{&quot;relatedIdentifier&quot;: {&quot;relatedIdentifierValue&quot;: &quot;https://www.bodc.ac.uk/data/documents/nodb/pdf/37imbrochurejul08.pdf&quot;,&quot;relatedIdentifierType&quot;: &quot;URL&quot;, &quot;relationType&quot;: &quot;IsDescribedBy&quot;}}]</td></tr>
+</tbody></table>
 
                     </main>
 
