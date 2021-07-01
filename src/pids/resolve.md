@@ -7,7 +7,7 @@ Resolving a PID (also "retrieving a PID (record)") is the process of submitting 
 ## Ingredients
 
 - A registered PID you want to resolve.
-- Access to a PID Information Types Service or a Testbed instance ([also see Appendix A](./appendix_pit.md))
+- Access to a [PID Information Types Service]((../appendix/appendix_pit.md)) or a Testbed instance.
     - The service must be configured in a way to support your PID system. For details on that, read the instructions.
     - Alternatively: Any other system that uses the resolving API of the PID system of your choice.
 

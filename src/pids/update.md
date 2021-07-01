@@ -6,7 +6,7 @@ This is very similar to "[Create a PID](./create.md)".
 
 ## Ingredients
 
-- Access to a PID Information Types Service or a Testbed instance ([also see Appendix A](./appendix_pit.md))
+- Access to a [PID Information Types Service]((../appendix/appendix_pit.md)) or a Testbed instance.
 - The information you want to put into the record (new data and replacing data is both possible)
 
 ---

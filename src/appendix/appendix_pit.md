@@ -1,4 +1,6 @@
-## Appendix A: Set up a PID Information Types instance
+## PID Information Types service
+
+Our PID information types service implementation is a service that abstracts the use of PID services and validation using a data type registry. Its API makes it easier for clients to handle PIDs and make sure the records are validated before registering. It also offers possibility to notify other services about new or updated PIDs, which enables data curators to flexibly build search indices.
 
 > A PID information types instance for production needs a prefix of a compatible PID service, which is a financial and administrative matter and is something not every researcher will do on her own. Consider to find a service provider which can give you access to a PID information types service instance and skip the rest of this appendix. If you do have a PID prefix and want to do it yourself or want to try it with a in-memory "sandboxed" PID service (for testing only!), read on.
 
@@ -14,4 +16,4 @@ Alternatively, there is the Testbed-option. The Testbed is a set of services to 
 
 > The PID information types service is always configured to a sandboxed in-memory PID system by default, which allows to experiment with it. To create real PIDs, you will need access to a prefix of a supported PID service. The list of services can be extended, feel free to create an issue or a pull request. At the time of writing (June 2021) only the handle PID system is supported.
 
-[Testbed Source code and documentation on Github](https://github.com/kit-data-manager/testbed4inf).
+[Testbed source code and documentation on Github](https://github.com/kit-data-manager/testbed4inf).

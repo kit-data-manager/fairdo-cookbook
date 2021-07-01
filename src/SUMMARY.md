@@ -1,15 +1,14 @@
 # Summary
 [About](./about.md)
 
-1. [Working with PIDs](./pids/intro.md)
+- [Working with PIDs](./pids/intro.md)
    - [Create a PID](./pids/create.md)
    - [Resolve a PID](./pids/resolve.md)
    - [Update/maintain a PID](./pids/update.md)
    - [Delete](./pids/delete.md)
-   - [Appendix A: PID Information Types Service](./pids/appendix_pit.md)
 
 
-2. [Create a Data Type](./datatypes_intro.md)
+- [Create a Data Type](./datatypes_intro.md)
    - [ Search data type registry for suitable data type](./datatypes_step_1.md)
    - [Describe/model envisioned data type](./datatypes_step_2.md)
       - [Decide on Data Type‘s level of detail](./datatypes_step_2_1.md)
@@ -20,9 +19,12 @@
       - [Register main Data Type](./datatypes_step_3_3.md)
 
 
-3. [Create a PID KIP](./kip_intro.md)
+- [Create a PID KIP](./kip_intro.md)
    - [ Search data type registry for suitable KIP](./kip_step_1.md)
    - [Describe/model envisioned KIP](./kip_step_2.md)
       - [Call to mind basic KIP principles](./kip_step_2_1.md)
       - [Decide on KIP contents](./kip_step_2_2.md)
    - [Register new KIP in Data Type Registry](./kip_step_3.md)
+
+- [Appendix](./appendix/intro.md)
+   - [PID Information Types service](./appendix/appendix_pit.md)
