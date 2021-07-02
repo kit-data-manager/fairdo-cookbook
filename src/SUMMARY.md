@@ -6,7 +6,10 @@
   - [Create a PID](./pids/create.md)
   - [Resolve a PID](./pids/resolve.md)
   - [Update/maintain a PID](./pids/update.md)
-  - [Delete](./pids/delete.md)
+  - [Delete a PID](./pids/delete.md)
+
+- [Inform other systems about changes among your PIDs](./pids/notify.md)
+- [Search PIDs using record information](./pids/search.md)
 
 - [Create a Data Type](./datatypes_intro.md)
   - [Search data type registry for suitable data type](./datatypes_step_1.md)

@@ -23,7 +23,7 @@ This is very similar to "[Create a PID](./create.md)".
 
 The idea of updating a record is the following: Get the current state, modify the record, then overwrite the whole record with your modified version. To get the current state, you need to [resolve the PID, as stated in this recipe](./resolve.md).
 
-## Step 2: Modify the JSON-Representation of the PID record as you wish.
+## Step 2: Modify the JSON-Representation of the PID record as you wish
 
 You may use any JSON manipulation tool to exchange any information in the record, even the profile. But there will — like when using the "create API" — a validation before the PID information types service will do the update. So make sure that the result of your modifications is a valid record according to the (maybe new) profile before proceeding.
 
