@@ -15,6 +15,8 @@ The following recipe will cover what we recommend in such cases. Every recommend
 
 See the "[Update a PID recipe](./update.md)" to see the ingredients and steps. This recipe will cover in which way the record should be modified in different cases.
 
+---
+
 ## Work Steps
 
 ### If the object was available and a PID registered, but access is now restricted
@@ -27,7 +29,7 @@ FAIR Digital Objects can handle restricted access. It is encouraged to make data
 
 [Read this recipe on how to update your record.](./update.md)
 
-### The object is not available anymore and will probably never be available again.
+### If the object is not available anymore and will probably never be available again
 
 It is common consensus in PID handling to store a so called tomb stone in your profile and keep as much information as feasible within the record. To place this tombstone in the PID record, an according profile might need to be chosen. What the tombstone is will depend on the profile. It might be as simple as a human readable string or contain machine readable codes, similar to HTTP status codes.
 

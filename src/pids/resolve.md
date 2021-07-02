@@ -1,6 +1,8 @@
 # Resolve a PID
 
-Resolving a PID (also "retrieving a PID (record)") is the process of submitting the PID to a system in order to receive the associated PID record as a response. It is sometimes also called "resolving a FAIR Digital Object", although this term is also used to refer to the process of accessing the actual data object which is referenced by the PID record, which makes it a vague term. Resolving allows machines to act on the PIDs record information.
+Resolving a PID (also "retrieving/reading a PID (record)") is the process of submitting the PID to a system in order to receive the associated PID record as a response. It is sometimes also called "resolving a FAIR Digital Object", although this term is also used to refer to the process of accessing the actual data object which is referenced by the PID record, which makes it a vague term. Resolving allows machines to act on the PIDs record information.
+
+In contrast to the modifying use cases ([create](./create.md) and [update](./update.md)), the record is currently not being validated during this operation. The reason is that the machine is not able to prevent the record from being invalid within a reading operation. If the received record contains a profile, the PIT service can be explicitly requested to validate the PID record if the user or tool needs this information.
 
 ---
 
@@ -27,7 +29,7 @@ Resolving a PID (also "retrieving a PID (record)") is the process of submitting 
 
 The PID information types service offers an API to resolve PIDs. The principle is simple: You give it the API and will get a JSON document in return, which contains the content of the PIDs record.
 
- ![](../images/pit_to_pid.drawio.svg)
+![](../images/testbed_resolve.png)
 
 ### Using the PID information types instance
 
@@ -57,8 +59,8 @@ You will see a table, similar to the one after this paragraph. It contains a "Ty
 
 | Index | Type | Timestamp | Data |
 |-------|------|-----------|------|
-| 1 | 21.T11148/8eb858ee0b12e8e463a5 | 2021-04-19 08:59:03Z | {"identifierValue":"http://hdl.handle.net/21.T11998/0000-001A-3905-F","identifierType":"Handle"} |
+| 1 | 21.T11148/8eb858ee0b12e8e463a5 | 2021-04-19 08:59:03Z | {"identifierValue": "http://hdl.handle.net/21.T11998/0000-001A-3905-F", "identifierType": "Handle"} |
 | 3	| 21.T11148/9a15a4735d4bda329d80 | 2021-04-15 10:47:38Z | https://linkedsystems.uk/system/instance/TOOL0022_2490/current/ |
 | 4 | 21.T11148/709a23220f2c3d64d1e1 | 2021-04-15 10:47:38Z | Sea-Bird SBE 37-IM MicroCAT C-T Sensor |
-|12 | 21.T11148/eb3c713572f681e6c4c3 | 2021-04-19 10:41:18Z | [{ "alternateIdentifier": {"alternateIdentifierValue": "2490","alternateIdentifierType": "serialNumber" }}] |
-|13 | 21.T11148/178fb558abc755ca7046 | 2021-04-19 10:41:18Z | [{"relatedIdentifier": {"relatedIdentifierValue": "https://www.bodc.ac.uk/data/documents/nodb/pdf/37imbrochurejul08.pdf","relatedIdentifierType": "URL", "relationType": "IsDescribedBy"}}] |
+|12 | 21.T11148/eb3c713572f681e6c4c3 | 2021-04-19 10:41:18Z | [{ "alternateIdentifier": {"alternateIdentifierValue": "2490", "alternateIdentifierType": "serialNumber" }}] |
+|13 | 21.T11148/178fb558abc755ca7046 | 2021-04-19 10:41:18Z | [{"relatedIdentifier": {"relatedIdentifierValue": "https://www.bodc.ac.uk/data/documents/nodb/pdf/37imbrochurejul08.pdf", "relatedIdentifierType": "URL", "relationType": "IsDescribedBy"}}] |

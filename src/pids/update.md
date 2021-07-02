@@ -29,7 +29,9 @@ You may use any JSON manipulation tool to exchange any information in the record
 
 ## Step 3: Send PID update request to PID Information Types service
 
-This request is very similar to the [create request](./create.md). The difference is that you will need to provide a PID which will have its record updated.
+This request is very similar to the [create request](./create.md). The difference is that you will need to provide a PID which will have its record updated. The record will be validated, and if validation fails, the PID will not be updated.
+
+![The testbed validates records before creating or updating PIDs.](../images/testbed_create_update.png)
 
 1. [Download the bash script to update a PID](./update_pid.bash).
 2. Remember to store the JSON representation into a file in the same directory as the bash script. Call it for example `record.json`.
