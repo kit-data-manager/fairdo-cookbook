@@ -43,7 +43,7 @@ The testbed download and instructions are available at [https://github.com/kit-d
 - [Read a PIDs record information (Resolve a PID)](../pids/resolve.md)
 - [Manipulate a PID record with validated information (Update a PID record)](../pids/update.md)
 - [Inform other systems about changes](../pids/notify.md)
-- [Searching PIDs using record information](../pids/search.md) TODO
+- [Searching PIDs using record information](../pids/search.md)
 
 ## Contact
 
