@@ -101,7 +101,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="about.html">About</a></li><li class="chapter-item "><a href="pids/intro.html">Working with PIDs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="pids/create.html">Create a PID</a></li><li class="chapter-item "><a href="pids/resolve.html">Resolve a PID</a></li><li class="chapter-item "><a href="pids/update.html">Update/maintain a PID</a></li><li class="chapter-item "><a href="pids/delete.html">Delete</a></li></ol></li><li class="chapter-item "><a href="datatypes_intro.html">Create a Data Type</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="datatypes_step_1.html">Search data type registry for suitable data type</a></li><li class="chapter-item "><a href="datatypes_step_2.html">Describe/model envisioned data type</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="datatypes_step_2_1.html">Decide on Data Type‘s level of detail</a></li><li class="chapter-item "><a href="datatypes_step_2_2.html">DTR Inquiry</a></li></ol></li><li class="chapter-item "><a href="datatypes_step_3.html">Register data type(s) in data type registry</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="datatypes_step_3_1.html">Register new Child-Data Type(s)</a></li><li class="chapter-item "><a href="datatypes_step_3_2.html">Register extended Child-Data Type(s)</a></li><li class="chapter-item "><a href="datatypes_step_3_3.html">Register main Data Type</a></li></ol></li></ol></li><li class="chapter-item "><a href="kip_intro.html">Create a PID KIP</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="kip_step_1.html">Search data type registry for suitable KIP</a></li><li class="chapter-item "><a href="kip_step_2.html">Describe/model envisioned KIP</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="kip_step_2_1.html">Call to mind basic KIP principles</a></li><li class="chapter-item "><a href="kip_step_2_2.html">Decide on KIP contents</a></li></ol></li><li class="chapter-item "><a href="kip_step_3.html">Register new KIP in Data Type Registry</a></li></ol></li><li class="chapter-item "><a href="appendix/intro.html">Appendix</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="appendix/appendix_pit.html">PID Information Types service</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="about.html">About</a></li><li class="chapter-item "><a href="pids/intro.html">Working with PIDs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="pids/create.html">Create a PID</a></li><li class="chapter-item "><a href="pids/resolve.html">Resolve a PID</a></li><li class="chapter-item "><a href="pids/update.html">Update/maintain a PID</a></li><li class="chapter-item "><a href="pids/delete.html">Delete a PID</a></li></ol></li><li class="chapter-item "><a href="pids/notify.html">Inform other systems about changes among your PIDs</a></li><li class="chapter-item "><a href="pids/search.html">Search PIDs using record information</a></li><li class="chapter-item "><a href="datatypes_intro.html">Create a Data Type</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="datatypes_step_1.html">Search data type registry for suitable data type</a></li><li class="chapter-item "><a href="datatypes_step_2.html">Describe/model envisioned data type</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="datatypes_step_2_1.html">Decide on Data Type‘s level of detail</a></li><li class="chapter-item "><a href="datatypes_step_2_2.html">DTR Inquiry</a></li></ol></li><li class="chapter-item "><a href="datatypes_step_3.html">Register data type(s) in data type registry</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="datatypes_step_3_1.html">Register new Child-Data Type(s)</a></li><li class="chapter-item "><a href="datatypes_step_3_2.html">Register extended Child-Data Type(s)</a></li><li class="chapter-item "><a href="datatypes_step_3_3.html">Register main Data Type</a></li></ol></li></ol></li><li class="chapter-item "><a href="kip_intro.html">Create a PID KIP</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="kip_step_1.html">Search data type registry for suitable KIP</a></li><li class="chapter-item "><a href="kip_step_2.html">Describe/model envisioned KIP</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="kip_step_2_1.html">Call to mind basic KIP principles</a></li><li class="chapter-item "><a href="kip_step_2_2.html">Decide on KIP contents</a></li></ol></li><li class="chapter-item "><a href="kip_step_3.html">Register new KIP in Data Type Registry</a></li></ol></li><li class="chapter-item "><a href="appendix/intro.html">Appendix</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="appendix/appendix_pit.html">PID Information Types service</a></li><li class="chapter-item "><a href="appendix/appendix_testbed.html">FAIR DO Ecosystem Testbed</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -213,15 +213,16 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 </ol>
 <hr />
 <h2><a class="header" href="#step-1-build-a-json-representation-of-the-pid-record" id="step-1-build-a-json-representation-of-the-pid-record">Step 1: Build a JSON-Representation of the PID record</a></h2>
-<p>We need to build a JSON-Representation of the PID record, so we can send it — together with the request to create a PID – to the PID Information Types service. Usually this is something that a program will do, in some cases supported by human intervention, so this is a semi-technical step, actually. The program might be a workflow system, a repository or similar.</p>
-<p>As you have access to a PID information types service, the documentation of the API is available under it's domain (depending on the configuration, something like &quot;http://domain:port/swagger-ui.html&quot;). There you will find the current representation of a PID record within this service, using JSON. In general, a PID record is a Key-Value mapping. It maps types to values. The difference to typical Key-Value mappings is that there might be multiple values allowed for some types, depending on the profile. So it can be considered as a mapping in the following sense:</p>
-<pre><code>&quot;PID_of_type&quot; -&gt; List[&quot;value1&quot;, &quot;value2&quot;, ...]
+<p>PID records can be seen as Key-Value-Stores, where the keys are PIDs of types, and the values follow the rules of the type. The testbed only creates PIDs with a valid record in the following sense: Each PID record has to contain a PID of a profile. A profile defines which information is mandatory for this record and which information is optionally allowed. It is registered in a data type registry. The types again describe their meaning and their possible values.</p>
+<p>The PID Information Types (PIT) Service offers an API to create PIDs, given the prepared record information. We need to build a JSON-Representation of the PID record, so we can send it – together with the request to create a PID – to the PID Information Types service. Usually this is something that a program will do, in some cases supported by human intervention. The program might be a workflow system, a repository or similar. As you have access to a PID information types service, the documentation of the API is available under it's domain (depending on the configuration, something like &quot;http://domain:port/swagger-ui.html&quot;). There you will find the current representation of a PID record within this service, using JSON. The difference to typical Key-Value mappings is that there might be multiple values allowed for some types, depending on the profile. So it can be considered as a mapping in the following sense:</p>
+<pre><code class="language-text">&quot;PID_of_type&quot; -&gt; List[&quot;value1&quot;, &quot;value2&quot;, ...]
 </code></pre>
 <blockquote>
 <p>Note: The JSON representation additionally might contain a &quot;pid&quot; field. In the creation step, this field is ignored and can be omitted or null. It is used e.g. to transfer the PID to the client after creation. The same goes for other fields like &quot;name&quot;, which might contain human readable names. For creation, the only the types and values are important.</p>
 </blockquote>
-<p>The types are defined in the profile you have chosen (or created). The profile also decides if you need to assign a value to the type of if this is optional. It also defines if a type can have multiple values (repeatability). For more information about types and profiles, you might want to read into the following recipes: <a href="pids/../datatypes_intro.html">Create a data type</a>, <a href="pids/../kip_intro.html">Create a profile</a></p>
-<p>As you already chose the profile, try to fill it at best effort (remember that there are likely some mandatory fields). Note that all records must contain the PID of their profile. This is – again – defined in each profile. This PID will be used by the PID information types service to validate your record. —This means that if your record is not valid according to the profile you chose, no PID will be created. More details to that in the next step. Let us assume a <a href="http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132">simple profile</a>:</p>
+<p>The types are defined in the profile you have chosen (or created). The profile also decides if you need to assign a value to the type or if this type is optional. It also defines if a type can have multiple values (repeatability). After receiving the record information, the PIT information types service will use the contained profile to validate the information. Only if the validation succeeds, a new PID with the given record information will be registered at the configured PID service. It is therefore important to have a record which is valid according to its self-contained profile. For more information about types and profiles, you might want to read into the following recipes: <a href="pids/../datatypes_intro.html">Create a data type</a>, <a href="pids/../kip_intro.html">Create a profile</a></p>
+<p><img src="pids/../images/testbed_create_update.png" alt="The testbed validates records before creating or updating PIDs." /></p>
+<p>As you already chose the profile, try to fill it at best effort (remember that there are likely some mandatory fields). Note that all records must contain the PID of their profile. This is – again – defined in each profile. This PID will be used by the PID information types service to validate your record. This means that if your record is not valid according to the profile you chose, no PID will be created. More details to that in the next step. Let us assume a <a href="http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132">simple profile</a>:</p>
 <table><thead><tr><th>Property</th><th>mandatory</th><th>Description</th></tr></thead><tbody>
 <tr><td>KernelInformationProfile</td><td>yes</td><td>PID of the KIP for this PID record</td></tr>
 <tr><td>digitalObjectType</td><td>yes</td><td>PID of the Data Type of the referenced object</td></tr>
@@ -239,7 +240,7 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 <tr><td>alternateOf</td><td>no</td><td>PID of another object according to <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/">PROV-DM</a> recommendation</td></tr>
 </tbody></table>
 <p><a href="http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132">In this example, we use this profile</a>. Each profile has a list of properties. Go to the profile definition in the Data Type Registry, scroll to the first property (&quot;KernelInformationProfile&quot;) and click on the link to it (displayed as &quot;<a href="http://dtr-test.pidconsortium.net/#objects/21.T11148/076759916209e5d62bd5">type name: KernelInformationProfile</a>&quot;).</p>
-<p><img src="pids/../images/click_type_link.png" alt="" /></p>
+<p><img src="pids/../images/click_type_link.png" alt="How to find the type link." /></p>
 <p>On the properties page, you can see that this type has one sub-property, which is also called &quot;KernelInformationProfile&quot; and accepts a Handle-System-PID as a value. In the &quot;Representation and Semantics&quot; section, you can also see that &quot;Abbreviated Form&quot; is set to &quot;Yes&quot;. This simplifies the values for this type to ignore the encapsulation and allows us to simply refer to the inner type. Instead of writing</p>
 <pre><code class="language-json">{
   &quot;KernelInformationProfile&quot;:
@@ -269,7 +270,8 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 </ol>
 <p>On success the service will return the information back to you. it should be exactly the same, but with the PID of your object included. In this example, you can see that we used the sandboxed, temporary PID service for testing: <code>{&quot;pid&quot;:&quot;sandboxed/-647408938&quot;,&quot;entries&quot;:{...}}</code></p>
 <h1><a class="header" href="#resolve-a-pid" id="resolve-a-pid">Resolve a PID</a></h1>
-<p>Resolving a PID (also &quot;retrieving a PID (record)&quot;) is the process of submitting the PID to a system in order to receive the associated PID record as a response. It is sometimes also called &quot;resolving a FAIR Digital Object&quot;, although this term is also used to refer to the process of accessing the actual data object which is referenced by the PID record, which makes it a vague term. Resolving allows machines to act on the PIDs record information.</p>
+<p>Resolving a PID (also &quot;retrieving/reading a PID (record)&quot;) is the process of submitting the PID to a system in order to receive the associated PID record as a response. It is sometimes also called &quot;resolving a FAIR Digital Object&quot;, although this term is also used to refer to the process of accessing the actual data object which is referenced by the PID record, which makes it a vague term. Resolving allows machines to act on the PIDs record information.</p>
+<p>In contrast to the modifying use cases (<a href="pids/./create.html">create</a> and <a href="pids/./update.html">update</a>), the record is currently not being validated during this operation. The reason is that the machine is not able to prevent the record from being invalid within a reading operation. If the received record contains a profile, the PIT service can be explicitly requested to validate the PID record if the user or tool needs this information.</p>
 <hr />
 <h2><a class="header" href="#ingredients-1" id="ingredients-1">Ingredients</a></h2>
 <ul>
@@ -293,7 +295,7 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 <p>Also, it includes a small sandboxed PID service in it's default configuration for testing purposes. Note that these sandboxed PIDs are <strong>not</strong> publicly resolvable, do only exist in this instance and are not stored permanently. But it might be enough for you to e.g. test the API or your PID workflows.</p>
 </blockquote>
 <p>The PID information types service offers an API to resolve PIDs. The principle is simple: You give it the API and will get a JSON document in return, which contains the content of the PIDs record.</p>
-<p> <img src="pids/../images/pit_to_pid.drawio.svg" alt="" /></p>
+<p><img src="pids/../images/testbed_resolve.png" alt="" /></p>
 <h3><a class="header" href="#using-the-pid-information-types-instance" id="using-the-pid-information-types-instance">Using the PID information types instance</a></h3>
 <p>The advantage of this method is that the PID information types service is an abstraction of the PID system used. This means that if you switch the system in the background, the API will stay the same. The resolving step does currently not involve any FAIR or profile validation.</p>
 <ol>
@@ -320,11 +322,11 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 </ol>
 <p>You will see a table, similar to the one after this paragraph. It contains a &quot;Type&quot; column, which for a real FAIR Digital Object <strong>must</strong> contain only PIDs. Exceptions are other types that are required by a PID system, often containing specific, administrative information. The &quot;Data&quot; column contains the value of the according type in the same line. All other columns are handle specific. Here you can see an excerpt of a handle PID record:</p>
 <table><thead><tr><th>Index</th><th>Type</th><th>Timestamp</th><th>Data</th></tr></thead><tbody>
-<tr><td>1</td><td>21.T11148/8eb858ee0b12e8e463a5</td><td>2021-04-19 08:59:03Z</td><td>{&quot;identifierValue&quot;:&quot;http://hdl.handle.net/21.T11998/0000-001A-3905-F&quot;,&quot;identifierType&quot;:&quot;Handle&quot;}</td></tr>
+<tr><td>1</td><td>21.T11148/8eb858ee0b12e8e463a5</td><td>2021-04-19 08:59:03Z</td><td>{&quot;identifierValue&quot;: &quot;http://hdl.handle.net/21.T11998/0000-001A-3905-F&quot;, &quot;identifierType&quot;: &quot;Handle&quot;}</td></tr>
 <tr><td>3</td><td>21.T11148/9a15a4735d4bda329d80</td><td>2021-04-15 10:47:38Z</td><td>https://linkedsystems.uk/system/instance/TOOL0022_2490/current/</td></tr>
 <tr><td>4</td><td>21.T11148/709a23220f2c3d64d1e1</td><td>2021-04-15 10:47:38Z</td><td>Sea-Bird SBE 37-IM MicroCAT C-T Sensor</td></tr>
-<tr><td>12</td><td>21.T11148/eb3c713572f681e6c4c3</td><td>2021-04-19 10:41:18Z</td><td>[{ &quot;alternateIdentifier&quot;: {&quot;alternateIdentifierValue&quot;: &quot;2490&quot;,&quot;alternateIdentifierType&quot;: &quot;serialNumber&quot; }}]</td></tr>
-<tr><td>13</td><td>21.T11148/178fb558abc755ca7046</td><td>2021-04-19 10:41:18Z</td><td>[{&quot;relatedIdentifier&quot;: {&quot;relatedIdentifierValue&quot;: &quot;https://www.bodc.ac.uk/data/documents/nodb/pdf/37imbrochurejul08.pdf&quot;,&quot;relatedIdentifierType&quot;: &quot;URL&quot;, &quot;relationType&quot;: &quot;IsDescribedBy&quot;}}]</td></tr>
+<tr><td>12</td><td>21.T11148/eb3c713572f681e6c4c3</td><td>2021-04-19 10:41:18Z</td><td>[{ &quot;alternateIdentifier&quot;: {&quot;alternateIdentifierValue&quot;: &quot;2490&quot;, &quot;alternateIdentifierType&quot;: &quot;serialNumber&quot; }}]</td></tr>
+<tr><td>13</td><td>21.T11148/178fb558abc755ca7046</td><td>2021-04-19 10:41:18Z</td><td>[{&quot;relatedIdentifier&quot;: {&quot;relatedIdentifierValue&quot;: &quot;https://www.bodc.ac.uk/data/documents/nodb/pdf/37imbrochurejul08.pdf&quot;, &quot;relatedIdentifierType&quot;: &quot;URL&quot;, &quot;relationType&quot;: &quot;IsDescribedBy&quot;}}]</td></tr>
 </tbody></table>
 <h1><a class="header" href="#updatemaintain-a-pid" id="updatemaintain-a-pid">Update/maintain a PID</a></h1>
 <p>This is very similar to &quot;<a href="pids/./create.html">Create a PID</a>&quot;.</p>
@@ -344,10 +346,11 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 <hr />
 <h2><a class="header" href="#step-1-resolve-a-pid" id="step-1-resolve-a-pid">Step 1: Resolve a PID</a></h2>
 <p>The idea of updating a record is the following: Get the current state, modify the record, then overwrite the whole record with your modified version. To get the current state, you need to <a href="pids/./resolve.html">resolve the PID, as stated in this recipe</a>.</p>
-<h2><a class="header" href="#step-2-modify-the-json-representation-of-the-pid-record-as-you-wish" id="step-2-modify-the-json-representation-of-the-pid-record-as-you-wish">Step 2: Modify the JSON-Representation of the PID record as you wish.</a></h2>
+<h2><a class="header" href="#step-2-modify-the-json-representation-of-the-pid-record-as-you-wish" id="step-2-modify-the-json-representation-of-the-pid-record-as-you-wish">Step 2: Modify the JSON-Representation of the PID record as you wish</a></h2>
 <p>You may use any JSON manipulation tool to exchange any information in the record, even the profile. But there will — like when using the &quot;create API&quot; — a validation before the PID information types service will do the update. So make sure that the result of your modifications is a valid record according to the (maybe new) profile before proceeding.</p>
 <h2><a class="header" href="#step-3-send-pid-update-request-to-pid-information-types-service" id="step-3-send-pid-update-request-to-pid-information-types-service">Step 3: Send PID update request to PID Information Types service</a></h2>
-<p>This request is very similar to the <a href="pids/./create.html">create request</a>. The difference is that you will need to provide a PID which will have its record updated.</p>
+<p>This request is very similar to the <a href="pids/./create.html">create request</a>. The difference is that you will need to provide a PID which will have its record updated. The record will be validated, and if validation fails, the PID will not be updated.</p>
+<p><img src="pids/../images/testbed_create_update.png" alt="The testbed validates records before creating or updating PIDs." /></p>
 <ol>
 <li><a href="pids/./update_pid.bash">Download the bash script to update a PID</a>.</li>
 <li>Remember to store the JSON representation into a file in the same directory as the bash script. Call it for example <code>record.json</code>.</li>
@@ -370,6 +373,7 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 <hr />
 <h2><a class="header" href="#ingredients-3" id="ingredients-3">Ingredients</a></h2>
 <p>See the &quot;<a href="pids/./update.html">Update a PID recipe</a>&quot; to see the ingredients and steps. This recipe will cover in which way the record should be modified in different cases.</p>
+<hr />
 <h2><a class="header" href="#work-steps" id="work-steps">Work Steps</a></h2>
 <h3><a class="header" href="#if-the-object-was-available-and-a-pid-registered-but-access-is-now-restricted" id="if-the-object-was-available-and-a-pid-registered-but-access-is-now-restricted">If the object was available and a PID registered, but access is now restricted</a></h3>
 <p>FAIR Digital Objects can handle restricted access. It is encouraged to make data public if possible, to improve the situation for open data, open science, citizen science and so on. But sometimes it is not possible due to legal or privacy considerations. The important part is that a machine has to be able to know how to access the object if it has the neccessary information. I access is not possible in an automated way, the machine must be able to tell the user what she needs to do to gain access. Profiles need to be able to express this, but currently there is, unfortunately, no consensus about how this information should be represented. Generally, this is what should be done:</p>
@@ -379,17 +383,86 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 <li>Add information to the record that states how access can be achieved.</li>
 </ol>
 <p><a href="pids/./update.html">Read this recipe on how to update your record.</a></p>
-<h3><a class="header" href="#the-object-is-not-available-anymore-and-will-probably-never-be-available-again" id="the-object-is-not-available-anymore-and-will-probably-never-be-available-again">The object is not available anymore and will probably never be available again.</a></h3>
+<h3><a class="header" href="#if-the-object-is-not-available-anymore-and-will-probably-never-be-available-again" id="if-the-object-is-not-available-anymore-and-will-probably-never-be-available-again">If the object is not available anymore and will probably never be available again</a></h3>
 <p>It is common consensus in PID handling to store a so called tomb stone in your profile and keep as much information as feasible within the record. To place this tombstone in the PID record, an according profile might need to be chosen. What the tombstone is will depend on the profile. It might be as simple as a human readable string or contain machine readable codes, similar to HTTP status codes.</p>
 <ol>
 <li>Keep as much information as feasible in the record. There is no reason to loose even more information. Fingerprints like checksums might be useful in case data appears again, to identify it.</li>
 <li>Place a thombstone in the record to state that this object is gone, with as much information about why it has disappeared as possible. In case there is a new PID leading to the object, link it in the record.</li>
 </ol>
 <p><a href="pids/./update.html">Read this recipe on how to update your record.</a></p>
+<h1><a class="header" href="#inform-other-systems-about-changes-among-your-pids" id="inform-other-systems-about-changes-among-your-pids">Inform other systems about changes among your PIDs</a></h1>
+<p>If a PID has been created or a record has been updated, there might be the need to notify other services about this event. These might be internal or external services to be notified, depending on the use case. Examples are library systems, catalogues, search indices or backup systems. The receiving services could also be bridges to other technologies, like RSS feeds of data publications of a certain kind or other user oriented technologies. Bridging services might also help to close gaps if underlying technologies like TCP/IP change at some point of time.</p>
+<p><img src="pids/../images/testbed_notify.png" alt="The PIT service will notify the message broker, which will distribute the message among its subscribers." /></p>
+<p>This recipe shows the steps needed to notify a service.</p>
+<hr />
+<h2><a class="header" href="#ingredients-4" id="ingredients-4">Ingredients</a></h2>
+<ul>
+<li>A message broker instance, AMQP compatible</li>
+<li>Access to a <a href="pids/(../appendix/appendix_pit.html">PID Information Types Service</a> configured to use the message broker instance</li>
+<li>A service that should be notified, implementing the AMQP protocol</li>
+</ul>
+<p>Alternatively, for testing/experimentation purposes, you can use a <a href="pids/../appendix/appendix_testbed.html">testbed</a> instance, which comes with pre-configured with these ingredients and can be run using docker on your local machine.</p>
+<hr />
+<h2><a class="header" href="#work-steps-summary-3" id="work-steps-summary-3">Work Steps (Summary)</a></h2>
+<p>As soon as the PID information types service is configured to use the message broker, everything happens in the background. These steps show you how to visualize what happens hidden in the background, when using the testbed.</p>
+<ol>
+<li>Run the service that should be notified and register it at the message broker.</li>
+<li>Do any <a href="pids/./create.html">create</a> or <a href="pids/./update.html">update</a> operation on the PID information types service.</li>
+<li>Use the management interface to see the messaging process happening within the message broker.</li>
+<li>View the result of your service.</li>
+</ol>
+<hr />
+<h2><a class="header" href="#step1-run-the-service-that-should-be-notified-and-register-it-at-the-message-broker" id="step1-run-the-service-that-should-be-notified-and-register-it-at-the-message-broker">Step1: Run the service that should be notified and register it at the message broker</a></h2>
+<p>The <a href="pids/../appendix/appendix_testbed.html">testbed</a> implements the messaging principle using a message broker<sup class="footnote-reference"><a href="#messagebroker">1</a></sup>. It is a flexible approach that also enables federation and peering. The PIT service instance is by default configured to notify this service about create or update operations using a message. The message only contains a topic string and the PID this message is about. Services need to register in beforehand at the message broker for certain topics in order to receive those messages. It is up to the services what to do with the PID inside. The idea is to use the machine actionability of FAIR Digital Objects to enable services to decide themselves how to handle the received PID and information and data that can be reached by it.</p>
+<p>If you use a testbed instance with its default configuration, you can skip this step. It already comes with an indexing service running in the background. If you use your own service, register for all topics beginning with &quot;record.*&quot;.</p>
+<div class="footnote-definition" id="messagebroker"><sup class="footnote-definition-label">1</sup>
+<p>Currently, RabbitMQ is used as a message broker. It implements the „Advanced Message Queuing Protocol“ (AMQP) <a href="https://www.rabbitmq.com/">https://www.rabbitmq.com/</a></p>
+</div>
+<h2><a class="header" href="#step-2-do-any-create-or-update-operation-on-the-pid-information-types-service" id="step-2-do-any-create-or-update-operation-on-the-pid-information-types-service">Step 2: Do any create or update operation on the PID information types service</a></h2>
+<p>Follow one of the following recipes to trigger a notification:</p>
+<ol>
+<li><a href="pids/./create.html">Create a PID</a></li>
+<li><a href="pids/./update.html">Update a PID</a></li>
+</ol>
+<p>Both actions trigger notifications. Notifications are currently very small. They simply contain a topic string and a PID, which the receiver may resolve and decide how to act on it. A create event notification might contain the topic &quot;record.create&quot;, while an update event notification might have the topic &quot;record.update&quot;.</p>
+<h2><a class="header" href="#step-3-use-the-management-interface-to-see-the-messaging-process-happening-within-the-message-broker" id="step-3-use-the-management-interface-to-see-the-messaging-process-happening-within-the-message-broker">Step 3: Use the management interface to see the messaging process happening within the message broker</a></h2>
+<p>Using the testbed, you can access a management interface within your browser, using the following credentials:</p>
+<ul>
+<li>URL: <a href="http://localhost:15672/">http://localhost:15672/</a></li>
+<li>Username: guest</li>
+<li>Password: guest</li>
+</ul>
+<p>On the first page in the dashboard, you should see something like this graph:</p>
+<p><img src="pids/../images/testbed_messagebroker_activity-peak.png" alt="The messagebroker dashboard shows a peak, indicating a single incoming message." /></p>
+<p>It indicates an incoming message. Feel free to also explore the exchange and queues in the interface. If you used your own message broker, the interface might look different.</p>
+<h2><a class="header" href="#step-4-view-the-result-of-your-service" id="step-4-view-the-result-of-your-service">Step 4: View the result of your service</a></h2>
+<p>If you use the testbed, see if your action is represented in the contained search index. You can read about how to access in the <a href="pids/./search.html">search recipe</a>. If you use your own service, check if it acted as expected.</p>
+<h1><a class="header" href="#search-pids-using-record-information" id="search-pids-using-record-information">Search PIDs using record information</a></h1>
+<p>To search within PIDs, you need a search index. This recipe is about how such an index can be created and used. This approach generally works using the <a href="pids/./notify.html">messaging approach to notify other services</a>, in this case an indexer service. This approach scales well and supports federation, which enables not only to build up one large search index, but also specialized niche indices easily.</p>
+<p><img src="pids/../images/testbed_search.png" alt="A message broker can distribute one message to all its subscribers efficiently." /></p>
+<p>This approach is implemented in the <a href="pids/../appendix/appendix_testbed.html">testbed</a>, but there currently only supports the indexing of PIDs which will be announced via <a href="pids/./notify.html">message brokers</a>. This means that in the testbed, only PIDs which get created or updated after the search functionality was set up are indexed (change notifications). To also retrieve older PIDs which are not changing, ecosystems must offer further approaches, like regular &quot;record.refresh&quot; messages, indicating non-changing PIDs regularly or similar.</p>
+<hr />
+<h2><a class="header" href="#ingredients-5" id="ingredients-5">Ingredients</a></h2>
+<ul>
+<li>One or more message brokers to subscribe to for PIDs</li>
+<li>A search index like elasticsearch for example</li>
+<li>An indexer service with AMQP support, which can ingest FDOs into the search index</li>
+</ul>
+<p>Alternatively, for testing/experimentation purposes, you can use a <a href="pids/../appendix/appendix_testbed.html">testbed</a> instance, which comes with pre-configured with these ingredients and can be run using docker on your local machine.</p>
+<hr />
+<h2><a class="header" href="#work-steps-summary-4" id="work-steps-summary-4">Work Steps (Summary)</a></h2>
+<p>As soon as the PID information types service is configured to use the message broker, everything happens in the background. These steps show you how to visualize what happens hidden in the background, when using the testbed.</p>
+<ol>
+<li>Register your indexer at selected message brokers</li>
+<li>Use the search index to explore the results</li>
+<li>Use the search index APIs to build your custom search functionality.</li>
+</ol>
+<hr />
+<p>TODO</p>
 <h1><a class="header" href="#create-a-data-type" id="create-a-data-type">Create a Data Type</a></h1>
 <p>This receipt will show you how to create your first Data Type in a Data Type Registry. Together with Persistent Identifiers, which we deal with in another receipt, Data Types are a second essential ingredient of a FAIR Digital Object.</p>
 <hr />
-<h2><a class="header" href="#ingredients-4" id="ingredients-4">Ingredients</a></h2>
+<h2><a class="header" href="#ingredients-6" id="ingredients-6">Ingredients</a></h2>
 <ul>
 <li>Data Type Registry (DTR), e.g. <a href="http://dtr-test.pidconsortium.eu/">http://dtr-test.pidconsortium.eu/</a></li>
 <li>Registered user account at Data Type Registry</li>
@@ -547,7 +620,7 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 <h1><a class="header" href="#create-a-pid-kernel-information-profile" id="create-a-pid-kernel-information-profile">Create a PID Kernel Information Profile</a></h1>
 <p>In receipt we will show how you to create a PID Kernel Information Profile (KIP). The KIP is a special Data Type which allows you to define and validate elements in a PID Information Record. The goal is, to store a small subset of metadata in this record directly in the PID resolving service to allow fast, machine actionable decisions already on the PID-level. Thus, a machine can decide on further resolution of the referenced content or withdraw the PID if does not contain any interpretable information. </p>
 <hr />
-<h2><a class="header" href="#ingredients-5" id="ingredients-5">Ingredients</a></h2>
+<h2><a class="header" href="#ingredients-7" id="ingredients-7">Ingredients</a></h2>
 <ul>
 <li>Data Type Registry (DTR), e.g. <a href="http://dtr-test.pidconsortium.eu/">http://dtr-test.pidconsortium.eu/</a></li>
 <li>Registered user account at Data Type Registry</li>
@@ -668,6 +741,59 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 <p>The PID information types service is always configured to a sandboxed in-memory PID system by default, which allows to experiment with it. To create real PIDs, you will need access to a prefix of a supported PID service. The list of services can be extended, feel free to create an issue or a pull request. At the time of writing (June 2021) only the handle PID system is supported.</p>
 </blockquote>
 <p><a href="https://github.com/kit-data-manager/testbed4inf">Testbed source code and documentation on Github</a>.</p>
+<h1><a class="header" href="#fair-do-ecosystem-testbed" id="fair-do-ecosystem-testbed">FAIR DO Ecosystem Testbed</a></h1>
+<p>The FAIR Digital Object Ecosystem Testbed is developed at Karlsruhe Institute of Technology (KIT) as a contribution to the Helmholtz Metadata Collaboration (HMC)<sup class="footnote-reference"><a href="#hmc">1</a></sup> platform. HMC promotes the qualitative enrichment of research data by means of metadata – and implements this approach across the whole Helmholtz Association of German Research Centers.
+The introduction of FAIR Digital Objects plays a dominant role in the development of technical services in HMC since it promises</p>
+<ul>
+<li>to harmonize the machine-actionable handling of research data objects on a concept level,</li>
+<li>to provide metadata for technical and semantic interoperability,</li>
+<li>to integrate a wide range of digital objects including data, software and other
+research artifacts, and</li>
+<li>will enable the cross-disciplinary exploitation of the contents of big research data
+collections.</li>
+</ul>
+<div class="footnote-definition" id="hmc"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://www.hmc-plattform.org/en">https://www.hmc-plattform.org/en</a></p>
+</div>
+<h2><a class="header" href="#intention" id="intention">Intention</a></h2>
+<p>The FAIR Digital Object Ecosystem Testbed intends to demonstrate the feasibility of FAIR DO usage, to allow easy access to FAIR DOs and to to drive discussions about the implementation.</p>
+<p><img src="appendix/../images/testbed_poster-overview.png" alt="Simplified testbed overview" /></p>
+<p>The Testbed consists of a set of services to facilitate and demonstrate generic use cases for FAIR DOs, with a strong focus on PIDs and PID Information Records, and explicitly not covering data storage and repositories. It is not a hosted demonstrator. Instead, you can download and run it on your everyday computer<sup class="footnote-reference"><a href="#testbedrepo">2</a></sup>. As the services interact to fulfill some of the use cases, we describe them as an ecosystem. Yet, every service can be used independently<sup class="footnote-reference"><a href="#testbedcomposeyml">3</a></sup> <sup class="footnote-reference"><a href="#kitdm">4</a></sup>.
+The Testbed can also be used as an environment to test the interplay with other services (e.g. repositories).</p>
+<div class="footnote-definition" id="testbedrepo"><sup class="footnote-definition-label">2</sup>
+<p>Testbed instructions and download: <a href="https://github.com/kit-data-manager/testbed4inf">https://github.com/kit-data-manager/testbed4inf</a></p>
+</div>
+<div class="footnote-definition" id="testbedcomposeyml"><sup class="footnote-definition-label">3</sup>
+<p>Service composition definition file in the testbed: <a href="https://github.com/kit-data-manager/testbed4inf/blob/master/docker-compose.yml">https://github.com/kit-data-manager/testbed4inf/blob/master/docker-compose.yml</a></p>
+</div>
+<div class="footnote-definition" id="kitdm"><sup class="footnote-definition-label">4</sup>
+<p>KIT Data Manager services <a href="https://github.com/kit-data-manager/">https://github.com/kit-data-manager/</a></p>
+</div>
+<h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
+<p>The FAIR Digital Object Implementation is based on the federated Handle PID System<sup class="footnote-reference"><a href="#handlesystem">5</a></sup> and PID Kernel Information (within the PID records). To make the start of the testbed as easy as possible, the testbed services are abstracted using Docker Containers and can be started as a bundle using Docker-Compose. As it uses external resources like external containerized services, the Handle system and an external type registry<sup class="footnote-reference"><a href="#dtr">6</a></sup> , an internet
+connection is required.
+The testbed download and instructions are available at <a href="https://github.com/kit-data-manager/testbed4inf">https://github.com/kit-data-manager/testbed4inf</a>.</p>
+<div class="footnote-definition" id="handlesystem"><sup class="footnote-definition-label">5</sup>
+<p><a href="https://handle.net/">https://handle.net/</a> , <a href="https://hdl.handle.net/">https://hdl.handle.net/</a></p>
+</div>
+<div class="footnote-definition" id="dtr"><sup class="footnote-definition-label">6</sup>
+<p><a href="http://dtr-test.pidconsortium.net/">http://dtr-test.pidconsortium.net/</a></p>
+</div>
+<h2><a class="header" href="#implemented-use-cases" id="implemented-use-cases">Implemented use cases</a></h2>
+<ul>
+<li><a href="appendix/../pids/create.html">Create a PID with a validated record</a></li>
+<li><a href="appendix/../pids/resolve.html">Read a PIDs record information (Resolve a PID)</a></li>
+<li><a href="appendix/../pids/update.html">Manipulate a PID record with validated information (Update a PID record)</a></li>
+<li><a href="appendix/../pids/notify.html">Inform other systems about changes</a></li>
+<li><a href="appendix/../pids/search.html">Searching PIDs using record information</a> TODO</li>
+</ul>
+<h2><a class="header" href="#contact" id="contact">Contact</a></h2>
+<p>Via Github: <a href="https://github.com/kit-data-manager/testbed4inf/issues">https://github.com/kit-data-manager/testbed4inf/issues</a></p>
+<p>Via Mail:</p>
+<ul>
+<li>Pfeil, Andreas <a href="mailto:appendix/andreas.pfeil@kit.edu">andreas.pfeil@kit.edu</a></li>
+<li>Jejkal, Thomas <a href="mailto:appendix/thomas.jejkal@kit.edu">thomas.jejkal@kit.edu</a></li>
+</ul>
 
                     </main>
 
