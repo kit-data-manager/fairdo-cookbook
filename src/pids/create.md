@@ -8,7 +8,7 @@ As you can see in the ingedient list, you will need a profile. It will be stored
 
 ## Ingredients
 
-- Access to a [PID Information Types Service]((../appendix/appendix_pit.md)) or a Testbed instance.
+- Access to a [PID Information Types Service](../appendix/appendix_pit.md) or a Testbed instance.
 - [A PID Information Profile](../kip_intro.md) that can properly represent your object you want to represent
 - A reference to your data/object (e.g. a URL), which can be used according to your profile
 - Information which needs to be provided according to the profile you chose
