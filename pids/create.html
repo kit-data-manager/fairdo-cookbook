@@ -201,7 +201,7 @@
 <p><img src="../images/testbed_create_update.png" alt="The testbed validates records before creating or updating PIDs." /></p>
 <p>As you already chose the profile, try to fill it at best effort (remember that there are likely some mandatory fields). Note that all records must contain the PID of their profile. This is – again – defined in each profile. This PID will be used by the PID information types service to validate your record. This means that if your record is not valid according to the profile you chose, no PID will be created. More details to that in the next step. Let us assume a <a href="http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132">simple profile</a>:</p>
 <table><thead><tr><th>Property</th><th>mandatory</th><th>Description</th></tr></thead><tbody>
-<tr><td>KernelInformationProfile</td><td>yes</td><td>PID of the KIP for this PID record</td></tr>
+<tr><td>kernelInformationProfile</td><td>yes</td><td>PID of the KIP for this PID record</td></tr>
 <tr><td>digitalObjectType</td><td>yes</td><td>PID of the Data Type of the referenced object</td></tr>
 <tr><td>digitalObjectLocation</td><td>yes</td><td>Location URL of the referenced object</td></tr>
 <tr><td>digitalObjectPolicy</td><td>yes</td><td>PID of the policy object with e.g. license information</td></tr>
@@ -237,11 +237,11 @@
 <p>Every instance hosts an interactive API documentation. It is available at <code>http://domain:port/swagger-ui.html</code>, where domain and port is specific to your instance. To do a small manual test, the following bash script will help you. In practice you probably want to do it automatically or build a user interface in case it is done (semi-)manually.</p>
 <ol>
 <li><a href="./create_pid.bash">Download the bash script to register a PID</a>. Remember that for production-configured PID information types services, this will register a real PID. In this case, you can reuse the created PID later by <a href="./update.html">updating the record</a>.</li>
-<li>Remember to store the JSON representation into a file in the same directory as the bash script. Call it for example <code>record.json</code>.</li>
+<li>Remember to store the JSON representation into a file in the same directory as the bash script. Call it for example <code>record.json</code>. <a href="./test.json">You may use this example record</a> if you like. Note that its &quot;pid&quot; field contains a PID, which will be ignored for PID creation. There will be a new PID assigned.</li>
 <li>Open a terminal and execute this command:
 <ul>
 <li><code>bash create_pid.bash $url record.json</code></li>
-<li>where <code>$url</code> must be replaced with the hostname and port (e.g. <code>https://hostname:port</code>).</li>
+<li>where <code>$url</code> must be replaced with the hostname and port of the PIT service (e.g. <code>https://localhost:8090</code> if you run the testbed).</li>
 </ul>
 </li>
 </ol>
