@@ -95,9 +95,9 @@ Now, bring your record into the actual JSON representation by figuring out the v
 Every instance hosts an interactive API documentation. It is available at `http://domain:port/swagger-ui.html`, where domain and port is specific to your instance. To do a small manual test, the following bash script will help you. In practice you probably want to do it automatically or build a user interface in case it is done (semi-)manually.
 
 1. [Download the bash script to register a PID](./create_pid.bash). Remember that for production-configured PID information types services, this will register a real PID. In this case, you can reuse the created PID later by [updating the record](./update.md).
-2. Remember to store the JSON representation into a file in the same directory as the bash script. Call it for example `record.json`.
+2. Remember to store the JSON representation into a file in the same directory as the bash script. Call it for example `record.json`. [You may use this example record](./test.json) if you like. Note that its "pid" field contains a PID, which will be ignored for PID creation. There will be a new PID assigned.
 3. Open a terminal and execute this command:
     - `bash create_pid.bash $url record.json`
-    - where `$url` must be replaced with the hostname and port (e.g. `https://hostname:port`).
+    - where `$url` must be replaced with the hostname and port of the PIT service (e.g. `https://localhost:8090` if you run the testbed).
 
 On success the service will return the information back to you. it should be exactly the same, but with the PID of your object included. In this example, you can see that we used the sandboxed, temporary PID service for testing: `{"pid":"sandboxed/-647408938","entries":{...}}`

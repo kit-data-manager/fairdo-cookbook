@@ -34,7 +34,7 @@ This request is very similar to the [create request](./create.md). The differenc
 ![The testbed validates records before creating or updating PIDs.](../images/testbed_create_update.png)
 
 1. [Download the bash script to update a PID](./update_pid.bash).
-2. Remember to store the JSON representation into a file in the same directory as the bash script. Call it for example `record.json`.
+2. Remember to store the JSON representation into a file in the same directory as the bash script. Call it for example `record.json`. [You may use this example record](./test.json) if you like. Note that its "pid" field contains a PID, which will be ignored for PID updates.
 3. Open a terminal and execute this command:
     - `bash update_pid.bash $url record.json $pid`
     - where `$url` must be replaced with the hostname and port (e.g. `https://hostname:port`).
