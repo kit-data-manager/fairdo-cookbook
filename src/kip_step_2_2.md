@@ -4,7 +4,7 @@ With our six key principles in mind, we can now start defining our PID Kernel In
 
 | Property                 | Description                                                  |
 | ------------------------ | ------------------------------------------------------------ |
-| KernelInformationProfile | PID of the KIP for this PID record                           |
+| kernelInformationProfile | PID of the KIP for this PID record                           |
 | digitalObjectType        | PID of the Data Type of the referenced object                |
 | digitalObjectLocation    | Location URL of the referenced object                        |
 | digitalObjectPolicy      | PID of the policy object with e.g. license information       |
@@ -23,7 +23,7 @@ As we've learned in the recipe on [Create a Data Type](./datatype_into.md), we n
 
 | Property                 | DTR Inquiry Result (<span style="color:green">Reuse</span>, <span style="color:orange">Extend</span>, <span style="color:red">Create</span>) |
 | ------------------------ | ------------------------------------------------------------ |
-| KernelInformationProfile | <span style="color:green">KernelInformationProfile</span> (21.T11148/076759916209e5d62bd5) |
+| kernelInformationProfile | <span style="color:green">KernelInformationProfile</span> (21.T11148/076759916209e5d62bd5) |
 | digitalObjectType        | <span style="color:green">digitalObjectType</span> (21.T11148/1c699a5d1b4ad3ba4956) |
 | digitalObjectLocation    | <span style="color:green">digitalObjectLocation</span> (21.T11148/b8457812905b83046284) |
 | digitalObjectPolicy      | <span style="color:green">digitalObjectPolicy</span> (21.T11148/8074aed799118ac263ad) |

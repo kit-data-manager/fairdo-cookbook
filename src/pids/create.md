@@ -42,7 +42,7 @@ As you already chose the profile, try to fill it at best effort (remember that t
 
 | Property                 | mandatory | Description                                                  |
 | ------------------------ | --------- | ------------------------------------------------------------ |
-| KernelInformationProfile | yes       | PID of the KIP for this PID record                           |
+| kernelInformationProfile | yes       | PID of the KIP for this PID record                           |
 | digitalObjectType        | yes       | PID of the Data Type of the referenced object                |
 | digitalObjectLocation    | yes       | Location URL of the referenced object                        |
 | digitalObjectPolicy      | yes       | PID of the policy object with e.g. license information       |
