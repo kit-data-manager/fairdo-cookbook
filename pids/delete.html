@@ -47,6 +47,8 @@
         
         <link rel="stylesheet" href="../chapter_list.css">
         
+        <link rel="stylesheet" href="../theme-adjustments.css">
+        
 
         
     </head>
@@ -107,8 +109,19 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
-                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder" class="click-transparent"></div>
+                <div class="logo-header mobile-on">
+    <div class="logo-spacing-general">
+        <a class="logo-align-middle logo-card"
+        href="https://kit.edu/"
+        title="Karlsruhe Institute of Technology"
+        aria-label="Visit the KIT Website">
+            <img class="lightonly" src="../kit_logo_en_black.svg" alt="KIT logo">
+            <img class="darkonly" src="../kit_logo_en_white.svg" alt="KIT logo">
+            <img class="whiteonly" src="../kit_logo_en.svg" alt="KIT logo">
+        </a>
+    </div>
+</div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -131,9 +144,18 @@
                         
                     </div>
 
-                    <h1 class="menu-title">FAIR DO Cookbook</h1>
+                    <h1 class="menu-title" title="FAIR DO Cookbook">
+                        FAIR DO Cookbook
+                    </h1>
 
                     <div class="right-buttons">
+                        <div class="logo-spacing-general">
+                            <a class="mobile-off logo-align-middle logo-card" href="https://kit.edu/" title="Karlsruhe Institute of Technology" aria-label="Visit the KIT Website">
+                                <img class="lightonly" src="../kit_logo_en_black.svg" alt="KIT logo">
+                                <img class="darkonly" src="../kit_logo_en_white.svg" alt="KIT logo">
+                                <img class="whiteonly" src="../kit_logo_en.svg" alt="KIT logo">
+                            </a>
+                        </div>
                         
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
@@ -144,13 +166,15 @@
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -236,6 +260,61 @@
             </nav>
 
         </div>
+
+        <script>
+            function updateThemeElements() {
+                try {
+                    var html = document.querySelector('html');
+                    var theme = localStorage.getItem('mdbook-theme');
+                    var white_themes = ["light"]
+                    var light_themes = ["rust"]
+                    var light_only_elements = html.getElementsByClassName("lightonly")
+                    var dark_only_elements = html.getElementsByClassName("darkonly")
+                    var white_only_elements = html.getElementsByClassName("whiteonly")
+                    console.log(theme)
+                    console.log(light_themes)
+                    if (light_themes.includes(theme)) {
+                        for (light_only of light_only_elements) {
+                            light_only.classList.remove("hideme")
+                        }
+                        for (dark_only of dark_only_elements) {
+                            dark_only.classList.add("hideme")
+                        }
+                        for (white_only of white_only_elements) {
+                            white_only.classList.add("hideme")
+                        }
+                    } else if (white_themes.includes(theme)) {
+                        for (light_only of light_only_elements) {
+                            light_only.classList.add("hideme")
+                        }
+                        for (dark_only of dark_only_elements) {
+                            dark_only.classList.add("hideme")
+                        }
+                        for (white_only of white_only_elements) {
+                            white_only.classList.remove("hideme")
+                        }
+                    } else {
+                        for (light_only of light_only_elements) {
+                            light_only.classList.add("hideme")
+                        }
+                        for (dark_only of dark_only_elements) {
+                            dark_only.classList.remove("hideme")
+                        }
+                        for (white_only of white_only_elements) {
+                            white_only.classList.add("hideme")
+                        }
+                    }
+                } catch (e) { }
+            }
+            updateThemeElements() // call it once in the beginning
+            // configure to call the function when theme changes.
+            // the theme is stored as a class in the html tag, so we observe changes in this tag.
+            var themeStorage = document.querySelector('html');
+            const config = { attributes: true, childList: false, subtree: false };
+            const callback = function(mutationsList, observer) {updateThemeElements()}
+            const observer = new MutationObserver(callback);
+            observer.observe(themeStorage, config);
+        </script>
 
         
 
