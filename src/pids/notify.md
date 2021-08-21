@@ -11,7 +11,7 @@ This recipe shows the steps needed to notify a service.
 ## Ingredients
 
 - A message broker instance, AMQP compatible
-- Access to a [PID Information Types Service]((../appendix/appendix_pit.md)) configured to use the message broker instance
+- Access to a [PID Information Types Service](../appendix/appendix_pit.md) configured to use the message broker instance
 - A service that should be notified, implementing the AMQP protocol
 
 Alternatively, for testing/experimentation purposes, you can use a [testbed](../appendix/appendix_testbed.md) instance, which comes with pre-configured with these ingredients and can be run using docker on your local machine.
