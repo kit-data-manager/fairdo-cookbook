@@ -1,13 +1,13 @@
 # Update/maintain a PID
 
-This is very similar to "[Create a PID](./create.md)".
+Updating means to resolve the record, change it, and then send it back for an update. Therefore this recipe is very similar to "[Create a PID](./create.md)".
 
 ---
 
 ## Ingredients
 
 - Access to a [PID Information Types Service](../appendix/appendix_pit.md) or a Testbed instance.
-- The information you want to put into the record (new data and replacing data is both possible)
+- The information you want to put into the record (new data and replacing data is both possible).
 
 ---
 
@@ -25,7 +25,7 @@ The idea of updating a record is the following: Get the current state, modify th
 
 ## Step 2: Modify the JSON-Representation of the PID record as you wish
 
-You may use any JSON manipulation tool to exchange any information in the record, even the profile. But there will — like when using the "create API" — a validation before the PID information types service will do the update. So make sure that the result of your modifications is a valid record according to the (maybe new) profile before proceeding.
+You may use any JSON manipulation tool to exchange any information in the record, even the profile. But there will — like when using the "create API" — be a validation before the PID information types service will do the update. So make sure that the result of your modifications is a valid record according to the (maybe new) profile before proceeding. More on that in the following recipe: [Create a PID](./create.md)
 
 ## Step 3: Send PID update request to PID Information Types service
 

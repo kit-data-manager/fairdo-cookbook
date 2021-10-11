@@ -10,6 +10,8 @@ research artifacts, and
 - will enable the cross-disciplinary exploitation of the contents of big research data
 collections.
 
+> Please note the testbed is not meant to be used in production as a whole, as it may contain services in a proof-of-concept state and is subject to change. You may use it for experimentation, inspiration and discussion, or limit the set of services to those who are production-ready.
+
 [^hmc]: [https://www.hmc-plattform.org/en](https://www.hmc-plattform.org/en)
 
 ## Intention

@@ -1,8 +1,8 @@
 # Resolve a PID
 
-Resolving a PID (also "retrieving/reading a PID (record)") is the process of submitting the PID to a system in order to receive the associated PID record as a response. It is sometimes also called "resolving a FAIR Digital Object", although this term is also used to refer to the process of accessing the actual data object which is referenced by the PID record, which makes it a vague term. Resolving allows machines to act on the PIDs record information.
+Resolving a PID (also "retrieving/reading a PID (record)") is the process of submitting the PID to a system in order to receive the associated PID record as a response. It is sometimes also called "resolving a FAIR Digital Object", although this term is also used to refer to the process of accessing the actual data object which makes it a vague term. Resolving allows machines to read (and act on) the PIDs record information.
 
-In contrast to the modifying use cases ([create](./create.md) and [update](./update.md)), the record is currently not being validated during this operation. The reason is that the machine is not able to prevent the record from being invalid within a reading operation. If the received record contains a profile, the PIT service can be explicitly requested to validate the PID record if the user or tool needs this information.
+In contrast to the modifying use cases ([create](./create.md) and [update](./update.md)), the record is currently not being validated during this operation. The reason is that neither the machine nor the user is able to prevent the record from being invalid within a reading operation. If the received record contains a profile, the PIT service can be explicitly requested to validate the PID record if the user or tool needs this information.
 
 ---
 
@@ -10,8 +10,6 @@ In contrast to the modifying use cases ([create](./create.md) and [update](./upd
 
 - A registered PID you want to resolve.
 - Access to a [PID Information Types Service](../appendix/appendix_pit.md) or a Testbed instance.
-    - The service must be configured in a way to support your PID system. For details on that, read the instructions.
-    - Alternatively: Any other system that uses the resolving API of the PID system of your choice.
 
 ---
 
@@ -22,10 +20,6 @@ In contrast to the modifying use cases ([create](./create.md) and [update](./upd
 ---
 
 ## Step 1: Request the PID information types service to resolve a given PID
-
-> Note: The PID information types service does not support every PID system, but can be extended. Feel free to open an issue on the [Github Page](https://github.com/kit-data-manager/pit-service) if your PID type is not supported. As of now (June 2021) it supports only PID services building on the federated Handle System.
->
-> Also, it includes a small sandboxed PID service in it's default configuration for testing purposes. Note that these sandboxed PIDs are **not** publicly resolvable, do only exist in this instance and are not stored permanently. But it might be enough for you to e.g. test the API or your PID workflows.
 
 The PID information types service offers an API to resolve PIDs. The principle is simple: You give it the API and will get a JSON document in return, which contains the content of the PIDs record.
 
