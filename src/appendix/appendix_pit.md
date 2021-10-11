@@ -1,6 +1,6 @@
 ## PID Information Types service
 
-Our PID information types service implementation is a service that abstracts the use of PID services and validation using a data type registry. Its API makes it easier for clients to handle PIDs and make sure the records are validated before registering. It also offers possibility to notify other services about new or updated PIDs, which enables data curators to flexibly build search indices.
+Our PID information types service implementation is a service that abstracts the use of PID services and validation using a data type registry. Its API makes it easier for clients to handle PIDs and make sure the records are validated before registering. It also offers possibility to notify other services about new or updated PIDs, which enables data curators to flexibly build search indices. It's use cases are described in the recipe collection ["Working with PIDs"](../pids/intro.md).
 
 > A PID information types instance for production needs a prefix of a compatible PID service, which is a financial and administrative matter and is something not every researcher will do on her own. Consider to find a service provider which can give you access to a PID information types service instance and skip the rest of this appendix. If you do have a PID prefix and want to do it yourself or want to try it with a in-memory "sandboxed" PID service (for testing only!), read on.
 

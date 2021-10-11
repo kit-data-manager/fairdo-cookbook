@@ -29,8 +29,9 @@ The Testbed can also be used as an environment to test the interplay with other 
 
 ## Implementation
 
-The FAIR Digital Object Implementation is based on the federated Handle PID System[^handlesystem] and PID Kernel Information (within the PID records). To make the start of the testbed as easy as possible, the testbed services are abstracted using Docker Containers and can be started as a bundle using Docker-Compose. As it uses external resources like external containerized services, the Handle system and an external type registry[^dtr] , an internet
-connection is required.
+The FAIR Digital Object Implementation is based on the federated Handle PID System[^handlesystem] and PID Kernel Information (within the PID records). To make the start of the testbed as easy as possible, the testbed services are abstracted using Docker Containers and can be started as a bundle using Docker-Compose. As it uses external resources like external containerized services, the Handle system and an external type registry[^dtr] , an internet connection is required.
+A central component of the testbed is the [PIT service](appendix_pit.md), offering a simple API to ease the usage of PIDs in a FAIR way.
+
 The testbed download and instructions are available at [https://github.com/kit-data-manager/testbed4inf](https://github.com/kit-data-manager/testbed4inf).
 
 [^handlesystem]: <https://handle.net/> , <https://hdl.handle.net/>
