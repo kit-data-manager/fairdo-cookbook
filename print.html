@@ -199,11 +199,11 @@
                     <main>
                         <h1><a class="header" href="#about" id="about">About</a></h1>
 <h1><a class="header" href="#introduction-working-with-pids" id="introduction-working-with-pids">Introduction: Working with PIDs</a></h1>
-<p><strong>A PID is a unique, persistent and resolvable identifier for an object.</strong> This object might be (meta-)data, data streams, sensors, repositories and more. PIDs are associated with information which helps to access the object and to elaborate the use of the (data) object (PID record information) for the use case of a client. This means that a PID resolves to a &quot;landing page for machines&quot;, enabling the client to decide if it can work with this object and to programmatically access it. Therefore PIDs are a vital part of FAIR Digital Objects.</p>
+<p><strong>A PID is a unique, persistent and resolvable identifier for an object.</strong> This object might be (meta-)data, data streams, sensors, repositories and more. PIDs are associated with information (PID record information) which helps to access the object and to elaborate the use of the object for the use case of a client. This means that a PID resolves to a &quot;landing page for machines&quot; (the PID record), enabling the client to decide if it can work with this object and to programmatically access it. Therefore PIDs are a vital part of FAIR Digital Objects.</p>
 <p><img src="pids/../images/pid_overview.drawio.svg" alt="" /></p>
-<p><strong>The following receipts are about working with PIDs</strong> and use the same ingredients and similar steps. Working with PIDs means in this case, to do <a href="https://de.wikipedia.org/wiki/CRUD">CRUD-Operations</a> (Create, Retrieve, Update, Delete) with PIDs. We use our <a href="https://github.com/kit-data-manager/testbed4inf">Testbed</a> to elaborate and test generic PID handling and advanced use cases.</p>
+<p><strong>The following recipes are about working with PIDs</strong> and use the same ingredients and similar steps. Working with PIDs means in this case, to do <a href="https://de.wikipedia.org/wiki/CRUD">CRUD-Operations</a> (Create, Retrieve, Update, Delete) with PIDs. We use our <a href="pids/../appendix/appendix_testbed.html">Testbed</a> to elaborate and test generic PID handling and advanced use cases.</p>
 <blockquote>
-<p>Note that there is no delete-Operation recommended in the context of FAIR Digital Objects, therefore the recipe will not delete it, but show how to handle e.g. the loss of the actual data in terms of PID curation.</p>
+<p>Note that there is no delete-Operation recommended in the context of FAIR Digital Objects, therefore the recipe will not describe how to delete it, but show how to handle use cases which seem to make PID deletion relevant, like data loss or licansing issues.</p>
 </blockquote>
 <p><img src="pids/../images/pit_to_pid.drawio.svg" alt="" /></p>
 <hr />
@@ -387,11 +387,11 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 </li>
 </ol>
 <h1><a class="header" href="#delete-a-pid" id="delete-a-pid">Delete a PID</a></h1>
-<p>Deleting a PID should not be done, as it is against the P in PID. Note that usually PID systems offer a possibility to delete PIDs. As we are considering FAIR ecosystems, we do not expose this functionality to maintain reusability and citability to the highest degree possible. It is therefore not supported by the PID information types service.</p>
-<p>But there are solutions if you feel the need, which are better than updating the record to some dummy record. There are cases where deleting a PID might seem to be a solution at the first glance:</p>
+<p>Deleting a PID should not be done, as it is against the P in PID. The reason to use PIDs is to give certain guarantees about citing and reusing objects, while keeping the provenance management simple. Usually, current PID systems do indeed offer a possibility to delete PIDs. As we are considering FAIR ecosystems, we do not expose this functionality to maintain reusability and citability to the highest degree possible. It is therefore not supported by the PID information types service (PIT).</p>
+<p>But there are solutions if you feel the need, which are better than updating the record to a useless dummy record. There are cases where deleting a PID might seem to be a solution at the first glance:</p>
 <ol>
 <li>The object access is now restricted (e.g., it was made public by accident).</li>
-<li>The object is gone. It might have been an accident, for administrative reasons (free space, archival, ...) or the object might have been available but has been withdrawn.</li>
+<li>The object is gone. It might have been an accident, for administrative reasons (free space, archival, ...) or other reasons.</li>
 </ol>
 <p>The following recipe will cover what we recommend in such cases. Every recommendation involves <a href="pids/./update.html">modifying/updating the record</a> in specific ways.</p>
 <hr />
@@ -400,7 +400,7 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 <hr />
 <h2><a class="header" href="#work-steps" id="work-steps">Work Steps</a></h2>
 <h3><a class="header" href="#if-the-object-was-available-and-a-pid-registered-but-access-is-now-restricted" id="if-the-object-was-available-and-a-pid-registered-but-access-is-now-restricted">If the object was available and a PID registered, but access is now restricted</a></h3>
-<p>FAIR Digital Objects can handle restricted access. It is encouraged to make data public if possible, to improve the situation for open data, open science, citizen science and so on. But sometimes it is not possible due to legal or privacy considerations. The important part is that a machine has to be able to know how to access the object if it has the neccessary information. I access is not possible in an automated way, the machine must be able to tell the user what she needs to do to gain access. Profiles need to be able to express this, but currently there is, unfortunately, no consensus about how this information should be represented. Generally, this is what should be done:</p>
+<p>FAIR Digital Objects can handle restricted access. It is encouraged to make data public if possible, to improve the situation for open data, open science, citizen science and so on. But sometimes it is not possible due to legal or privacy considerations. The important part is that a machine has to be able to know how to access the object if it has the neccessary legitimation. If access is not possible in an automated way, the machine must be able to tell the user what she needs to do to gain access. Profiles need to be able to express this, but currently there is, unfortunately, no consensus about how this information should be represented. Generally, this is what should be done:</p>
 <ol>
 <li>Make sure no confidential information is stored in the record.</li>
 <li>Add information to the record that states that the object access is restricted.</li>
@@ -748,7 +748,7 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 <li><a href="appendix/./appendix_pit.html">PID Information Types service</a></li>
 </ol>
 <h2><a class="header" href="#pid-information-types-service" id="pid-information-types-service">PID Information Types service</a></h2>
-<p>Our PID information types service implementation is a service that abstracts the use of PID services and validation using a data type registry. Its API makes it easier for clients to handle PIDs and make sure the records are validated before registering. It also offers possibility to notify other services about new or updated PIDs, which enables data curators to flexibly build search indices.</p>
+<p>Our PID information types service implementation is a service that abstracts the use of PID services and validation using a data type registry. Its API makes it easier for clients to handle PIDs and make sure the records are validated before registering. It also offers possibility to notify other services about new or updated PIDs, which enables data curators to flexibly build search indices. It's use cases are described in the recipe collection <a href="appendix/../pids/intro.html">&quot;Working with PIDs&quot;</a>.</p>
 <blockquote>
 <p>A PID information types instance for production needs a prefix of a compatible PID service, which is a financial and administrative matter and is something not every researcher will do on her own. Consider to find a service provider which can give you access to a PID information types service instance and skip the rest of this appendix. If you do have a PID prefix and want to do it yourself or want to try it with a in-memory &quot;sandboxed&quot; PID service (for testing only!), read on.</p>
 </blockquote>
@@ -794,9 +794,9 @@ The Testbed can also be used as an environment to test the interplay with other 
 <p>KIT Data Manager services <a href="https://github.com/kit-data-manager/">https://github.com/kit-data-manager/</a></p>
 </div>
 <h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
-<p>The FAIR Digital Object Implementation is based on the federated Handle PID System<sup class="footnote-reference"><a href="#handlesystem">5</a></sup> and PID Kernel Information (within the PID records). To make the start of the testbed as easy as possible, the testbed services are abstracted using Docker Containers and can be started as a bundle using Docker-Compose. As it uses external resources like external containerized services, the Handle system and an external type registry<sup class="footnote-reference"><a href="#dtr">6</a></sup> , an internet
-connection is required.
-The testbed download and instructions are available at <a href="https://github.com/kit-data-manager/testbed4inf">https://github.com/kit-data-manager/testbed4inf</a>.</p>
+<p>The FAIR Digital Object Implementation is based on the federated Handle PID System<sup class="footnote-reference"><a href="#handlesystem">5</a></sup> and PID Kernel Information (within the PID records). To make the start of the testbed as easy as possible, the testbed services are abstracted using Docker Containers and can be started as a bundle using Docker-Compose. As it uses external resources like external containerized services, the Handle system and an external type registry<sup class="footnote-reference"><a href="#dtr">6</a></sup> , an internet connection is required.
+A central component of the testbed is the <a href="appendix/appendix_pit.html">PIT service</a>, offering a simple API to ease the usage of PIDs in a FAIR way.</p>
+<p>The testbed download and instructions are available at <a href="https://github.com/kit-data-manager/testbed4inf">https://github.com/kit-data-manager/testbed4inf</a>.</p>
 <div class="footnote-definition" id="handlesystem"><sup class="footnote-definition-label">5</sup>
 <p><a href="https://handle.net/">https://handle.net/</a> , <a href="https://hdl.handle.net/">https://hdl.handle.net/</a></p>
 </div>
