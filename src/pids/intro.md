@@ -1,12 +1,12 @@
 # Introduction: Working with PIDs
 
-**A PID is a unique, persistent and resolvable identifier for an object.** This object might be (meta-)data, data streams, sensors, repositories and more. PIDs are associated with information which helps to access the object and to elaborate the use of the (data) object (PID record information) for the use case of a client. This means that a PID resolves to a "landing page for machines", enabling the client to decide if it can work with this object and to programmatically access it. Therefore PIDs are a vital part of FAIR Digital Objects.
+**A PID is a unique, persistent and resolvable identifier for an object.** This object might be (meta-)data, data streams, sensors, repositories and more. PIDs are associated with information (PID record information) which helps to access the object and to elaborate the use of the object for the use case of a client. This means that a PID resolves to a "landing page for machines" (the PID record), enabling the client to decide if it can work with this object and to programmatically access it. Therefore PIDs are a vital part of FAIR Digital Objects.
 
 ![](../images/pid_overview.drawio.svg)
 
-**The following receipts are about working with PIDs** and use the same ingredients and similar steps. Working with PIDs means in this case, to do [CRUD-Operations](https://de.wikipedia.org/wiki/CRUD) (Create, Retrieve, Update, Delete) with PIDs. We use our [Testbed](https://github.com/kit-data-manager/testbed4inf) to elaborate and test generic PID handling and advanced use cases.
+**The following recipes are about working with PIDs** and use the same ingredients and similar steps. Working with PIDs means in this case, to do [CRUD-Operations](https://de.wikipedia.org/wiki/CRUD) (Create, Retrieve, Update, Delete) with PIDs. We use our [Testbed](../appendix/appendix_testbed.md) to elaborate and test generic PID handling and advanced use cases.
 
-> Note that there is no delete-Operation recommended in the context of FAIR Digital Objects, therefore the recipe will not delete it, but show how to handle e.g. the loss of the actual data in terms of PID curation.
+> Note that there is no delete-Operation recommended in the context of FAIR Digital Objects, therefore the recipe will not describe how to delete it, but show how to handle use cases which seem to make PID deletion relevant, like data loss or licansing issues.
 
 ![](../images/pit_to_pid.drawio.svg)
 
