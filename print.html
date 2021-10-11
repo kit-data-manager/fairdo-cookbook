@@ -301,18 +301,13 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 </ol>
 <p>On success the service will return the information back to you. It should be exactly the same, but with the PID of your object included. In this example, you can see that we used the sandboxed, temporary PID service for testing: <code>{&quot;pid&quot;:&quot;sandboxed/-647408938&quot;,&quot;entries&quot;:{...}}</code></p>
 <h1><a class="header" href="#resolve-a-pid" id="resolve-a-pid">Resolve a PID</a></h1>
-<p>Resolving a PID (also &quot;retrieving/reading a PID (record)&quot;) is the process of submitting the PID to a system in order to receive the associated PID record as a response. It is sometimes also called &quot;resolving a FAIR Digital Object&quot;, although this term is also used to refer to the process of accessing the actual data object which is referenced by the PID record, which makes it a vague term. Resolving allows machines to act on the PIDs record information.</p>
-<p>In contrast to the modifying use cases (<a href="pids/./create.html">create</a> and <a href="pids/./update.html">update</a>), the record is currently not being validated during this operation. The reason is that the machine is not able to prevent the record from being invalid within a reading operation. If the received record contains a profile, the PIT service can be explicitly requested to validate the PID record if the user or tool needs this information.</p>
+<p>Resolving a PID (also &quot;retrieving/reading a PID (record)&quot;) is the process of submitting the PID to a system in order to receive the associated PID record as a response. It is sometimes also called &quot;resolving a FAIR Digital Object&quot;, although this term is also used to refer to the process of accessing the actual data object which makes it a vague term. Resolving allows machines to read (and act on) the PIDs record information.</p>
+<p>In contrast to the modifying use cases (<a href="pids/./create.html">create</a> and <a href="pids/./update.html">update</a>), the record is currently not being validated during this operation. The reason is that neither the machine nor the user is able to prevent the record from being invalid within a reading operation. If the received record contains a profile, the PIT service can be explicitly requested to validate the PID record if the user or tool needs this information.</p>
 <hr />
 <h2><a class="header" href="#ingredients-1" id="ingredients-1">Ingredients</a></h2>
 <ul>
 <li>A registered PID you want to resolve.</li>
-<li>Access to a <a href="pids/../appendix/appendix_pit.html">PID Information Types Service</a> or a Testbed instance.
-<ul>
-<li>The service must be configured in a way to support your PID system. For details on that, read the instructions.</li>
-<li>Alternatively: Any other system that uses the resolving API of the PID system of your choice.</li>
-</ul>
-</li>
+<li>Access to a <a href="pids/../appendix/appendix_pit.html">PID Information Types Service</a> or a Testbed instance.</li>
 </ul>
 <hr />
 <h2><a class="header" href="#work-steps-summary-1" id="work-steps-summary-1">Work Steps (Summary)</a></h2>
@@ -321,10 +316,6 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 </ol>
 <hr />
 <h2><a class="header" href="#step-1-request-the-pid-information-types-service-to-resolve-a-given-pid" id="step-1-request-the-pid-information-types-service-to-resolve-a-given-pid">Step 1: Request the PID information types service to resolve a given PID</a></h2>
-<blockquote>
-<p>Note: The PID information types service does not support every PID system, but can be extended. Feel free to open an issue on the <a href="https://github.com/kit-data-manager/pit-service">Github Page</a> if your PID type is not supported. As of now (June 2021) it supports only PID services building on the federated Handle System.</p>
-<p>Also, it includes a small sandboxed PID service in it's default configuration for testing purposes. Note that these sandboxed PIDs are <strong>not</strong> publicly resolvable, do only exist in this instance and are not stored permanently. But it might be enough for you to e.g. test the API or your PID workflows.</p>
-</blockquote>
 <p>The PID information types service offers an API to resolve PIDs. The principle is simple: You give it the API and will get a JSON document in return, which contains the content of the PIDs record.</p>
 <p><img src="pids/../images/testbed_resolve.png" alt="" /></p>
 <h3><a class="header" href="#using-the-pid-information-types-instance" id="using-the-pid-information-types-instance">Using the PID information types instance</a></h3>
@@ -360,12 +351,12 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 <tr><td>13</td><td>21.T11148/178fb558abc755ca7046</td><td>2021-04-19 10:41:18Z</td><td>[{&quot;relatedIdentifier&quot;: {&quot;relatedIdentifierValue&quot;: &quot;https://www.bodc.ac.uk/data/documents/nodb/pdf/37imbrochurejul08.pdf&quot;, &quot;relatedIdentifierType&quot;: &quot;URL&quot;, &quot;relationType&quot;: &quot;IsDescribedBy&quot;}}]</td></tr>
 </tbody></table>
 <h1><a class="header" href="#updatemaintain-a-pid" id="updatemaintain-a-pid">Update/maintain a PID</a></h1>
-<p>This is very similar to &quot;<a href="pids/./create.html">Create a PID</a>&quot;.</p>
+<p>Updating means to resolve the record, change it, and then send it back for an update. Therefore this recipe is very similar to &quot;<a href="pids/./create.html">Create a PID</a>&quot;.</p>
 <hr />
 <h2><a class="header" href="#ingredients-2" id="ingredients-2">Ingredients</a></h2>
 <ul>
 <li>Access to a <a href="pids/../appendix/appendix_pit.html">PID Information Types Service</a> or a Testbed instance.</li>
-<li>The information you want to put into the record (new data and replacing data is both possible)</li>
+<li>The information you want to put into the record (new data and replacing data is both possible).</li>
 </ul>
 <hr />
 <h2><a class="header" href="#work-steps-summary-2" id="work-steps-summary-2">Work Steps (Summary)</a></h2>
@@ -378,7 +369,7 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 <h2><a class="header" href="#step-1-resolve-a-pid" id="step-1-resolve-a-pid">Step 1: Resolve a PID</a></h2>
 <p>The idea of updating a record is the following: Get the current state, modify the record, then overwrite the whole record with your modified version. To get the current state, you need to <a href="pids/./resolve.html">resolve the PID, as stated in this recipe</a>.</p>
 <h2><a class="header" href="#step-2-modify-the-json-representation-of-the-pid-record-as-you-wish" id="step-2-modify-the-json-representation-of-the-pid-record-as-you-wish">Step 2: Modify the JSON-Representation of the PID record as you wish</a></h2>
-<p>You may use any JSON manipulation tool to exchange any information in the record, even the profile. But there will — like when using the &quot;create API&quot; — a validation before the PID information types service will do the update. So make sure that the result of your modifications is a valid record according to the (maybe new) profile before proceeding.</p>
+<p>You may use any JSON manipulation tool to exchange any information in the record, even the profile. But there will — like when using the &quot;create API&quot; — be a validation before the PID information types service will do the update. So make sure that the result of your modifications is a valid record according to the (maybe new) profile before proceeding. More on that in the following recipe: <a href="pids/./create.html">Create a PID</a></p>
 <h2><a class="header" href="#step-3-send-pid-update-request-to-pid-information-types-service" id="step-3-send-pid-update-request-to-pid-information-types-service">Step 3: Send PID update request to PID Information Types service</a></h2>
 <p>This request is very similar to the <a href="pids/./create.html">create request</a>. The difference is that you will need to provide a PID which will have its record updated. The record will be validated, and if validation fails, the PID will not be updated.</p>
 <p><img src="pids/../images/testbed_create_update.png" alt="The testbed validates records before creating or updating PIDs." /></p>
@@ -755,22 +746,19 @@ Deleting is against the P(ersistent) in PID. There are cases where you might fee
 <li><a href="appendix/./appendix_pit.html">PID Information Types service</a></li>
 </ol>
 <h2><a class="header" href="#pid-information-types-service" id="pid-information-types-service">PID Information Types service</a></h2>
-<p>Our PID information types service implementation is a service that abstracts the use of PID services and validation using a data type registry. Its API makes it easier for clients to handle PIDs and make sure the records are validated before registering. It also offers possibility to notify other services about new or updated PIDs, which enables data curators to flexibly build search indices. It's use cases are described in the recipe collection <a href="appendix/../pids/intro.html">&quot;Working with PIDs&quot;</a>.</p>
+<p>Our PID information types service implementation is a service that abstracts the use (<a href="https://de.wikipedia.org/wiki/CRUD">CRUD</a>) of PID services and validation using a data type registry. Its API makes it easier for clients to handle PIDs and make sure the records are validated before registering. It also offers possibility to notify other services about new or updated PIDs, which enables data curators to flexibly build search indices. It's use cases are described in the recipe collection <a href="appendix/../pids/intro.html">&quot;Working with PIDs&quot;</a>.</p>
 <blockquote>
 <p>A PID information types instance for production needs a prefix of a compatible PID service, which is a financial and administrative matter and is something not every researcher will do on her own. Consider to find a service provider which can give you access to a PID information types service instance and skip the rest of this appendix. If you do have a PID prefix and want to do it yourself or want to try it with a in-memory &quot;sandboxed&quot; PID service (for testing only!), read on.</p>
 </blockquote>
-<p>There are two ways to set up an instance. If you only need the typical CRUD functionalities for PIDs, the PID Information Types Service will be enough. It is an easy to set up service offering a simple REST API.</p>
+<p>The PIT service is part of the <a href="appendix/../appendix/appendix_testbed.html">testbed</a></p>
 <blockquote>
 <p>Please note that the PID Information Types Service is still in heavy development and not yet ready for production use. (June 2021)</p>
 </blockquote>
+<blockquote>
+<p>Note: The PID information types service does not support every PID system, but can be extended. Feel free to open an issue on the <a href="https://github.com/kit-data-manager/pit-service">Github Page</a> if your PID type is not supported. As of now (June 2021) it supports only PID services building on the federated Handle System.</p>
+<p>Also, it includes a small sandboxed PID service in it's default configuration for testing purposes. Note that these sandboxed PIDs are <strong>not</strong> publicly resolvable, do only exist in this instance and are not stored permanently. But it might be enough for you to e.g. test the API or your PID workflows.</p>
+</blockquote>
 <p><a href="https://github.com/kit-data-manager/pit-service">PID Information Types Source code and documentation on Github</a>.</p>
-<p>Alternatively, there is the Testbed-option. The Testbed is a set of services to demonstrate the PID handling and advanced functionalities like PID indexing. It can be considered a playground or an exemplary service ecosystem. It also contains a PID Information Types Service instance.</p>
-<blockquote>
-<p>Please note the testbed is not meant to be used in production as a whole, as it may contain services in a proof-of-concept state and is subject to change. You may use it for experimentation, inspiration and discussion, though.</p>
-</blockquote>
-<blockquote>
-<p>The PID information types service is always configured to a sandboxed in-memory PID system by default, which allows to experiment with it. To create real PIDs, you will need access to a prefix of a supported PID service. The list of services can be extended, feel free to create an issue or a pull request. At the time of writing (June 2021) only the handle PID system is supported.</p>
-</blockquote>
 <p><a href="https://github.com/kit-data-manager/testbed4inf">Testbed source code and documentation on Github</a>.</p>
 <h1><a class="header" href="#fair-do-ecosystem-testbed" id="fair-do-ecosystem-testbed">FAIR DO Ecosystem Testbed</a></h1>
 <p>The FAIR Digital Object Ecosystem Testbed is developed at Karlsruhe Institute of Technology (KIT) as a contribution to the Helmholtz Metadata Collaboration (HMC)<sup class="footnote-reference"><a href="#hmc">1</a></sup> platform. HMC promotes the qualitative enrichment of research data by means of metadata – and implements this approach across the whole Helmholtz Association of German Research Centers.
@@ -783,6 +771,9 @@ research artifacts, and</li>
 <li>will enable the cross-disciplinary exploitation of the contents of big research data
 collections.</li>
 </ul>
+<blockquote>
+<p>Please note the testbed is not meant to be used in production as a whole, as it may contain services in a proof-of-concept state and is subject to change. You may use it for experimentation, inspiration and discussion, or limit the set of services to those who are production-ready.</p>
+</blockquote>
 <div class="footnote-definition" id="hmc"><sup class="footnote-definition-label">1</sup>
 <p><a href="https://www.hmc-plattform.org/en">https://www.hmc-plattform.org/en</a></p>
 </div>

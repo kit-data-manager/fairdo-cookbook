@@ -196,12 +196,12 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#updatemaintain-a-pid" id="updatemaintain-a-pid">Update/maintain a PID</a></h1>
-<p>This is very similar to &quot;<a href="./create.html">Create a PID</a>&quot;.</p>
+<p>Updating means to resolve the record, change it, and then send it back for an update. Therefore this recipe is very similar to &quot;<a href="./create.html">Create a PID</a>&quot;.</p>
 <hr />
 <h2><a class="header" href="#ingredients" id="ingredients">Ingredients</a></h2>
 <ul>
 <li>Access to a <a href="../appendix/appendix_pit.html">PID Information Types Service</a> or a Testbed instance.</li>
-<li>The information you want to put into the record (new data and replacing data is both possible)</li>
+<li>The information you want to put into the record (new data and replacing data is both possible).</li>
 </ul>
 <hr />
 <h2><a class="header" href="#work-steps-summary" id="work-steps-summary">Work Steps (Summary)</a></h2>
@@ -214,7 +214,7 @@
 <h2><a class="header" href="#step-1-resolve-a-pid" id="step-1-resolve-a-pid">Step 1: Resolve a PID</a></h2>
 <p>The idea of updating a record is the following: Get the current state, modify the record, then overwrite the whole record with your modified version. To get the current state, you need to <a href="./resolve.html">resolve the PID, as stated in this recipe</a>.</p>
 <h2><a class="header" href="#step-2-modify-the-json-representation-of-the-pid-record-as-you-wish" id="step-2-modify-the-json-representation-of-the-pid-record-as-you-wish">Step 2: Modify the JSON-Representation of the PID record as you wish</a></h2>
-<p>You may use any JSON manipulation tool to exchange any information in the record, even the profile. But there will — like when using the &quot;create API&quot; — a validation before the PID information types service will do the update. So make sure that the result of your modifications is a valid record according to the (maybe new) profile before proceeding.</p>
+<p>You may use any JSON manipulation tool to exchange any information in the record, even the profile. But there will — like when using the &quot;create API&quot; — be a validation before the PID information types service will do the update. So make sure that the result of your modifications is a valid record according to the (maybe new) profile before proceeding. More on that in the following recipe: <a href="./create.html">Create a PID</a></p>
 <h2><a class="header" href="#step-3-send-pid-update-request-to-pid-information-types-service" id="step-3-send-pid-update-request-to-pid-information-types-service">Step 3: Send PID update request to PID Information Types service</a></h2>
 <p>This request is very similar to the <a href="./create.html">create request</a>. The difference is that you will need to provide a PID which will have its record updated. The record will be validated, and if validation fails, the PID will not be updated.</p>
 <p><img src="../images/testbed_create_update.png" alt="The testbed validates records before creating or updating PIDs." /></p>

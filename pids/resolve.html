@@ -196,18 +196,13 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#resolve-a-pid" id="resolve-a-pid">Resolve a PID</a></h1>
-<p>Resolving a PID (also &quot;retrieving/reading a PID (record)&quot;) is the process of submitting the PID to a system in order to receive the associated PID record as a response. It is sometimes also called &quot;resolving a FAIR Digital Object&quot;, although this term is also used to refer to the process of accessing the actual data object which is referenced by the PID record, which makes it a vague term. Resolving allows machines to act on the PIDs record information.</p>
-<p>In contrast to the modifying use cases (<a href="./create.html">create</a> and <a href="./update.html">update</a>), the record is currently not being validated during this operation. The reason is that the machine is not able to prevent the record from being invalid within a reading operation. If the received record contains a profile, the PIT service can be explicitly requested to validate the PID record if the user or tool needs this information.</p>
+<p>Resolving a PID (also &quot;retrieving/reading a PID (record)&quot;) is the process of submitting the PID to a system in order to receive the associated PID record as a response. It is sometimes also called &quot;resolving a FAIR Digital Object&quot;, although this term is also used to refer to the process of accessing the actual data object which makes it a vague term. Resolving allows machines to read (and act on) the PIDs record information.</p>
+<p>In contrast to the modifying use cases (<a href="./create.html">create</a> and <a href="./update.html">update</a>), the record is currently not being validated during this operation. The reason is that neither the machine nor the user is able to prevent the record from being invalid within a reading operation. If the received record contains a profile, the PIT service can be explicitly requested to validate the PID record if the user or tool needs this information.</p>
 <hr />
 <h2><a class="header" href="#ingredients" id="ingredients">Ingredients</a></h2>
 <ul>
 <li>A registered PID you want to resolve.</li>
-<li>Access to a <a href="../appendix/appendix_pit.html">PID Information Types Service</a> or a Testbed instance.
-<ul>
-<li>The service must be configured in a way to support your PID system. For details on that, read the instructions.</li>
-<li>Alternatively: Any other system that uses the resolving API of the PID system of your choice.</li>
-</ul>
-</li>
+<li>Access to a <a href="../appendix/appendix_pit.html">PID Information Types Service</a> or a Testbed instance.</li>
 </ul>
 <hr />
 <h2><a class="header" href="#work-steps-summary" id="work-steps-summary">Work Steps (Summary)</a></h2>
@@ -216,10 +211,6 @@
 </ol>
 <hr />
 <h2><a class="header" href="#step-1-request-the-pid-information-types-service-to-resolve-a-given-pid" id="step-1-request-the-pid-information-types-service-to-resolve-a-given-pid">Step 1: Request the PID information types service to resolve a given PID</a></h2>
-<blockquote>
-<p>Note: The PID information types service does not support every PID system, but can be extended. Feel free to open an issue on the <a href="https://github.com/kit-data-manager/pit-service">Github Page</a> if your PID type is not supported. As of now (June 2021) it supports only PID services building on the federated Handle System.</p>
-<p>Also, it includes a small sandboxed PID service in it's default configuration for testing purposes. Note that these sandboxed PIDs are <strong>not</strong> publicly resolvable, do only exist in this instance and are not stored permanently. But it might be enough for you to e.g. test the API or your PID workflows.</p>
-</blockquote>
 <p>The PID information types service offers an API to resolve PIDs. The principle is simple: You give it the API and will get a JSON document in return, which contains the content of the PIDs record.</p>
 <p><img src="../images/testbed_resolve.png" alt="" /></p>
 <h3><a class="header" href="#using-the-pid-information-types-instance" id="using-the-pid-information-types-instance">Using the PID information types instance</a></h3>
