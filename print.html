@@ -197,8 +197,35 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#about" id="about">About</a></h1>
-<h1><a class="header" href="#introduction-working-with-pids" id="introduction-working-with-pids">Introduction: Working with PIDs</a></h1>
+                        <h1><a class="header" href="#welcome" id="welcome">Welcome</a></h1>
+<p>This cookbook shall guide the reader through the different use cases when adopting, maintaining and using FAIR Digital Objects.</p>
+<div class="centerbox">
+    <img src="./images/cover.png" alt="cookbook cover" style="max-height:50em;" />
+</div>
+<h2><a class="header" href="#target-audience" id="target-audience">Target audience</a></h2>
+<p>This cookbook is targeted at people who:</p>
+<ul>
+<li>build, control or maintain infrastructure or clients that should work with FAIR DOs in some way.</li>
+<li>are interested in how types, profiles and records work and how they can be crated.</li>
+</ul>
+<p>Future target groups are also planned:</p>
+<ul>
+<li>People who need to know about how a machine can understand and act on (e.g. record) information within FAIR DOs.</li>
+</ul>
+<h2><a class="header" href="#about-us" id="about-us">About us</a></h2>
+<p><a href="https://www.scc.kit.edu/ueberuns/dem.php">Data Expoitation Methods (DEM)</a>, is part of the Steinbuch Centre for Computing (SCC), located at Karlsruhe Institute of Technology (KIT).</p>
+<div class="centerbox">
+    <div class="logo-spacing-general">
+        <a class="logo-align-middle logo-card"
+        href="https://kit.edu/"
+        title="Karlsruhe Institute of Technology"
+        aria-label="Visit the KIT Website">
+            <img class="lightonly" src="/kit_logo_en_black.svg" alt="KIT logo">
+            <img class="darkonly" src="/kit_logo_en_white.svg" alt="KIT logo">
+            <img class="whiteonly" src="/kit_logo_en.svg" alt="KIT logo">
+        </a>
+    </div>
+</div><h1><a class="header" href="#introduction-working-with-pids" id="introduction-working-with-pids">Introduction: Working with PIDs</a></h1>
 <p><strong>A PID is a unique, persistent and resolvable identifier for an object.</strong> This object might be (meta-)data, data streams, sensors, repositories and more. PIDs are associated with information (PID record information) which helps to access the object and to elaborate the use of the object for the use case of a client. This means that a PID resolves to a &quot;landing page for machines&quot; (the PID record), enabling the client to decide if it can work with this object and to programmatically access it. Therefore PIDs are a vital part of FAIR Digital Objects.</p>
 <p><img src="pids/../images/pid_overview.drawio.svg" alt="" /></p>
 <p><strong>The following recipes are about working with PIDs</strong> and use the same ingredients and similar steps. Working with PIDs means in this case, to do <a href="https://de.wikipedia.org/wiki/CRUD">CRUD-Operations</a> (Create, Retrieve, Update, Delete) with PIDs. We use our <a href="pids/../appendix/appendix_testbed.html">Testbed</a> to elaborate and test generic PID handling and advanced use cases.</p>
