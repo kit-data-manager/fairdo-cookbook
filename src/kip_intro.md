@@ -2,7 +2,7 @@
 
 
 
-In receipt we will show how you to create a PID Kernel Information Profile (KIP). The KIP is a special Data Type which allows you to define and validate elements in a PID Information Record. The goal is, to store a small subset of metadata in this record directly in the PID resolving service to allow fast, machine actionable decisions already on the PID-level. Thus, a machine can decide on further resolution of the referenced content or withdraw the PID if does not contain any interpretable information. 
+In receipt we will show how you to create a PID Kernel Information Profile (KIP). The KIP is a special Data Type which allows you to define and validate elements in a PID Record. The goal is, to store a small subset of metadata in this record directly in the PID resolving service to allow fast, machine actionable decisions already on the PID-level. Thus, a machine can decide on further resolution of the referenced content or withdraw the PID if does not contain any interpretable information. 
 
 ---
 
