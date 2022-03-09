@@ -20,7 +20,7 @@ The FAIR Digital Object Ecosystem Testbed intends to demonstrate the feasibility
 
 ![Simplified testbed overview](../images/testbed_poster-overview.png)
 
-The Testbed consists of a set of services to facilitate and demonstrate generic use cases for FAIR DOs, with a strong focus on PIDs and PID Information Records, and explicitly not covering data storage and repositories. It is not a hosted demonstrator. Instead, you can download and run it on your everyday computer[^testbedrepo]. As the services interact to fulfill some use cases, we describe them as an ecosystem. Yet, every service can be used independently[^testbedcomposeyml] [^kitdm].
+The Testbed consists of a set of services to facilitate and demonstrate generic use cases for FAIR DOs, with a strong focus on PIDs and PID Records, and explicitly not covering data storage and repositories. It is not a hosted demonstrator. Instead, you can download and run it on your everyday computer[^testbedrepo]. As the services interact to fulfill use cases, we describe them as an ecosystem. Yet, every service can be used independently[^testbedcomposeyml] [^kitdm].
 The Testbed can also be used as an environment to test the interplay with other services (e.g. repositories).
 
 [^testbedrepo]: Testbed instructions and download: [https://github.com/kit-data-manager/testbed4inf](https://github.com/kit-data-manager/testbed4inf)
