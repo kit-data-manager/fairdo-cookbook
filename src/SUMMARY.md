@@ -8,8 +8,8 @@
   - [Update/maintain a PID](./pids/update.md)
   - [Delete a PID](./pids/delete.md)
 
-- [Inform other systems about changes among your PIDs](./pids/notify.md)
-- [Search PIDs using record information](./pids/search.md)
+- [Inform (or be informed) about new or changed PIDs](./pids/notify.md)
+- [Search for PIDs](./pids/search.md)
 
 - [Create a Data Type](./datatypes_intro.md)
   - [Search data type registry for suitable data type](./datatypes_step_1.md)
