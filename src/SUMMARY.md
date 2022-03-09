@@ -29,5 +29,5 @@
   - [Register new KIP in Data Type Registry](./kip_step_3.md)
 
 - [Appendix](./appendix/intro.md)
-  - [PID Information Types service](./appendix/appendix_pit.md)
+  - [Typed PID Maker](./appendix/appendix_pit.md)
   - [FAIR DO Ecosystem Testbed](./appendix/appendix_testbed.md)

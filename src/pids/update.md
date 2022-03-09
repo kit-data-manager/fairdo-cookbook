@@ -6,7 +6,7 @@ Updating means to resolve the record, change it, and then send it back for an up
 
 ## Ingredients
 
-- Access to a [PID Information Types Service](../appendix/appendix_pit.md) or a Testbed instance.
+- Access to a [Typed PID Maker](../appendix/appendix_pit.md) or a Testbed instance.
 - The information you want to put into the record (new data and replacing data is both possible).
 
 ---
@@ -15,7 +15,7 @@ Updating means to resolve the record, change it, and then send it back for an up
 
 1. Resolve the PID
 2. Modify the JSON-Representation of the PID record as you wish.
-3. Request the PID Information Types service (also available in the testbed) to update the PID and send the JSON record (step 3) together with the request.
+3. Send PID update request to the Typed PID Maker
 
 ---
 
@@ -25,9 +25,9 @@ The idea of updating a record is the following: Get the current state, modify th
 
 ## Step 2: Modify the JSON-Representation of the PID record as you wish
 
-You may use any JSON manipulation tool to exchange any information in the record, even the profile. But there will — like when using the "create API" — be a validation before the PID information types service will do the update. So make sure that the result of your modifications is a valid record according to the (maybe new) profile before proceeding. More on that in the following recipe: [Create a PID](./create.md)
+You may use any JSON manipulation tool to exchange any information in the record, even the profile. But there will — like when using the "create API" — be a validation before the Typed PID Maker will do the update. So make sure that the result of your modifications is a valid record according to the (maybe new) profile before proceeding. More on that in the following recipe: [Create a PID](./create.md)
 
-## Step 3: Send PID update request to PID Information Types service
+## Step 3: Send PID update request to the Typed PID Maker
 
 This request is very similar to the [create request](./create.md). The difference is that you will need to provide a PID which will have its record updated. The record will be validated, and if validation fails, the PID will not be updated.
 
