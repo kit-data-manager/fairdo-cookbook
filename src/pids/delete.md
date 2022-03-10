@@ -1,6 +1,6 @@
 # Delete a PID
 
-Deleting a PID should not be done, as it is against the P in PID. The reason to use PIDs is to give certain guarantees about citing and reusing objects, while keeping the provenance management simple. Usually, current PID systems do indeed offer a possibility to delete PIDs. As we are considering FAIR ecosystems, we do not expose this functionality to maintain reusability and citability to the highest degree possible. It is therefore not supported by the PID information types service (PIT).
+Deleting a PID should not be done, as it is against the P in PID. The reason to use PIDs is to give certain guarantees about citing and reusing objects, while keeping the provenance management simple. Usually, current PID systems do indeed offer a possibility to delete PIDs. As we are considering FAIR ecosystems, we do not expose this functionality to maintain reusability and citability to the highest degree possible. It is therefore not supported by the Typed PID Maker.
 
 But there are solutions if you feel the need, which are better than updating the record to a useless dummy record. There are cases where deleting a PID might seem to be a solution at the first glance:
 

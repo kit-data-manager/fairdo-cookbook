@@ -4,15 +4,23 @@
 
 ![](../images/pid_overview.drawio.svg)
 
-**The following recipes are about working with PIDs** and use the same ingredients and similar steps. Working with PIDs means in this case, to do [CRUD-Operations](https://de.wikipedia.org/wiki/CRUD) (Create, Retrieve, Update, Delete) with PIDs. We use our [Testbed](../appendix/appendix_testbed.md) to elaborate and test generic PID handling and advanced use cases.
+## Why should I adapt PIDs for my research objects?
 
-> Note that there is no delete-Operation recommended in the context of FAIR Digital Objects, therefore the recipe will not describe how to delete it, but show how to handle use cases which seem to make PID deletion relevant, like data loss or licansing issues.
+Assigning PIDs to your objects, no matter if they are data, software, publidations, or something else, has several advantages:
 
-![](../images/pit_to_pid.drawio.svg)
-
----
+- Cite and identify your object with a global identifier that will never change.
+- Define the relations of your research to the work of other scientists. PID records allow you to link your object to other objects (using their PID) without additional infrastructure on your side.
+- Enable humans **and machines** to resolve the identifier, to find and access your objects and to understand its context.
+- Instead of developing scripts and applications for your specific data repositories, you can develop them for all kinds of FAIR DOs, making software more independent of your current data management and ease the reuse of other researchers data.
+- Increase the overall FAIR level of your research objects.
 
 ## Recipes
+
+**The following recipes are about working with PIDs** and use the same ingredients and similar steps. Working with PIDs means in this case, to do [CRUD-Operations](https://de.wikipedia.org/wiki/CRUD) (Create, Retrieve, Update, Delete) with PIDs. We use our [Testbed](../appendix/appendix_testbed.md) to elaborate and test generic PID handling and advanced use cases.
+
+> Note that there is no delete-Operation recommended in the context of FAIR Digital Objects, therefore the recipe will not describe how to delete it, but show how to handle use cases which seem to make PID deletion relevant, like data loss or licensing issues.
+
+![](../images/pit_to_pid.drawio.svg)
 
 - [Create a PID](./create.md)  
     This is also known as "Creating a FAIR Digital Object" or "Creating a PID Record".

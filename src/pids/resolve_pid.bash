@@ -9,7 +9,7 @@ fi
 if test "$1" = "--help" || test "$1" = "-h" || test $# -lt 2
     then
     echo "=== HELP ==="
-    echo "Resolve a PID using a PIT service endpoint."
+    echo "Resolve a PID using a Typed PID Maker endpoint."
     echo "Usage: resolve_pid.bash \$url \$pid"
     exit -1
 fi
