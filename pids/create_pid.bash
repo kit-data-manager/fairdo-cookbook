@@ -14,7 +14,7 @@ fi
 if test "$1" = "--help" || test "$1" = "-h" || test $# -lt 2 || test ! -f "$2"
     then
     echo "=== HELP ==="
-    echo "Create a PID using a PIT service endpoint."
+    echo "Create a PID using a Typed PID Maker endpoint."
     echo "Usage: create_pid.bash \$url \$path_to_json_file"
     exit -1
 fi
