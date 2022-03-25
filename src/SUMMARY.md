@@ -8,6 +8,7 @@
   - [Update/maintain a PID](./pids/update.md)
   - [Delete a PID](./pids/delete.md)
 
+- [Validate a PID record](./pids/validate.md)
 - [Inform (or be informed) about new or changed PIDs](./pids/notify.md)
 - [Search for PIDs](./pids/search.md)
 
