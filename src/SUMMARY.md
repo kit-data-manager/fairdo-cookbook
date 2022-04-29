@@ -1,12 +1,14 @@
 # Summary
 
 [About](./about.md)
+[Introduction to PIDs and FAIR DOs](./pids/intro.md)
 
-- [Working with PIDs](./pids/intro.md)
-  - [Create a PID](./pids/create.md)
-  - [Resolve a PID](./pids/resolve.md)
-  - [Update/maintain a PID](./pids/update.md)
-  - [Delete a PID](./pids/delete.md)
+---
+
+- [Create a PID](./pids/create.md)
+- [Resolve a PID](./pids/resolve.md)
+- [Update/maintain a PID](./pids/update.md)
+- [Delete a PID](./pids/delete.md)
 
 - [Inform (or be informed) about new or changed PIDs](./pids/notify.md)
 - [Search for PIDs](./pids/search.md)
