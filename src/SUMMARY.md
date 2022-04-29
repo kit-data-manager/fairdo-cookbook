@@ -8,9 +8,9 @@
   - [Update/maintain a PID](./pids/update.md)
   - [Delete a PID](./pids/delete.md)
 
-- [Validate a PID record](./pids/validate.md)
 - [Inform (or be informed) about new or changed PIDs](./pids/notify.md)
 - [Search for PIDs](./pids/search.md)
+- [Validate a PID record](./pids/validate.md)
 
 - [Create a Data Type](./datatypes_intro.md)
   - [Search data type registry for suitable data type](./datatypes_step_1.md)
