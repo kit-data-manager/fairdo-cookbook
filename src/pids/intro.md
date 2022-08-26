@@ -28,7 +28,7 @@ Assigning such PIDs to your objects, no matter if they are data, software, publi
 
 ## Related recipes
 
-**The following recipes are about the basic handling of PIDs for FAIR DOs.** Basic handling means, in this case, to do [CRUD-Operations](https://de.wikipedia.org/wiki/CRUD) (Create, Retrieve, Update, Delete) with PIDs. We use our [Testbed](../appendix/appendix_testbed.md) to elaborate and test generic PID handling and advanced use cases.
+**The following recipes are about the basic handling of PIDs for FAIR DOs.** Basic handling means, in this case, to do [CRUD-Operations](https://de.wikipedia.org/wiki/CRUD) (Create, Retrieve, Update, Delete) with PIDs. We use our [FAIR DO Lab](../appendix/appendix_fair-do-lab.md) as our default setup. It is adjustable so you can only start the services you need (or use other services instead).
 
 > Note that there is no delete-Operation recommended in the context of FAIR Digital Objects, therefore the recipe will not describe how to delete it, but show how to handle use cases which seem to make PID deletion relevant, like data loss or licensing issues.
 

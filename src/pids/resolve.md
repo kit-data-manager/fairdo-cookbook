@@ -9,7 +9,7 @@ In contrast to the modifying use cases ([create](./create.md) and [update](./upd
 ## Ingredients
 
 - A registered PID you want to resolve.
-- Access to a [Typed PID Maker](../appendix/appendix_pit.md) or a Testbed instance.
+- Access to a [Typed PID Maker](../appendix/appendix_pit.md) or a FAIR DO Lab instance.
     - Alternatively, try it in your browser!
 
 ---

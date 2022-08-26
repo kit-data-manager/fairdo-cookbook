@@ -4,7 +4,7 @@ It is a common use case to search for PIDs using the record information or have 
 
 ![A message broker will notify an indexer to update the search index.](../images/testbed_search.png)
 
-This approach is implemented in the [FAIR Digital Object Ecosystem Testbed](../appendix/appendix_testbed.md). Currently, the indexing functionality has to be set up before the PIDs are registered or changed to make sure they are indexed. To also retrieve older PIDs which are not changing, ecosystems must offer further approaches, like regular "record.refresh" messages, indicating non-changing PIDs regularly or other interfaces to order older PIDs.
+This approach is implemented in the [FAIR Digital Object Lab](../appendix/appendix_fair-do-lab.md). Currently, the indexing functionality has to be set up before the PIDs are registered or changed to make sure they are indexed. To also retrieve older PIDs which are not changing, ecosystems must offer further approaches, like regular "record.refresh" messages, indicating non-changing PIDs regularly or other interfaces to order older PIDs.
 
 ---
 
@@ -12,7 +12,7 @@ This approach is implemented in the [FAIR Digital Object Ecosystem Testbed](../a
 
 Either
 
-- A [FAIR Digital Object Ecosystem Testbed](../appendix/appendix_testbed.md) instance, which comes with pre-configured with the ingredients below and will save you step 1 (configuration)
+- A [FAIR Digital Object Lab](../appendix/appendix_fair-do-lab.md) instance, which comes with pre-configured with the ingredients below and will save you step 1 (configuration)
 
 or
 
@@ -24,17 +24,17 @@ or
 
 ## Work Steps (Summary)
 
-As soon as the Typed PID Maker is configured to use the message broker, everything happens in the background. These steps show you how to visualize what happens hidden in the background, when using the testbed.
+As soon as the Typed PID Maker is configured to use the message broker, everything happens in the background. These steps show you how to visualize what happens hidden in the background, when using the FAIR DO Lab.
 
-1. Configuration (not required if testbed is used)
+1. Configuration (not required if the Lab is used)
 2. Create some PIDs with record information
 3. Use the search index to search for PIDs
 
 ---
 
-## Step 1: Configuration (not required if testbed is used)
+## Step 1: Configuration (not required if the FAIR DO Lab is used)
 
-The testbed is pre-configured to fulfill this use case in the following ways:
+The FAIR DO Lab is pre-configured to fulfill this use case in the following ways:
 
 1. The Typed PID Maker is configured to send messages to a message broker if PIDs are created. In its `application.properties` configuration file, we need to configure the message broker and exchange:
     ```yaml
@@ -55,7 +55,7 @@ The testbed is pre-configured to fulfill this use case in the following ways:
     repo.messaging.receiver.routingKeys: pidrecord.#  // message topics which are handled
     ```
 
-In case you do not use the testbed and instead do your own setup, make sure it is configured this way.
+In case you do not use the FAIR DO Lab and instead do your own setup, make sure it is configured this way.
 
 ## Step 2: Create some PIDs with record information
 
@@ -63,7 +63,7 @@ Use the [recipe to create PIDs](./create.md) to create a few dummy PIDs. We reco
 
 ## Step3: Use the search index to search for PIDs
 
-As the Typed PID Maker and the Indexer have been configured accordingly in step 1 (or the default configuration of the testbed has been used), the PIDs should have been indexed shortly after their creation. We can now use the index to query information from it. How to do this will depend on your search index engine. We will demonstrate this on the testbed, which uses Elasticsearch as index as well as Kibana for administration and exploration.
+As the Typed PID Maker and the Indexer have been configured accordingly in step 1 (or the default configuration of the FAIR DO Lab has been used), the PIDs should have been indexed shortly after their creation. We can now use the index to query information from it. How to do this will depend on your search index engine. We will demonstrate this on the FAIR DO Lab, which uses Elasticsearch as index as well as Kibana for administration and exploration.
 
 1. Visit <http://127.0.0.1:5601/app/kibana#/discover>
 2. Use "record*" as index pattern and click "Next step"

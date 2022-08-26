@@ -7,7 +7,7 @@ Download:
 Based on:
 [PIT Recommendations (RDA)](https://rd-alliance.org/group/pid-information-types-wg/outcomes/pid-information-types) \
 Contained in:
-[FAIR Digital Object Ecosystem Testbed](../appendix/appendix_testbed.md) \
+[FAIR Digital Object Lab](../appendix/appendix_fair-do-lab.md) \
 Related recipes:
 ["Working with PIDs"](../pids/intro.md),
 ["Informing other systems about PIDs"](../pids/notify.md),
