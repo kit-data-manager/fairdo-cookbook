@@ -33,4 +33,4 @@
 
 - [Appendix](./appendix/intro.md)
   - [Typed PID Maker](./appendix/appendix_pit.md)
-  - [FAIR DO Ecosystem Testbed](./appendix/appendix_testbed.md)
+  - [FAIR DO Lab](./appendix/appendix_fair-do-lab.md)
