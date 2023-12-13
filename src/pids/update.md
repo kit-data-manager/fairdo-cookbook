@@ -6,7 +6,7 @@ Updating means to resolve the record, change it, and then send it back for an up
 
 ## Ingredients
 
-- Access to a [Typed PID Maker](../appendix/appendix_pit.md) or a Testbed instance.
+- Access to a [Typed PID Maker](../appendix/appendix_pit.md) or a FAIR DO Lab instance.
 - The information you want to put into the record (new data and replacing data is both possible).
 
 ---
@@ -31,7 +31,7 @@ You may use any JSON manipulation tool to exchange any information in the record
 
 This request is very similar to the [create request](./create.md). The difference is that you will need to provide a PID which will have its record updated. The record will be validated, and if validation fails, the PID will not be updated.
 
-![The testbed validates records before creating or updating PIDs.](../images/testbed_create_update.png)
+![The Typed PID Maker validates records before creating or updating PIDs.](../images/testbed_create_update.png)
 
 1. [Download the bash script to update a PID](./update_pid.bash).
 2. Remember to store the JSON representation into a file in the same directory as the bash script. Call it for example `record.json`. [You may use this example record](./test.json) if you like. Note that its "pid" field contains a PID, which will be ignored for PID updates.

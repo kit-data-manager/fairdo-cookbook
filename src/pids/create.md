@@ -8,7 +8,7 @@ As you can see in the ingredient list, you will need a profile. A reference to t
 
 ## Ingredients
 
-- A running [Typed PID Maker](../appendix/appendix_pit.md) (or Testbed instance)
+- A running [Typed PID Maker](../appendix/appendix_pit.md) (or FAIR DO Lab instance)
 - [A PID Information Profile](../kip_intro.md) that can properly represent your object you want to represent
 - A reference to your data/object (e.g. a URL), which can be used with your profile
 - Information which needs to be provided according to the profile
@@ -41,7 +41,7 @@ Therefore, we need to build a JSON-Representation of the PID record to send to t
 
 The types are defined in the profile you have chosen (or created). The profile also decides if you need to assign a value to the type or if this type is optional. It also defines if a type can have multiple values (repeatability). After receiving the record information, the Typed PID Maker will use the contained profile to validate the information. Only if the validation succeeds, a new PID with the given record information will be registered at the configured PID service. It is therefore important to have a record which is valid according to its self-contained profile. For more information about types and profiles, you might want to read into the following recipes: [Create a data type](../datatypes_intro.md), [Create a profile](../kip_intro.md).
 
-![The testbed validates records before creating or updating PIDs.](../images/testbed_create_update.png)
+![The Typed PID Maker validates records before creating or updating PIDs.](../images/testbed_create_update.png)
 
 As you already chose the profile, try to fill it at best effort (remember that there are likely some mandatory fields). Note that all records must contain the PID of their profile. This is – again – defined in each profile. The PID will be used by the Typed PID Maker to validate your record. If your record is not valid according to the profile you chose, no PID will be created. More details to that in the next step. Let us assume a [simple profile](http://dtr-test.pidconsortium.net/#objects/21.T11148/0c5636e4d82b88f86132):
 
@@ -105,6 +105,6 @@ Every instance hosts an interactive API documentation. It is available at `http:
 2. Remember to store the JSON representation into a file in the same directory as the bash script. Call it for example `record.json`. [You may use this example record](./test.json) if you like. Note that its `pid` field contains a PID, which will be ignored for PID creation. There will be a new PID assigned.
 3. Open a terminal and execute this command:
     - `bash create_pid.bash $url record.json`
-    - where `$url` must be replaced with the hostname and port of the Typed PID Maker (e.g. `https://localhost:8090` if you run the testbed).
+    - where `$url` must be replaced with the hostname and port of the Typed PID Maker (e.g. `https://localhost:8090` if you run the FAIR DO Lab).
 
 On success the service will return the information back to you. It should be exactly the same, but with the PID of your object included. In this example, you can see that we used the sandboxed, temporary PID service for testing: `{"pid":"sandboxed/-647408938","entries":{...}}`
