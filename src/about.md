@@ -19,7 +19,7 @@ Future target groups are also planned:
 
 ## About us
 
-[Data Expoitation Methods (DEM)](https://www.scc.kit.edu/ueberuns/dem.php), is part of the Steinbuch Centre for Computing (SCC), located at Karlsruhe Institute of Technology (KIT).
+[Data Expoitation Methods (DEM)](https://www.scc.kit.edu/ueberuns/dem.php), is part of the Scientific Computing Center (SCC), located at Karlsruhe Institute of Technology (KIT).
 
 <div class="centerbox">
     <div class="logo-spacing-general">
