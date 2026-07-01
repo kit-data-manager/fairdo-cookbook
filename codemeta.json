@@ -1,6 +1,6 @@
 {
     "@context": "https://w3id.org/codemeta/3.0",
-    "type": "book",
+    "type": "SoftwareSourceCode",
     "codeRepository": "https://github.com/kit-data-manager/fairdo-cookbook.git",
     "name": "FAIR DO Cookbook",
     "dateCreated": "2021-05-04",
@@ -100,17 +100,14 @@
         "FAIR DO",
         "PID",
         "Cookbook"
-    ]
+    ],
     "license": "https://spdx.org/licenses/CC-BY-4.0",
     "runtimePlatform": "mdbook",
-    "softwareRequirements": {
-      "@type": "SoftwareApplication",
-      "name": "mdBook",
-      "url": "https://github.com/rust-lang/mdBook"
-    },
+    "softwareRequirements": [
+      "https://github.com/rust-lang/mdBook"
+    ],
     "developmentStatus": "Production/Stable",
     "issueTracker": "https://github.com/kit-data-manager/fairdo-cookbook/issues",
     "version": "-",
     "dateModified": "2026-06-17"
 }
-
