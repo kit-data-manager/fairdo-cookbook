@@ -1,16 +1,27 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- family-names: "Pfeil"
-  given-names: "Andreas"
-  orcid: "https://orcid.org/0000-0001-6575-1022"
 - family-names: "Jejkal"
   given-names: "Thomas"
+  affiliation: Karlsruhe Institute of Technology
+  email: thomas.jejkal@kit.edu
   orcid: "https://orcid.org/0000-0003-2804-688X"
+- family-names: "Pfeil"
+  given-names: "Andreas"
+  affiliation: Karlsruhe Institute of Technology
+  email: andreas.pfeil@kit.edu
+  orcid: "https://orcid.org/0000-0001-6575-1022"
+title: "Indexing and Mapping Service"
 - family-names: "Hartmann"
   given-names: "Volker"
+  affiliation: Karlsruhe Institute of Technology
+  email: volker.hartmann@kit.edu
   orcid: "https://orcid.org/0000-0001-6383-5214"
 title: "FAIR DO Cookbook"
-date-released: 2021-05-04
+type: book
+abstract: "Manual guiding the reader through the different use cases when adopting, maintaining and using FAIR Digital Objects."
 url: "https://kit-data-manager.github.io/fairdo-cookbook/"
-repository-code: "https://github.com/kit-data-manager/fairdo-cookbook"
+repository-code:  "https://github.com/kit-data-manager/fairdo-cookbook/"
+license: CC-BY-4.0
+version: -
+date-released: 2024-01-16
