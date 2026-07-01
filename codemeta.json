@@ -1,0 +1,113 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "type": "SoftwareSourceCode",
+    "codeRepository": "https://github.com/kit-data-manager/fairdo-cookbook.git",
+    "name": "FAIR DO Cookbook",
+    "dateCreated": "2021-05-04",
+    "description": "Manual guiding the reader through the different use cases when adopting, maintaining and using FAIR Digital Objects.",
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Andreas",
+            "familyName": "Pfeil",
+            "email": "andreas.pfeil@kit.edu",
+            "@id": "https://orcid.org/0000-0001-6574-1022",
+            "identifier": "https://orcid.org/0000-0001-6575-1022",
+            "affiliation": {
+                "type": "Organization",
+                "name": "Karlsruhe Institute of Technology (KIT)"
+            }
+        },
+        {
+            "@type": "Person",
+            "givenName": "Thomas",
+            "familyName": "Jejkal",
+            "email": "thomas.jejkal@kit.edu",
+            "@id": "https://orcid.org/0000-0003-2804-688X",
+            "identifier": "https://orcid.org/0000-0003-2804-688X",
+            "affiliation": {
+                "type": "Organization",
+                "name": "Karlsruhe Institute of Technology (KIT)"
+            }
+        },
+        {
+            "@type": "Person",
+            "givenName": "Volker",
+            "familyName": "Hartmann",
+            "email": "volker.hartmann@kit.edu",
+            "@id": "https://orcid.org/0000-0001-6383-5214",
+            "identifier": "https://orcid.org/0000-0001-6383-5214",
+            "affiliation": {
+                "type": "Organization",
+                "name": "Karlsruhe Institute of Technology (KIT)"
+            }
+        }
+    ],
+    "maintainer": [
+        {
+            "@type": "Person",
+            "givenName": "Andreas",
+            "familyName": "Pfeil",
+            "email": "andreas.pfeil@kit.edu",
+            "@id": "https://orcid.org/0000-0001-6574-1022",
+            "identifier": "https://orcid.org/0000-0001-6575-1022",
+            "affiliation": {
+                "type": "Organization",
+                "name": "Karlsruhe Institute of Technology (KIT)"
+            }
+        },
+        {
+            "@type": "Person",
+            "givenName": "Thomas",
+            "familyName": "Jejkal",
+            "email": "thomas.jejkal@kit.edu",
+            "@id": "https://orcid.org/0000-0003-2804-688X",
+            "identifier": "https://orcid.org/0000-0003-2804-688X",
+            "affiliation": {
+                "type": "Organization",
+                "name": "Karlsruhe Institute of Technology (KIT)"
+            }
+        },
+        {
+            "@type": "Person",
+            "givenName": "Volker",
+            "familyName": "Hartmann",
+            "email": "volker.hartmann@kit.edu",
+            "@id": "https://orcid.org/0000-0001-6383-5214",
+            "identifier": "https://orcid.org/0000-0001-6383-5214",
+            "affiliation": {
+                "type": "Organization",
+                "name": "Karlsruhe Institute of Technology (KIT)"
+            }
+        }
+    ],
+    "funder": [
+        {
+            "@type": "Organization",
+            "name": "Helmholtz Association of German Research Centers",
+            "@id": "https://ror.org/0281dp749",
+            "url": "https://www.helmholtz.de/"
+        },
+        {
+            "@type": "Organization",
+            "name": "Helmholtz Metadata Collaboration (HMC)",
+            "@id": "https://ror.org/04v4h0v24",
+            "url": "https://helmholtz-metadaten.de/"
+        }
+    ],
+    "keywords": [
+        "FAIR",
+        "FAIR DO",
+        "PID",
+        "Cookbook"
+    ],
+    "license": "https://spdx.org/licenses/CC-BY-4.0",
+    "runtimePlatform": "mdbook",
+    "softwareRequirements": [
+      "https://github.com/rust-lang/mdBook"
+    ],
+    "developmentStatus": "Production/Stable",
+    "issueTracker": "https://github.com/kit-data-manager/fairdo-cookbook/issues",
+    "version": "-",
+    "dateModified": "2026-06-17"
+}
